@@ -1,5 +1,4 @@
 import { defineConfig } from 'vite';
-import tailwindcss from '@tailwindcss/vite'
 import { resolve } from 'path';
 
 // https://vitejs.dev/config/
@@ -10,9 +9,6 @@ export default defineConfig({
     outDir: resolve(__dirname, 'dist'),
     emptyOutDir: true,
   },
-  plugins: [
-    tailwindcss(),
-  ],
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),

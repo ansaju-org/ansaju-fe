@@ -1,5 +1,5 @@
 // CSS imports
-import '../script/styles/style.css';
+import '../styles/style.css';
 
 import App from './pages/app';
 
