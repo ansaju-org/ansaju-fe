@@ -26,6 +26,11 @@ header {
   padding-inline: 20px;
 }
 
+.logo {
+  width: 85px;
+  height: 85px;
+}
+
 .left-group {
   display: flex;
   align-items: center;
@@ -87,7 +92,7 @@ header {
 
 .nav-list li a {
   padding: 6px 10px;
-
+  font-size: 17px;
   display: block;
   
   color: #ffff;

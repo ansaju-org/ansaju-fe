@@ -1,6 +1,6 @@
 // CSS imports
 import '../styles/style.css';
-
+import '../scripts/components/header-page';
 import App from './pages/app';
 
 document.addEventListener('DOMContentLoaded', async () => {
