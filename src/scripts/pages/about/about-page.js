@@ -1,9 +1,10 @@
 export default class AboutPage {
     async render() {
       return `
-        <section class="about-container">
-          <h1>About Page</h1>
-        </section>
+      <header-page></header-page>
+      <section class="about-container">
+      <h1>About Page</h1>
+      </section>
       `;
     }
   
