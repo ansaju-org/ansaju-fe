@@ -1,12 +1,11 @@
-import routes from '../routes/routes';
-import { getActiveRoute } from '../routes/url-parser';
+import routes from "../routes/routes";
+import { getActiveRoute } from "../routes/url-parser";
 
 class App {
   #content = null;
 
-  constructor({ navigationDrawer, drawerButton, content }) {
+  constructor({ content }) {
     this.#content = content;
-
   }
 
   async renderPage() {
