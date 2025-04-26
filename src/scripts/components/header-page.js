@@ -1,9 +1,9 @@
-import HeaderPresenter from "../presenter/header-presenter.js";
+import HeaderPresenter from '../presenter/header-presenter.js';
 
 class HeaderPage extends HTMLElement {
   constructor() {
     super();
-    this.attachShadow({ mode: "open" });
+    this.attachShadow({ mode: 'open' });
   }
 
   connectedCallback() {
@@ -33,4 +33,4 @@ class HeaderPage extends HTMLElement {
   }
 }
 
-customElements.define("header-page", HeaderPage);
+customElements.define('header-page', HeaderPage);
