@@ -1,10 +1,9 @@
-export default class HomePage {
+export default class Register {
   async render() {
     return `
         <div class="section-rightQuestion">
         <div class="rightQuestion-content">
-          <h2>Selamat Datang di Atiny Story</h2>
-          <p>Cerita Khusus Penggemar Ateez</p>
+          <h2>Recognize Your Potential with Ansaju</h2>
         </div>
       </div>
         `;

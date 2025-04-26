@@ -1,15 +1,15 @@
 import FirstPage from '../pages/first-page/first-page';
 import HomePage from '../pages/home/home-page';
 import AboutPage from '../pages/about/about-page';
-import LeftQuestion from '../pages/question-pages/leftQuestion';
-import RightQuestion from '../pages/question-pages/rightQuestion';
+import Login from '../pages/login-register-page/login';
+import Register from '../pages/login-register-page/register';
 
 const routes = {
   '/': new FirstPage(),
   '/home': new HomePage(),
   '/about': new AboutPage(),
-  '/leftQuestion': new LeftQuestion(),
-  '/rightQuestion': new RightQuestion(),
+  '/login': new Login(),
+  '/register': new Register(),
 };
 
 export default routes;

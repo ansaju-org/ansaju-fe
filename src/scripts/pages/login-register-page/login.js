@@ -1,10 +1,9 @@
-export default class HomePage {
+export default class Login {
   async render() {
     return `
         <div class="section-leftQuestion">
         <div class="leftQuestion-content">
-          <h2>Selamat Datang di Atiny Story</h2>
-          <p>Cerita Khusus Penggemar Ateez</p>
+          <h2>Explore to Achieve Your Dreams with Ansaju</h2>
         </div>
       </div>
         `;
