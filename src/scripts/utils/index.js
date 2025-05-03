@@ -8,5 +8,5 @@ export function showFormattedDate(date, locale = 'en-US', options = {}) {
 }
 
 export function sleep(time = 1000) {
-  return new Promise(resolve => setTimeout(resolve, time));
+  return new Promise((resolve) => setTimeout(resolve, time));
 }
