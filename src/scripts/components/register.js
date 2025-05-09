@@ -1,5 +1,3 @@
-// import HeaderPresenter from '../presenter/header-presenter.js';
-
 class RegisterPage extends HTMLElement {
   constructor() {
     super();
@@ -35,4 +33,4 @@ class RegisterPage extends HTMLElement {
   }
 }
 
-customElements.define('right-question', RightQuestion);
+customElements.define('register-page', RegisterPage);

@@ -18,4 +18,4 @@ class LoginPage extends HTMLElement {
   }
 }
 
-customElements.define('left-question', LeftQuestion);
+customElements.define('login-page', LoginPage);
