@@ -1,7 +1,9 @@
 // CSS imports
 import '../styles/style.css';
+//Component
 import '../scripts/components/header-page';
 import '../scripts/components/footer-page';
+//App
 import App from './pages/app';
 
 document.addEventListener('DOMContentLoaded', async () => {
