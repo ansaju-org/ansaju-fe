@@ -108,48 +108,24 @@ footer {
   margin-bottom: 30px;
 }
 
-/* leftQuestion */
-.leftQuestion-content {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0), rgba(0, 191, 255)), url('/images/bg-left.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+/* Styles yang tidak bisa dibuat dengan Tailwind default */
+.cut {
+  transition: transform 200ms;
+  transform: translateY(0);
 }
-
-.leftQuestion-content h2 {
-  font-size: 50px;
-  color: #fff;
-  text-align: right;
-  margin-bottom: 20px;
-  padding-right: 10px;
+.input:focus ~ .cut,
+.input:not(:placeholder-shown) ~ .cut {
+  transform: translateY(8px);
 }
-
-/* rightQuestion */
-.rightQuestion-content {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0), rgba(152, 228, 174)), url('/images/bg-right.png');
-  background-size: cover;
-  background-position: 60% 30%;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.placeholder {
+  transform-origin: 0 50%;
+  transition:
+    transform 200ms,
+    color 200ms;
 }
-
-.rightQuestion-content h2 {
-  font-size: 50px;
-  color: #fff;
-  text-align: left;
-  margin-bottom: 20px;
-  padding-left: 10px;
+.input:focus ~ .placeholder,
+.input:not(:placeholder-shown) ~ .placeholder {
+  transform: translateY(-30px) translateX(10px) scale(0.75);
 }
 
 /* Write your styles more here */
