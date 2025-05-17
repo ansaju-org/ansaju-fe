@@ -12,18 +12,29 @@ class HeaderPage extends HTMLElement {
   render() {
     this.shadowRoot.innerHTML = `
       <link rel="stylesheet" href="/styles/style.css" />
-      <nav class="bg-[#00bfff] shadow-md">
-  <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <nav class="bg-[#00bfff] mx-auto p-20 md:py-8">
+  <div class="flex items-center justify-between h-20">
     <!-- Brand (Logo + Text) -->
+    <div class="flex flex-row items-center gap-4">
     <a href="/" class="flex items-center space-x-3">
-      <img src="/logo.png" class="h-8 w-auto" alt="Logo" />
-      <span class="text-2xl font-semibold text-white whitespace-nowrap">Ansaju</span>
+      <img src="/logo.png" class="h-14 w-14" alt="Logo" />
+      <span class="text-2xl gap-4 font-semibold text-white whitespace-nowrap">Ansaju</span>
+      <div class="flex flex-row gap-2 space-x-3 rtl:space-x-reverse"> 
+      <ul class="sm:flex flex-row p-4 gap-4 hidden md:p-0 space-y-2 md:space-y-0 md:space-x-8 font-medium md:bg-transparent">
+      <li><a href="#/home" class="block px-3 py-2 rounded-md text-blue-700 hover:bg-gray-100 md:hover:text-blue-700">Home</a></li>
+      <li><a href="#/about" class="block px-3 py-2 rounded-md text-white">About</a></li>
+      <li><a href="#/news" class="block px-3 py-2 rounded-md text-white">News</a></li>
+      <li><a href="#" class="block px-3 py-2 rounded-md text-white">Test Potential</a></li>
+      </ul>
+      </div>
     </a>
+    </div>
+    
 
     <!-- Right controls (Profile + Menu Button) -->
     <div class="flex items-center space-x-4 md:space-x-0 rtl:space-x-reverse">
       <!-- Profile Button -->
-      <button type="button" id="user-menu-button" class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600">
+      <button type="button" id="user-menu-button" class="flex text-sm rounded-full ">
         <span class="sr-only">Open user menu</span>
         <img class="w-8 h-8 rounded-full" src="/component/iconOrg.png" alt="User photo" />
       </button>
@@ -50,8 +61,8 @@ class HeaderPage extends HTMLElement {
     <ul class="flex flex-col md:flex-row p-4 md:p-0 space-y-2 md:space-y-0 md:space-x-8 font-medium bg-white md:bg-transparent md:hidden">
       <li><a href="#/home" class="block px-3 py-2 rounded-md text-blue-700 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700">Home</a></li>
       <li><a href="#/about" class="block px-3 py-2 rounded-md hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700">About</a></li>
-      <li><a href="#" class="block px-3 py-2 rounded-md hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700">Services</a></li>
-      <li><a href="#" class="block px-3 py-2 rounded-md hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700">Pricing</a></li>
+      <li><a href="#" class="block px-3 py-2 rounded-md hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700">News</a></li>
+      <li><a href="#" class="block px-3 py-2 rounded-md hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700">Test Potential</a></li>
       <li><a href="#" class="block px-3 py-2 rounded-md hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700">Contact</a></li>
     </ul>
   </div>

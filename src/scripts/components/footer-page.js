@@ -12,7 +12,7 @@ class FooterPage extends HTMLElement {
     this.shadowRoot.innerHTML = `
     <link rel="stylesheet" href="/styles/style.css" />
     <footer class="bg-white rounded-lg shadow-sm dark:bg-gray-900 m-4">
-    <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+    <div class="w-full mx-auto p-4 md:py-8 bg-[#00bfff]">
         <div class="sm:flex sm:items-center sm:justify-between">
             <a href="#" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
                 <img src="/logo.png" class="h-20" alt="ansaju-logo" />

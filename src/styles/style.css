@@ -3,7 +3,6 @@
 * {
   margin: 0;
   padding: 0;
-
   box-sizing: border-box;
 }
 
@@ -24,45 +23,6 @@ footer {
 /* MAIN */
 .main-content {
   padding-block: 20px;
-}
-
-/* Footer */
-footer {
-  background-color: #00bfff;
-  color: white;
-  padding: 75px 0;
-  margin-top: 40px;
-}
-
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-inline: 20px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  text-align: center;
-}
-
-.footer-navigation {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.footer-navigation a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-
-.footer-navigation a:hover {
-  color: #003366;
-  text-decoration: underline;
 }
 
 /* first page */
@@ -129,49 +89,3 @@ footer {
 }
 
 /* Write your styles more here */
-
-@media screen and (width > 1000px) {
-  .navigation-drawer {
-    min-height: auto;
-    width: auto;
-    padding: 0;
-    background-color: transparent;
-
-    flex-direction: row;
-    justify-content: space-between;
-
-    position: static;
-    box-shadow: none;
-    transform: translateX(0);
-  }
-
-  .nav-list {
-    flex-direction: row;
-  }
-
-  .nav-list li a {
-    display: inline-block;
-  }
-
-  .drawer-button {
-    display: none;
-  }
-}
-
-@media (max-width: 768px) {
-  .rightQuestion-content {
-    background-size: cover;
-    display: flex;
-    background-position: left top;
-    height: 100vh;
-    padding: 20px;
-  }
-
-  .leftQuestion-content {
-    background-size: cover;
-    display: flex;
-    background-position: center;
-    height: 100vh;
-    padding: 20px;
-  }
-}
