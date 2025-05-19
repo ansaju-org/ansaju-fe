@@ -18,35 +18,35 @@ class HeaderPage extends HTMLElement {
     <div class="flex flex-row items-center gap-4">
     <a href="/" class="flex items-center space-x-3 gap-2">
       <img src="/logo.png" class="h-14 w-14" alt="Logo" />
-      <span class="text-2xl gap-4 font-semibold text-white whitespace-nowrap">Ansaju</span>
+      <span class="text-2xl gap-4 font-semibold text-[#f8f8f6] whitespace-nowrap">Ansaju</span>
       <div class="flex flex-row gap-2 space-x-3 rtl:space-x-reverse"> 
       <ul class="sm:flex flex-row p-4 gap-4 hidden md:p-0 space-y-2 md:space-y-0 md:space-x-8 font-medium md:bg-transparent">
-      <li><a href="#/home" data-page="home" id="nav-link" class="block px-3 py-2 rounded-md text-white md:hover:text-white transition-colors duration-200">Home</a></li>
-      <li><a href="#/about" data-page="about" id="nav-link" class="block px-3 py-2 rounded-md text-white md:hover:text-white transition-colors duration-200">About</a></li>
-      <li><a href="#/news" data-page="news" id="nav-link" class="block px-3 py-2 rounded-md text-white md:hover:text-white transition-colors duration-200">News</a></li>
+      <li><a href="#/home" data-page="home" id="nav-link" class="block px-3 py-2 rounded-md text-[#f8f8f6] md:hover:text-[#f8f8f6] transition-colors duration-200">Home</a></li>
+      <li><a href="#/about" data-page="about" id="nav-link" class="block px-3 py-2 rounded-md text-[#f8f8f6] md:hover:text-[#f8f8f6] transition-colors duration-200">About</a></li>
+      <li><a href="#/news" data-page="news" id="nav-link" class="block px-3 py-2 rounded-md text-[#f8f8f6] md:hover:text-[#f8f8f6] transition-colors duration-200">News</a></li>
        <!-- Drop Down -->
       <li class="nav-dropdown-container relative">
     </a>
   <!-- Dropdown Trigger -->
   <button 
-    class="dropdown-trigger flex items-center justify-between w-full px-3 py-2 rounded-md text-white md:hover:text-blue-200 transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-300"
+    class="dropdown-trigger flex items-center justify-between w-full px-3 py-2 rounded-md text-[#f8f8f6] md:hover:text-blue-200 transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-300"
     data-page="testPotential"
     aria-haspopup="true"
     aria-expanded="false"
     aria-controls="dropdown-menu-testPotential"
   >
   </button>
-  <span class="dropdown-text text-white">Test Potential</span>
+  <span class="dropdown-text text-[#f8f8f6]">Test Potential</span>
   <svg 
  id="nav-link-testPotential"
-class="dropdown-arrow w-6 h-6 text-white transition-transform duration-300 ease-in-out ml-2 justify-self-center transform -translate-x-1/2 animate-bounce" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+class="dropdown-arrow w-6 h-6 text-[#f8f8f6] transition-transform duration-300 ease-in-out ml-2 justify-self-center transform -translate-x-1/2 animate-bounce" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
 </svg>
 
   <!-- Dropdown Menu -->
   <ul 
     id="dropdown-menu-testPotential"
-    class="absolute left-0 top-full mt-1 w-48 bg-white rounded-md shadow-lg border border-gray-200 opacity-0 invisible transform scale-95 transition-all duration-300 ease-in-out z-50"
+    class="absolute left-0 top-full mt-1 w-48 bg-[#f8f8f6] rounded-md shadow-lg border border-gray-200 opacity-0 invisible transform scale-95 transition-all duration-300 ease-in-out z-50"
     role="menu"
     aria-labelledby="nav-link-testPotential"
   >
@@ -94,12 +94,12 @@ class="dropdown-arrow w-6 h-6 text-white transition-transform duration-300 ease-
             <div class="flex justify-end">
                 <div class="flex items-center space-x-4 md:space-x-0 rtl:space-x-reverse gap-2 relative">
                     <!-- Profile Button -->
-                    <button type="button" id="user-menu-button" class="flex focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-full transition-all duration-200 hover:shadow-lg">
-                        <img class="w-12 h-12 rounded-full border-2 border-gray-200" src="/component/iconOrg.png" alt="User photo" />
+                    <button type="button" id="user-menu-button" class="flex focus:outline-none focus:ring-2 focus:ring-[#98e4ae] focus:ring-offset-2 rounded-full transition-all duration-200 hover:shadow-lg">
+                        <img class="w-12 h-12 rounded-full" src="/component/iconOrg.png" alt="User photo" />
                     </button>
                     
                     <!-- Dropdown Menu -->
-                    <div id="user-dropdown" class="hidden absolute right-0 top-14 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-200 z-50">
+                    <div id="user-dropdown" class="hidden absolute right-0 top-14 mt-2 w-56 bg-[#f8f8f6] rounded-lg shadow-lg border border-gray-200 z-50">
                         <!-- User Info Section -->
                         <div class="px-4 py-3 border-b border-gray-100">
                             <p class="text-sm font-medium text-gray-900">John Doe</p>
@@ -151,7 +151,7 @@ class="dropdown-arrow w-6 h-6 text-white transition-transform duration-300 ease-
                     </div>
 
       <!-- Drawer Toggle (Mobile) -->
-      <button id="drawer-button" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-[#fff] focus:ring-2 focus:ring-white">
+      <button id="drawer-button" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-[#f8f8f6] rounded-lg md:hidden hover:bg-[#fff] focus:ring-2 focus:ring-white">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
@@ -160,7 +160,7 @@ class="dropdown-arrow w-6 h-6 text-white transition-transform duration-300 ease-
   </div>
 
   <!-- Navigation Drawer -->
-  <div id="navigation-drawer" class="fixed top-0 right-0 w-64 h-full shadow-lg bg-white transform translate-x-full transition-transform duration-300 z-50 md:translate-x-0 md:static md:flex md:w-auto md:shadow-none">
+  <div id="navigation-drawer" class="fixed top-0 right-0 w-64 h-full shadow-lg bg-[#f8f8f6] transform translate-x-full transition-transform duration-300 z-50 md:translate-x-0 md:static md:flex md:w-auto md:shadow-none">
     <!-- Close Button (Mobile only) -->
     <div class="flex justify-end p-4 md:hidden">
     <button id="drawer-close" class="text-[#00bfff] hover:text-[#98e4ae]">
@@ -171,7 +171,7 @@ class="dropdown-arrow w-6 h-6 text-white transition-transform duration-300 ease-
     </div>
 
     <!-- Navigation Links -->
-    <ul class="flex flex-col md:flex-row p-4 md:p-0 space-y-2 md:space-y-0 md:space-x-8 font-medium bg-white md:bg-transparent md:hidden">
+    <ul class="flex flex-col md:flex-row p-4 md:p-0 space-y-2 md:space-y-0 md:space-x-8 font-medium bg-[#f8f8f6] md:bg-transparent md:hidden">
       <li><a href="#/home" data-page="home" id="nav-link-mobile" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 transition-colors duration-200">Home</a></li>
       <li><a href="#/about" data-page="about" id="nav-link-mobile" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 transition-colors duration-200">About</a></li>
       <li><a href="#/news" data-page="news" id="nav-link-mobile" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 transition-colors duration-200">News</a></li>
@@ -183,7 +183,7 @@ class="dropdown-arrow w-6 h-6 text-white transition-transform duration-300 ease-
         <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
       </svg>
     </button>
-    <ul id="dropdown-mobile-menu" class="absolute left-0 top-full mt-1 w-48 bg-white rounded-md shadow-lg border border-gray-200 opacity-0 invisible transform scale-95 transition-all duration-300 z-50">
+    <ul id="dropdown-mobile-menu" class="absolute left-0 top-full mt-1 w-48 bg-[#f8f8f6] rounded-md shadow-lg border border-gray-200 opacity-0 invisible transform scale-95 transition-all duration-300 z-50">
       <li><a href="#/akademik" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 first:rounded-t-md">Akademik</a></li>
       <li><a href="#/potential" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200">Potential</a></li>
       <li><a href="#/lorem-ipsum" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 last:rounded-b-md">Lorem Ipsum</a></li>
@@ -362,7 +362,6 @@ class="dropdown-arrow w-6 h-6 text-white transition-transform duration-300 ease-
 
     if (!userMenuButton || !userDropdown) return;
 
-    // Toggle dropdown ketika button diklik
     userMenuButton.addEventListener('click', (e) => {
       e.stopPropagation();
       userDropdown.classList.toggle('hidden');
@@ -377,21 +376,18 @@ class="dropdown-arrow w-6 h-6 text-white transition-transform duration-300 ease-
       }
     });
 
-    // Tutup dropdown ketika klik di luar
     document.addEventListener('click', (e) => {
       if (!userMenuButton.contains(e.target) && !userDropdown.contains(e.target)) {
         userDropdown.classList.add('hidden');
       }
     });
 
-    // Tutup dropdown ketika ESC ditekan
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         userDropdown.classList.add('hidden');
       }
     });
 
-    // Handle menu item clicks
     const menuItems = userDropdown.querySelectorAll('a');
     menuItems.forEach((item) => {
       item.addEventListener('click', function (e) {
@@ -401,16 +397,13 @@ class="dropdown-arrow w-6 h-6 text-white transition-transform duration-300 ease-
         if (menuText === 'Keluar') {
           if (confirm('Apakah Anda yakin ingin keluar?')) {
             alert('Anda telah keluar dari sistem');
-            // window.location.href = '/logout';
           }
         } else {
           alert(`Anda mengklik: ${menuText}`);
-          // window.location.href = '/path/to/' + menuText.toLowerCase();
         }
       });
     });
 
-    // Tambah hover effect pada profile button
     userMenuButton.addEventListener('mouseenter', function () {
       this.style.transform = 'scale(1.05)';
     });

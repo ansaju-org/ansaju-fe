@@ -16,20 +16,20 @@ class FooterPage extends HTMLElement {
   <div class="flex flex-col items-center md:items-start mb-4 md:mb-0">
     <a href="#" class="flex items-center space-x-4 mb-2 gap-2">
       <img src="/logo.png" class="h-16 w-16 p-2" alt="ansaju-logo" />
-      <span class="text-3xl font-semibold text-white">Ansaju</span>
+      <span class="text-3xl font-semibold text-[#f8f8f6]">Ansaju</span>
     </a>
-    <span class="text-base text-white font-light text-center md:text-left">Recomendation System Majors for Students</span>
+    <span class="text-base text-[#f8f8f6] font-light text-center md:text-left">Recomendation System Majors for Students</span>
   </div>
-  <ul class="flex flex-row md:flex-row justify-center items-center gap-4 md:gap-8 text-lg font-semibold text-white text-center">
+  <ul class="flex flex-row md:flex-row justify-center items-center gap-4 md:gap-8 text-lg font-semibold text-[#f8f8f6] text-center">
     <li><a href="#" class="hover:text-[#98e4ae] transition">Support</a></li>
     <li><a href="#" class="hover:text-[#98e4ae] transition">Privacy Policy</a></li>
     <li><a href="#" class="hover:text-[#98e4ae] transition">Scholarship Informations</a></li>
     <li><a href="#" class="hover:text-[#98e4ae] transition">Ansaju Teams</a></li>
   </ul>
 </div>
-      <div class="w-full border-t border-white/20 mt-8 pt-4 flex flex-col items-center">
-        <span class="block text-sm text-white/70">© 2025 <span class="font-bold">Ansaju</span>. All Rights Reserved.</span>
-        <span class="block text-xs text-white/50 mt-1">Made with <span class="text-pink-300">♥</span> by Ansaju Team</span>
+      <div class="w-full border-t border-[#f8f8f6] mt-10 pt-10 flex flex-col items-center">
+        <span class="block text-sm text-[#f8f8f6]">© 2025 <span class="font-bold">Ansaju</span>. All Rights Reserved.</span>
+        <span class="block text-xs text-[#f8f8f6] mt-1">Made with <span class="text-pink-300">♥</span> by Ansaju Team</span>
       </div>
     </footer>
       `;

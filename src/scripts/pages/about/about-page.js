@@ -9,10 +9,10 @@ export default class AboutPage {
                 <div class="flex-1 text-center">
                     <h2 class="text-4xl font-bold text-[#00bfff] mb-2">About Ansaju</h2>
                     <h3 class="text-2xl font-semibold text-[#98e4ae] mb-6">"Anti Salah Jurusan"</h3>
-                    <p class="text-gray-600 text-lg leading-relaxed mb-4">
+                    <p class="text-[#00bfff] text-lg leading-relaxed mb-4">
                         Ansaju adalah platform yang membantu siswa dan mahasiswa menemukan jurusan dan potensi terbaik mereka. Kami percaya setiap orang unik dan berhak mendapatkan masa depan yang sesuai dengan minat dan bakatnya.
                     </p>
-                    <p class="text-gray-500 text-base leading-relaxed">
+                    <p class="text-[#86e7b8] text-base leading-relaxed">
                         Dengan fitur tes potensi, informasi jurusan, dan konsultasi, Ansaju hadir untuk mencegah salah jurusan dan membangun generasi yang lebih siap menghadapi dunia kerja.
                     </p>
                 </div>
@@ -39,10 +39,10 @@ export default class AboutPage {
                 <div class="flex-1 text-center">
                     <h2 class="text-4xl font-bold text-[#00bfff] mb-2">Objective Ansaju</h2>
                     <h3 class="text-2xl font-semibold text-[#98e4ae] mb-6">"Anti Salah Jurusan"</h3>
-                    <p class="text-gray-600 text-lg leading-relaxed mb-4">
+                    <p class="text-[#00bfff] text-lg leading-relaxed mb-4">
                         Ansaju adalah platform yang membantu siswa dan mahasiswa menemukan jurusan dan potensi terbaik mereka. Kami percaya setiap orang unik dan berhak mendapatkan masa depan yang sesuai dengan minat dan bakatnya.
                     </p>
-                    <p class="text-gray-500 text-base leading-relaxed">
+                    <p class="text-[#86e7b8] text-base leading-relaxed">
                         Dengan fitur tes potensi, informasi jurusan, dan konsultasi, Ansaju hadir untuk mencegah salah jurusan dan membangun generasi yang lebih siap menghadapi dunia kerja.
                     </p>
                 </div>
