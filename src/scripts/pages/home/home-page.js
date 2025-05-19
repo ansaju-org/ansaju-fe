@@ -27,6 +27,8 @@ export default class HomePage {
     </a>
   </div>
 </section>
+<carousel-page></carousel-page>
+<slider-page></slider-page>
       <footer-page></footer-page>
       `;
   }

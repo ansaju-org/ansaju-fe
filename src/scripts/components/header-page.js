@@ -13,34 +13,151 @@ class HeaderPage extends HTMLElement {
     this.shadowRoot.innerHTML = `
       <link rel="stylesheet" href="/styles/style.css" />
       <nav class="bg-[#00bfff] mx-auto p-20 md:py-8">
+      <!-- Brand (Logo + Text) -->
   <div class="flex items-center justify-between h-20">
-    <!-- Brand (Logo + Text) -->
     <div class="flex flex-row items-center gap-4">
     <a href="/" class="flex items-center space-x-3">
       <img src="/logo.png" class="h-14 w-14" alt="Logo" />
       <span class="text-2xl gap-4 font-semibold text-white whitespace-nowrap">Ansaju</span>
       <div class="flex flex-row gap-2 space-x-3 rtl:space-x-reverse"> 
       <ul class="sm:flex flex-row p-4 gap-4 hidden md:p-0 space-y-2 md:space-y-0 md:space-x-8 font-medium md:bg-transparent">
-      <li><a href="#/home" class="block px-3 py-2 rounded-md text-blue-700 hover:bg-gray-100 md:hover:text-blue-700">Home</a></li>
-      <li><a href="#/about" class="block px-3 py-2 rounded-md text-white">About</a></li>
-      <li><a href="#/news" class="block px-3 py-2 rounded-md text-white">News</a></li>
-      <li><a href="#" class="block px-3 py-2 rounded-md text-white">Test Potential</a></li>
+      <li><a href="#/home" data-page="home" id="nav-link" class="block px-3 py-2 rounded-md text-white md:hover:text-white transition-colors duration-200">Home</a></li>
+      <li><a href="#/about" data-page="about" id="nav-link" class="block px-3 py-2 rounded-md text-white md:hover:text-white transition-colors duration-200">About</a></li>
+      <li><a href="#/news" data-page="news" id="nav-link" class="block px-3 py-2 rounded-md text-white md:hover:text-white transition-colors duration-200">News</a></li>
+       <!-- Drop Down -->
+      <li class="nav-dropdown-container relative">
+
+  <!-- Dropdown Trigger -->
+  <button 
+    class="dropdown-trigger flex items-center justify-between w-full px-3 py-2 rounded-md text-white md:hover:text-blue-200 transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-300"
+    data-page="testPotential"
+    aria-haspopup="true"
+    aria-expanded="false"
+    aria-controls="dropdown-menu-testPotential"
+  >
+  </button>
+  <span class="dropdown-text text-white">Test Potential</span>
+  <svg 
+  id="nav-link-testPotential" 
+      class="dropdown-arrow h-4 w-4 text-white transition-transform duration-300 ease-in-out ml-2 justify-self-center" 
+      xmlns="http://www.w3.org/2000/svg" 
+      fill="none" 
+      stroke="currentColor" 
+      viewBox="0 0 24 24" 
+      stroke-width="2"
+    >
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+    </svg>
+
+  <!-- Dropdown Menu -->
+  <ul 
+    id="dropdown-menu-testPotential"
+    class="absolute left-0 top-full mt-1 w-48 bg-white rounded-md shadow-lg border border-gray-200 opacity-0 invisible transform scale-95 transition-all duration-300 ease-in-out z-50"
+    role="menu"
+    aria-labelledby="nav-link-testPotential"
+  >
+    <li role="none">
+      <a 
+        href="#/akademik" 
+        class="dropdown-item block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 first:rounded-t-md"
+        role="menuitem"
+        tabindex="-1"
+      >
+        Akademik
+      </a>
+    </li>
+    <li role="none">
+      <a 
+        href="#/potential" 
+        class="dropdown-item block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200"
+        role="menuitem"
+        tabindex="-1"
+      >
+        Potential
+      </a>
+    </li>
+    <li role="none">
+      <a 
+        href="#/lorem-ipsum" 
+        class="dropdown-item block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 last:rounded-b-md"
+        role="menuitem"
+        tabindex="-1"
+      >
+        Lorem Ipsum
+      </a>
+    </li>
+  </ul>
+</li>
+    </a>
       </ul>
       </div>
     </a>
     </div>
-    
 
     <!-- Right controls (Profile + Menu Button) -->
-    <div class="flex items-center space-x-4 md:space-x-0 rtl:space-x-reverse">
-      <!-- Profile Button -->
-      <button type="button" id="user-menu-button" class="flex text-sm rounded-full ">
-        <span class="sr-only">Open user menu</span>
-        <img class="w-8 h-8 rounded-full" src="/component/iconOrg.png" alt="User photo" />
-      </button>
+    <div class="flex items-center space-x-4 md:space-x-0 rtl:space-x-reverse gap-2">
+            <!-- Header dengan Profile Dropdown -->
+            <div class="flex justify-end">
+                <div class="flex items-center space-x-4 md:space-x-0 rtl:space-x-reverse gap-2 relative">
+                    <!-- Profile Button -->
+                    <button type="button" id="user-menu-button" class="flex focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-full transition-all duration-200 hover:shadow-lg">
+                        <img class="w-12 h-12 rounded-full border-2 border-gray-200" src="/component/iconOrg.png" alt="User photo" />
+                    </button>
+                    
+                    <!-- Dropdown Menu -->
+                    <div id="user-dropdown" class="hidden absolute right-0 top-14 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-200 z-50">
+                        <!-- User Info Section -->
+                        <div class="px-4 py-3 border-b border-gray-100">
+                            <p class="text-sm font-medium text-gray-900">John Doe</p>
+                            <p class="text-sm text-gray-500 truncate">john.doe@example.com</p>
+                        </div>
+                        
+                        <!-- Menu Items -->
+                        <div class="py-1">
+                            <a href="#" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors duration-150">
+                                <svg class="w-4 h-4 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                </svg>
+                                Profil Saya
+                            </a>
+                            <a href="#" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors duration-150">
+                                <svg class="w-4 h-4 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                                Pengaturan
+                            </a>
+                            <a href="#" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors duration-150">
+                                <svg class="w-4 h-4 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2M7 4h10M7 4H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11V8h4v3"></path>
+                                </svg>
+                                Aktivitas
+                            </a>
+                            <a href="#" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors duration-150">
+                                <svg class="w-4 h-4 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                Bantuan
+                            </a>
+                        </div>
+                        
+                        <!-- Divider -->
+                        <div class="border-t border-gray-100"></div>
+                        
+                        <!-- Logout -->
+                        <div class="py-1">
+                            <a href="#" id="logout-btn" class="flex items-center px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors duration-150">
+                                <svg class="w-4 h-4 mr-3 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                                </svg>
+                                Keluar
+                            </a>
+                        </div>
+                    </div>
 
       <!-- Drawer Toggle (Mobile) -->
-      <button id="drawer-button" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-[#00a6dd] focus:ring-2 focus:ring-white">
+      <button id="drawer-button" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-[#fff] focus:ring-2 focus:ring-white">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
@@ -59,11 +176,24 @@ class HeaderPage extends HTMLElement {
 
     <!-- Navigation Links -->
     <ul class="flex flex-col md:flex-row p-4 md:p-0 space-y-2 md:space-y-0 md:space-x-8 font-medium bg-white md:bg-transparent md:hidden">
-      <li><a href="#/home" class="block px-3 py-2 rounded-md text-blue-700 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700">Home</a></li>
-      <li><a href="#/about" class="block px-3 py-2 rounded-md hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700">About</a></li>
-      <li><a href="#" class="block px-3 py-2 rounded-md hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700">News</a></li>
-      <li><a href="#" class="block px-3 py-2 rounded-md hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700">Test Potential</a></li>
-      <li><a href="#" class="block px-3 py-2 rounded-md hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700">Contact</a></li>
+      <li><a href="#/home" data-page="home" id="nav-link-mobile" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 transition-colors duration-200">Home</a></li>
+      <li><a href="#/about" data-page="about" id="nav-link-mobile" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 transition-colors duration-200">About</a></li>
+      <li><a href="#/news" data-page="news" id="nav-link-mobile" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 transition-colors duration-200">News</a></li>
+      <!-- Dropdown Mobile -->
+      <li class="relative" id="dropdown-mobile-container">
+    <button id="dropdown-mobile-trigger" class="flex items-center justify-between w-full px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 transition-colors duration-200">
+      Test Potential
+      <svg class="h-4 w-4 ml-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+      </svg>
+    </button>
+    <ul id="dropdown-mobile-menu" class="absolute left-0 top-full mt-1 w-48 bg-white rounded-md shadow-lg border border-gray-200 opacity-0 invisible transform scale-95 transition-all duration-300 z-50">
+      <li><a href="#/akademik" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 first:rounded-t-md">Akademik</a></li>
+      <li><a href="#/potential" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200">Potential</a></li>
+      <li><a href="#/lorem-ipsum" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 last:rounded-b-md">Lorem Ipsum</a></li>
+    </ul>
+  </li>
+      <li><a href="#/contact" data-page="contact" id="nav-link-mobile" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 transition-colors duration-200">Contact</a></li>
     </ul>
   </div>
 </nav>
@@ -84,6 +214,212 @@ class HeaderPage extends HTMLElement {
     closeBtn?.addEventListener('click', () => {
       drawer.classList.add('translate-x-full');
       drawer.classList.remove('translate-x-0');
+    });
+
+    this.setupActiveNavigation();
+    this.setupDropdown();
+    this.setupDropdownMobile();
+    this.profileDropdown();
+  }
+
+  setupActiveNavigation() {
+    const setActiveNavigation = () => {
+      const currentHash = window.location.hash || '#/home';
+      const currentPage = currentHash.replace('#/', '');
+
+      this.shadowRoot.querySelectorAll('#nav-link').forEach((link) => {
+        link.classList.remove('text-white', 'underline', 'underline-offset-8');
+        link.classList.add('text-white');
+      });
+
+      this.shadowRoot.querySelectorAll('#nav-link-mobile').forEach((link) => {
+        link.classList.remove('text-white', 'font-semibold');
+        link.classList.add('text-gray-700');
+      });
+
+      const activeDesktopLink = this.shadowRoot.querySelector(
+        `#nav-link[data-page="${currentPage}"]`,
+      );
+      if (activeDesktopLink) {
+        activeDesktopLink.classList.remove('text-white');
+        activeDesktopLink.classList.add('text-white', 'underline', 'underline-offset-8');
+      }
+
+      const activeMobileLink = this.shadowRoot.querySelector(
+        `#nav-link-mobile[data-page="${currentPage}"]`,
+      );
+      if (activeMobileLink) {
+        activeMobileLink.classList.remove('text-gray-700');
+        activeMobileLink.classList.add('text-blue-700', 'font-semibold');
+      }
+    };
+
+    window.addEventListener('hashchange', setActiveNavigation);
+
+    this.shadowRoot.querySelectorAll('#nav-link').forEach((link) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.location.hash = link.getAttribute('href');
+        setActiveNavigation();
+      });
+    });
+
+    this.shadowRoot.querySelectorAll('#nav-link-mobile').forEach((link) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.location.hash = link.getAttribute('href');
+        setActiveNavigation();
+
+        const drawer = this.shadowRoot.getElementById('navigation-drawer');
+        drawer.classList.add('translate-x-full');
+        drawer.classList.remove('translate-x-0');
+      });
+    });
+
+    setActiveNavigation();
+  }
+
+  setupDropdown() {
+    const dropdownTrigger = this.shadowRoot.getElementById('nav-link-testPotential');
+    const dropdownMenu = this.shadowRoot.getElementById('dropdown-menu-testPotential');
+    if (!dropdownTrigger || !dropdownMenu) return;
+
+    let isOpen = false;
+
+    function toggleDropdown() {
+      isOpen = !isOpen;
+      dropdownTrigger.setAttribute('aria-expanded', isOpen);
+      if (isOpen) {
+        dropdownMenu.classList.remove('opacity-0', 'invisible', 'scale-95');
+        dropdownMenu.classList.add('opacity-100', 'visible', 'scale-100');
+      } else {
+        dropdownMenu.classList.add('opacity-0', 'invisible', 'scale-95');
+        dropdownMenu.classList.remove('opacity-100', 'visible', 'scale-100');
+      }
+    }
+
+    function closeDropdown() {
+      isOpen = false;
+      dropdownTrigger.setAttribute('aria-expanded', false);
+      dropdownMenu.classList.add('opacity-0', 'invisible', 'scale-95');
+      dropdownMenu.classList.remove('opacity-100', 'visible', 'scale-100');
+    }
+
+    dropdownTrigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      toggleDropdown();
+    });
+
+    this.shadowRoot.addEventListener('click', (e) => {
+      if (!dropdownTrigger.contains(e.target) && !dropdownMenu.contains(e.target)) {
+        closeDropdown();
+      }
+    });
+
+    dropdownTrigger.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleDropdown();
+      } else if (e.key === 'Escape') {
+        closeDropdown();
+      }
+    });
+  }
+
+  setupDropdownMobile() {
+    const trigger = this.shadowRoot.getElementById('dropdown-mobile-trigger');
+    const menu = this.shadowRoot.getElementById('dropdown-mobile-menu');
+    if (!trigger || !menu) return;
+    let isOpen = false;
+    function toggleDropdown() {
+      isOpen = !isOpen;
+      if (isOpen) {
+        menu.classList.remove('opacity-0', 'invisible', 'scale-95');
+        menu.classList.add('opacity-100', 'visible', 'scale-100');
+      } else {
+        menu.classList.add('opacity-0', 'invisible', 'scale-95');
+        menu.classList.remove('opacity-100', 'visible', 'scale-100');
+      }
+    }
+    function closeDropdown() {
+      isOpen = false;
+      menu.classList.add('opacity-0', 'invisible', 'scale-95');
+      menu.classList.remove('opacity-100', 'visible', 'scale-100');
+    }
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      toggleDropdown();
+    });
+    this.shadowRoot.addEventListener('click', (e) => {
+      if (!trigger.contains(e.target) && !menu.contains(e.target)) {
+        closeDropdown();
+      }
+    });
+  }
+
+  profileDropdown() {
+    const userMenuButton = this.shadowRoot.getElementById('user-menu-button');
+    const userDropdown = this.shadowRoot.getElementById('user-dropdown');
+    const logoutBtn = userDropdown ? userDropdown.querySelector('#logout-btn') : null;
+
+    if (!userMenuButton || !userDropdown) return;
+
+    // Toggle dropdown ketika button diklik
+    userMenuButton.addEventListener('click', (e) => {
+      e.stopPropagation();
+      userDropdown.classList.toggle('hidden');
+      if (!userDropdown.classList.contains('hidden')) {
+        userDropdown.style.opacity = '0';
+        userDropdown.style.transform = 'translateY(-10px)';
+        setTimeout(() => {
+          userDropdown.style.transition = 'opacity 0.2s ease-out, transform 0.2s ease-out';
+          userDropdown.style.opacity = '1';
+          userDropdown.style.transform = 'translateY(0)';
+        }, 10);
+      }
+    });
+
+    // Tutup dropdown ketika klik di luar
+    document.addEventListener('click', (e) => {
+      if (!userMenuButton.contains(e.target) && !userDropdown.contains(e.target)) {
+        userDropdown.classList.add('hidden');
+      }
+    });
+
+    // Tutup dropdown ketika ESC ditekan
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        userDropdown.classList.add('hidden');
+      }
+    });
+
+    // Handle menu item clicks
+    const menuItems = userDropdown.querySelectorAll('a');
+    menuItems.forEach((item) => {
+      item.addEventListener('click', function (e) {
+        e.preventDefault();
+        const menuText = this.textContent.trim();
+        userDropdown.classList.add('hidden');
+        if (menuText === 'Keluar') {
+          if (confirm('Apakah Anda yakin ingin keluar?')) {
+            alert('Anda telah keluar dari sistem');
+            // window.location.href = '/logout';
+          }
+        } else {
+          alert(`Anda mengklik: ${menuText}`);
+          // window.location.href = '/path/to/' + menuText.toLowerCase();
+        }
+      });
+    });
+
+    // Tambah hover effect pada profile button
+    userMenuButton.addEventListener('mouseenter', function () {
+      this.style.transform = 'scale(1.05)';
+    });
+    userMenuButton.addEventListener('mouseleave', function () {
+      this.style.transform = 'scale(1)';
     });
   }
 }

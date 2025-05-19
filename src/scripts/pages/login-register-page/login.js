@@ -2,7 +2,7 @@ export default class Login {
   async render() {
     return `
         <section class="gap-10 flex items-center justify-center min-h-screen bg-[conic-gradient(rgba(0,191,255,0.35)),url('/images/bg-left.png')] bg-no-repeat bg-cover p-4">
-       <h1 class="text-left text-5xl text-[#fff]">Explore to Achieve Your Dreams with Ansaju</h1>
+       <h1 class="text-center text-5xl text-[#fff]">Explore to Achieve Your Dreams with Ansaju</h1>
         <div class="bg-white rounded-3xl border-8 border-[#00bfff] w-full max-w-md shadow-lg p-8">
         <h2 class="text-[#00bfff] font-League spartan text-center text-4xl font-bold mb-2">Log in</h2>
         <p class="text-[#00bfff] text-center mb-6">Welcome Back Friends!</p>

@@ -20,6 +20,31 @@ footer {
   font-family: 'League Spartan', sans-serif;
 }
 
+/* carousel */
+#carousel {
+  font-family: 'League Spartan', sans-serif;
+  margin: 20px;
+  padding: 20px;
+}
+
+/* Slider */
+#default-carousel {
+  margin: 15px;
+  padding: 15px;
+}
+
+.carousel-item {
+  transition: all 0.7s ease-in-out;
+}
+.indicator-active {
+  background-color: white;
+  opacity: 1;
+}
+.indicator-inactive {
+  background-color: rgba(255, 255, 255, 0.5);
+  opacity: 0.7;
+}
+
 /* MAIN */
 .main-content {
   padding-block: 20px;
