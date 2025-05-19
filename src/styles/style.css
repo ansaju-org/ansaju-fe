@@ -93,7 +93,6 @@ footer {
   margin-bottom: 30px;
 }
 
-/* Styles yang tidak bisa dibuat dengan Tailwind default */
 .cut {
   transition: transform 200ms;
   transform: translateY(0);

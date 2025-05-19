@@ -16,12 +16,9 @@ class CarouselPage extends HTMLElement {
     <div class="h-1/3 bg-white sm:h-2/3"></div>
   </div>
   <div class="relative mx-auto max-w-7xl">
-    <div class="text-center">
-      <h2 class="text-3xl font-bold tracking-tight text-[#00bfff] sm:text-4xl">Column me neatly.</h2>
-    </div>
     <div class="mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
 
-      <div class="flex flex-col overflow-hidden rounded-lg shadow-lg shadow-[#00bfff]">
+      <div class="flex flex-col overflow-hidden rounded-lg shadow-lg shadow-[#00bfff] transition delay-150 duration-300 ease-in-out hover:-translate-y-1">
         <div class="flex-shrink-0">
           <img class="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1679&amp;q=80" alt="">
         </div>
@@ -57,7 +54,7 @@ class CarouselPage extends HTMLElement {
         </div>
       </div>
 
-      <div class="flex flex-col overflow-hidden rounded-lg shadow-lg shadow-[#00bfff]">
+      <div class="flex flex-col overflow-hidden rounded-lg shadow-lg shadow-[#00bfff] transition delay-150 duration-300 ease-in-out hover:-translate-y-1">
         <div class="flex-shrink-0">
           <img class="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1679&amp;q=80" alt="">
         </div>
@@ -94,7 +91,7 @@ class CarouselPage extends HTMLElement {
         </div>
       </div>
 
-      <div class="flex flex-col overflow-hidden rounded-lg shadow-lg shadow-[#00bfff]">
+      <div class="flex flex-col overflow-hidden rounded-lg shadow-lg shadow-[#00bfff] transition delay-150 duration-300 ease-in-out hover:-translate-y-1">
         <div class="flex-shrink-0">
           <img class="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1679&amp;q=80" alt="">
         </div>

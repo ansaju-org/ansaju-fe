@@ -16,7 +16,7 @@ class HeaderPage extends HTMLElement {
       <!-- Brand (Logo + Text) -->
   <div class="flex items-center justify-between h-20">
     <div class="flex flex-row items-center gap-4">
-    <a href="/" class="flex items-center space-x-3">
+    <a href="/" class="flex items-center space-x-3 gap-2">
       <img src="/logo.png" class="h-14 w-14" alt="Logo" />
       <span class="text-2xl gap-4 font-semibold text-white whitespace-nowrap">Ansaju</span>
       <div class="flex flex-row gap-2 space-x-3 rtl:space-x-reverse"> 
@@ -26,7 +26,7 @@ class HeaderPage extends HTMLElement {
       <li><a href="#/news" data-page="news" id="nav-link" class="block px-3 py-2 rounded-md text-white md:hover:text-white transition-colors duration-200">News</a></li>
        <!-- Drop Down -->
       <li class="nav-dropdown-container relative">
-
+    </a>
   <!-- Dropdown Trigger -->
   <button 
     class="dropdown-trigger flex items-center justify-between w-full px-3 py-2 rounded-md text-white md:hover:text-blue-200 transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-300"
@@ -38,16 +38,10 @@ class HeaderPage extends HTMLElement {
   </button>
   <span class="dropdown-text text-white">Test Potential</span>
   <svg 
-  id="nav-link-testPotential" 
-      class="dropdown-arrow h-4 w-4 text-white transition-transform duration-300 ease-in-out ml-2 justify-self-center" 
-      xmlns="http://www.w3.org/2000/svg" 
-      fill="none" 
-      stroke="currentColor" 
-      viewBox="0 0 24 24" 
-      stroke-width="2"
-    >
-      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-    </svg>
+ id="nav-link-testPotential"
+class="dropdown-arrow w-6 h-6 text-white transition-transform duration-300 ease-in-out ml-2 justify-self-center transform -translate-x-1/2 animate-bounce" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+</svg>
 
   <!-- Dropdown Menu -->
   <ul 
@@ -169,8 +163,10 @@ class HeaderPage extends HTMLElement {
   <div id="navigation-drawer" class="fixed top-0 right-0 w-64 h-full shadow-lg bg-white transform translate-x-full transition-transform duration-300 z-50 md:translate-x-0 md:static md:flex md:w-auto md:shadow-none">
     <!-- Close Button (Mobile only) -->
     <div class="flex justify-end p-4 md:hidden">
-      <button id="drawer-close" class="text-gray-700 hover:text-red-500 text-xl font-bold">
-        ✕
+    <button id="drawer-close" class="text-[#00bfff] hover:text-[#98e4ae]">
+        <svg class="w-6 h-8" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6"/>
+</svg>
       </button>
     </div>
 

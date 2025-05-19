@@ -11,30 +11,26 @@ class FooterPage extends HTMLElement {
   render() {
     this.shadowRoot.innerHTML = `
     <link rel="stylesheet" href="/styles/style.css" />
-    <footer class="bg-[#00bfff] rounded-lg shadow-sm m-4">
-    <div class="w-full mx-auto p-4 md:py-8 bg-[#00bfff]">
-        <div class="sm:flex sm:items-center sm:justify-between">
-            <a href="#" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
-                <img src="/logo.png" class="h-20" alt="ansaju-logo" />
-                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Ansaju</span>
-            </a>
-            <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-white sm:mb-0 dark:text-white">
-                <li>
-                    <a href="#" class="hover:underline me-4 md:me-6">About</a>
-                </li>
-                <li>
-                    <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
-                </li>
-                <li>
-                    <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
-                </li>
-                <li>
-                    <a href="#" class="hover:underline">Contact</a>
-                </li>
-            </ul>
-        </div>
-        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://flowbite.com/" class="hover:underline">Flowbite™</a>. All Rights Reserved.</span>
-    </div>
+    <footer class="bg-[#00bfff] rounded-t-3xl shadow-lg m-0 w-full pt-10 pb-4 flex flex-col items-center">
+      <div class="w-full max-h-full flex flex-col md:flex-row md:items-center md:justify-between px-4 md:px-8 gap-8 md:gap-0">
+  <div class="flex flex-col items-center md:items-start mb-4 md:mb-0">
+    <a href="#" class="flex items-center space-x-4 mb-2 gap-2">
+      <img src="/logo.png" class="h-16 w-16 p-2" alt="ansaju-logo" />
+      <span class="text-3xl font-semibold text-white">Ansaju</span>
+    </a>
+    <span class="text-base text-white font-light text-center md:text-left">Recomendation System Majors for Students</span>
+  </div>
+  <ul class="flex flex-row md:flex-row justify-center items-center gap-4 md:gap-8 text-lg font-semibold text-white text-center">
+    <li><a href="#" class="hover:text-[#98e4ae] transition">Support</a></li>
+    <li><a href="#" class="hover:text-[#98e4ae] transition">Privacy Policy</a></li>
+    <li><a href="#" class="hover:text-[#98e4ae] transition">Scholarship Informations</a></li>
+    <li><a href="#" class="hover:text-[#98e4ae] transition">Ansaju Teams</a></li>
+  </ul>
+</div>
+      <div class="w-full border-t border-white/20 mt-8 pt-4 flex flex-col items-center">
+        <span class="block text-sm text-white/70">© 2025 <span class="font-bold">Ansaju</span>. All Rights Reserved.</span>
+        <span class="block text-xs text-white/50 mt-1">Made with <span class="text-pink-300">♥</span> by Ansaju Team</span>
+      </div>
     </footer>
       `;
   }
