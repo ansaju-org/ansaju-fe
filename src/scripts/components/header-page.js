@@ -94,7 +94,7 @@ class="dropdown-arrow w-6 h-6 text-[#f8f8f6] transition-transform duration-300 e
             <div class="flex justify-end">
                 <div class="flex items-center space-x-4 md:space-x-0 rtl:space-x-reverse gap-2 relative">
                     <!-- Profile Button -->
-                    <button type="button" id="user-menu-button" class="flex focus:outline-none focus:ring-2 focus:ring-[#98e4ae] focus:ring-offset-2 rounded-full transition-all duration-200 hover:shadow-lg">
+                    <button type="button" id="user-menu-button" class="flex focus:outline-none focus:ring-2 focus:ring-[#f8f8f6] focus:ring-offset-2 rounded-full transition-all duration-200 hover:shadow-lg">
                         <img class="w-12 h-12 rounded-full" src="/component/iconOrg.png" alt="User photo" />
                     </button>
                     
@@ -362,6 +362,7 @@ class="dropdown-arrow w-6 h-6 text-[#f8f8f6] transition-transform duration-300 e
 
     if (!userMenuButton || !userDropdown) return;
 
+    // Toggle dropdown ketika button diklik
     userMenuButton.addEventListener('click', (e) => {
       e.stopPropagation();
       userDropdown.classList.toggle('hidden');
@@ -376,18 +377,21 @@ class="dropdown-arrow w-6 h-6 text-[#f8f8f6] transition-transform duration-300 e
       }
     });
 
+    // Tutup dropdown ketika klik di luar
     document.addEventListener('click', (e) => {
       if (!userMenuButton.contains(e.target) && !userDropdown.contains(e.target)) {
         userDropdown.classList.add('hidden');
       }
     });
 
+    // Tutup dropdown ketika ESC ditekan
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         userDropdown.classList.add('hidden');
       }
     });
 
+    // Handle menu item clicks
     const menuItems = userDropdown.querySelectorAll('a');
     menuItems.forEach((item) => {
       item.addEventListener('click', function (e) {
