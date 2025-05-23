@@ -37,6 +37,16 @@ export default class HomePage {
   }
 
   async afterRender() {
-    // Do your job here
+    const header = document.querySelector('header-page')?.shadowRoot;
+    if (header) {
+      const logoutBtn = header.getElementById('logout-btn');
+      if (logoutBtn) {
+        logoutBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          localStorage.removeItem('accessToken');
+          window.location.hash = '/login';
+        });
+      }
+    }
   }
 }
