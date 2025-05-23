@@ -2,7 +2,7 @@ export default class AboutPage {
   async render() {
     return `
       <header-page></header-page>
-      <section class="flex flex-col items-center justify-center min-h-screen gap-40 p-40 m-40">
+      <section class="flex flex-col items-center justify-center min-h-screen gap-40 p-40 m-40 sm:mt-40">
         <div class="flex flex-row p-10 max-w-4xl w-full gap-10">
             <div class="flex flex-col md:flex-row items-center gap-40">
                 <!-- Text Content -->
@@ -49,6 +49,7 @@ export default class AboutPage {
             </div>
         </div>
     </section>
+    <anggota-ansaju></anggota-ansaju>
       <footer-page></footer-page>
     `;
   }

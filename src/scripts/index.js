@@ -5,6 +5,7 @@ import '../scripts/components/header-page';
 import '../scripts/components/footer-page';
 import '../scripts/components/carousel-page';
 import '../scripts/components/slider-page';
+import './components/anggota-ansaju';
 //App
 import App from './pages/app';
 

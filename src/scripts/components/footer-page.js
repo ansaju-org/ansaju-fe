@@ -20,11 +20,11 @@ class FooterPage extends HTMLElement {
     </a>
     <span class="text-base text-[#f8f8f6] font-light text-center md:text-left">Recomendation System Majors for Students</span>
   </div>
-  <ul class="flex flex-row md:flex-row justify-center items-center gap-4 md:gap-8 text-lg font-semibold text-[#f8f8f6] text-center">
+  <ul class="flex flex-row md:flex-row justify-center items-center gap-2 md:gap-8 text-lg font-semibold text-[#f8f8f6] text-center">
     <li><a href="#" class="hover:text-[#98e4ae] transition">Support</a></li>
     <li><a href="#" class="hover:text-[#98e4ae] transition">Privacy Policy</a></li>
     <li><a href="#" class="hover:text-[#98e4ae] transition">Scholarship Informations</a></li>
-    <li><a href="#" class="hover:text-[#98e4ae] transition">Ansaju Teams</a></li>
+    <li><a href="#/about" class="hover:text-[#98e4ae] transition">About</a></li>
   </ul>
 </div>
       <div class="w-full border-t border-[#f8f8f6] mt-10 pt-10 flex flex-col items-center">

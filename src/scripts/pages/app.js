@@ -13,9 +13,9 @@ class App {
     const url = getActiveRoute();
     let page = routes[url];
 
-    // Proteksi halaman yang butuh login
     const protectedRoutes = ['/home', '/about', '/news', '/contact'];
-    console.log('DEBUG: url', url, 'protectedRoutes', protectedRoutes, 'token', getAccessToken());
+    console.log(url, 'token', getAccessToken());
+    // 'protectedRoutes', protectedRoutes,
     if (protectedRoutes.includes(url)) {
       page = checkAuthenticatedRoute(page);
       if (!page) return;
