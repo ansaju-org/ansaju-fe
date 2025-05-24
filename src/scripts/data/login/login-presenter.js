@@ -22,6 +22,7 @@ export default class LoginPresenter {
         return;
       }
 
+      window.localStorage.setItem('user', JSON.stringify(response.data));
       const token = response.data?.token;
       if (!token) {
         console.error('postLogin: Missing token in response:', response);

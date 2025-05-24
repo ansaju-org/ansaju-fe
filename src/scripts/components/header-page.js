@@ -27,7 +27,7 @@ class HeaderPage extends HTMLElement {
       <ul class="sm:flex flex-row p-4 gap-4 hidden md:p-0 space-y-2 md:space-y-0 md:space-x-8 font-medium md:bg-transparent">
       <li><a href="/home" data-page="home" id="nav-link" class="block px-3 py-2 rounded-md text-[#f8f8f6] md:hover:text-[#f8f8f6] transition-colors duration-200">Home</a></li>
       <li><a href="/about" data-page="about" id="nav-link" class="block px-3 py-2 rounded-md text-[#f8f8f6] md:hover:text-[#f8f8f6] transition-colors duration-200">About</a></li>
-      <li><a href="#/news" data-page="news" id="nav-link" class="block px-3 py-2 rounded-md text-[#f8f8f6] md:hover:text-[#f8f8f6] transition-colors duration-200">News</a></li>
+      <li><a href="/news" data-page="news" id="nav-link" class="block px-3 py-2 rounded-md text-[#f8f8f6] md:hover:text-[#f8f8f6] transition-colors duration-200">News</a></li>
        <!-- Drop Down -->
       <li class="nav-dropdown-container relative">
     </a>
@@ -56,7 +56,7 @@ class="dropdown-arrow w-6 h-6 text-[#f8f8f6] transition-transform duration-300 e
   >
     <li role="none">
       <a 
-        href="#/akademik" 
+        href="/akademik" 
         class="dropdown-item block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 first:rounded-t-md"
         role="menuitem"
         tabindex="-1"
@@ -66,7 +66,7 @@ class="dropdown-arrow w-6 h-6 text-[#f8f8f6] transition-transform duration-300 e
     </li>
     <li role="none">
       <a 
-        href="#/potential" 
+        href="/potential" 
         class="dropdown-item block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200"
         role="menuitem"
         tabindex="-1"
@@ -76,7 +76,7 @@ class="dropdown-arrow w-6 h-6 text-[#f8f8f6] transition-transform duration-300 e
     </li>
     <li role="none">
       <a 
-        href="#/lorem-ipsum" 
+        href="/lorem-ipsum" 
         class="dropdown-item block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 last:rounded-b-md"
         role="menuitem"
         tabindex="-1"
@@ -106,8 +106,8 @@ class="dropdown-arrow w-6 h-6 text-[#f8f8f6] transition-transform duration-300 e
                     <div id="user-dropdown" class="hidden absolute right-0 top-14 mt-2 w-56 bg-[#f8f8f6] rounded-lg shadow-lg border border-gray-200 z-50">
                         <!-- User Info Section -->
                         <div class="px-4 py-3 border-b border-gray-100">
-                            <p class="text-sm font-medium text-gray-900">John Doe</p>
-                            <p class="text-sm text-gray-500 truncate">john.doe@example.com</p>
+                            <p id="name" class="text-xl font-medium text-[#00bfff]"></p>
+                            <p id="email" class="text-lg text-[#98e4ae] truncate"></p>
                         </div>
                         
                         <!-- Menu Items -->
@@ -177,8 +177,8 @@ class="dropdown-arrow w-6 h-6 text-[#f8f8f6] transition-transform duration-300 e
     <!-- Navigation Links -->
     <ul class="flex flex-col md:flex-row p-4 md:p-0 space-y-2 md:space-y-0 md:space-x-8 font-medium bg-[#f8f8f6] md:bg-transparent md:hidden">
       <li><a href="/home" data-page="home" id="nav-link-mobile" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 transition-colors duration-200">Home</a></li>
-      <li><a href="#/about" data-page="about" id="nav-link-mobile" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 transition-colors duration-200">About</a></li>
-      <li><a href="#/news" data-page="news" id="nav-link-mobile" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 transition-colors duration-200">News</a></li>
+      <li><a href="/about" data-page="about" id="nav-link-mobile" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 transition-colors duration-200">About</a></li>
+      <li><a href="/news" data-page="news" id="nav-link-mobile" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 transition-colors duration-200">News</a></li>
       <!-- Dropdown Mobile -->
       <li class="relative" id="dropdown-mobile-container">
     <button id="dropdown-mobile-trigger" class="flex items-center justify-between w-full px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 transition-colors duration-200">
@@ -188,12 +188,12 @@ class="dropdown-arrow w-6 h-6 text-[#f8f8f6] transition-transform duration-300 e
       </svg>
     </button>
     <ul id="dropdown-mobile-menu" class="absolute left-0 top-full mt-1 w-48 bg-[#f8f8f6] rounded-md shadow-lg border border-gray-200 opacity-0 invisible transform scale-95 transition-all duration-300 z-50">
-      <li><a href="#/akademik" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 first:rounded-t-md">Akademik</a></li>
-      <li><a href="#/potential" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200">Potential</a></li>
-      <li><a href="#/lorem-ipsum" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 last:rounded-b-md">Lorem Ipsum</a></li>
+      <li><a href="/akademik" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 first:rounded-t-md">Akademik</a></li>
+      <li><a href="/potential" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200">Potential</a></li>
+      <li><a href="/lorem-ipsum" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 last:rounded-b-md">Lorem Ipsum</a></li>
     </ul>
   </li>
-      <li><a href="#/contact" data-page="contact" id="nav-link-mobile" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 transition-colors duration-200">Contact</a></li>
+      <li><a href="/contact" data-page="contact" id="nav-link-mobile" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 transition-colors duration-200">Contact</a></li>
     </ul>
   </div>
 </nav>

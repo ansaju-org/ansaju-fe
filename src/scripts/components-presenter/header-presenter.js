@@ -142,6 +142,7 @@ function setupDropdownMobile(shadowRoot) {
 }
 
 function profileDropdown(shadowRoot) {
+  const storage = localStorage.getItem('user');
   const userMenuButton = shadowRoot.getElementById('user-menu-button');
   const userDropdown = shadowRoot.getElementById('user-dropdown');
   const logoutBtn = userDropdown ? userDropdown.querySelector('#logout-btn') : null;
@@ -158,6 +159,8 @@ function profileDropdown(shadowRoot) {
         userDropdown.style.transform = 'translateY(0)';
       }, 10);
     }
+    shadowRoot.getElementById('name').textContent = storage ? JSON.parse(storage).name : 'Guest';
+    shadowRoot.getElementById('email').textContent = storage ? JSON.parse(storage).email : 'Guest';
   });
   document.addEventListener('click', (e) => {
     if (!userMenuButton.contains(e.target) && !userDropdown.contains(e.target)) {
