@@ -44,7 +44,7 @@ export default class HomePage {
         logoutBtn.addEventListener('click', (e) => {
           e.preventDefault();
           localStorage.removeItem('accessToken');
-          window.location.hash = '/login';
+          window.location.pathname = '/login';
         });
       }
     }

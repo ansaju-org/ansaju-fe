@@ -33,7 +33,13 @@ export default class Register {
           <button type="submit" id="submit" class="bg-[#98e4ae] text-white w-20 font-League spartan text-lg font-semibold rounded-lg p-3 mt-2 hover:bg-green-600 transition duration-300 ease-in-out">Register</button>
         </form>
         <!-- FROM AREA ENDS -->
-
+        <div id="registerLoading" class="hidden justify-center items-center mb-4">
+          <svg class="animate-spin h-8 w-8 text-[#00bfff]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+          </svg>
+          <span class="ml-2 text-[#98e4ae] font-semibold">Registering...</span>
+        </div>
         <p class="text-center text-[#98e4ae] mt-6 text-sm">
           Already have an account?
           <a href="#/login" class="text-[#00bfff] hover:underline font-semibold">Login</a>
@@ -49,12 +55,28 @@ export default class Register {
       model: DataAPI,
     });
     this.#setupForm();
+    this.loadingEl = document.getElementById('registerLoading');
+    this.formEl = document.getElementById('registerForm');
+  }
+
+  #showLoading(show) {
+    if (this.loadingEl && this.formEl) {
+      if (show) {
+        this.loadingEl.classList.remove('hidden');
+        this.loadingEl.classList.add('flex');
+        this.formEl.classList.add('opacity-50', 'pointer-events-none');
+      } else {
+        this.loadingEl.classList.add('hidden');
+        this.loadingEl.classList.remove('flex');
+        this.formEl.classList.remove('opacity-50', 'pointer-events-none');
+      }
+    }
   }
 
   #setupForm() {
     document.getElementById('registerForm').addEventListener('submit', async (event) => {
       event.preventDefault();
-
+      this.#showLoading(true);
       const data = {
         name: document.getElementById('name').value,
         email: document.getElementById('email').value,
@@ -62,16 +84,19 @@ export default class Register {
         password: document.getElementById('password').value,
       };
       await this.#presenter.postRegister(data);
+      this.#showLoading(false);
     });
   }
 
   registeredSuccessfully(message) {
+    this.#showLoading(false);
     alert(message);
     console.log(message);
     location.href = '#/login';
   }
 
   registeredFailed(message) {
+    this.#showLoading(false);
     alert(message);
   }
 }

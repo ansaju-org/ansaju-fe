@@ -1,3 +1,5 @@
+import HeaderPresenter from '../components-presenter/header-presenter.js';
+
 class HeaderPage extends HTMLElement {
   constructor() {
     super();
@@ -6,7 +8,9 @@ class HeaderPage extends HTMLElement {
 
   connectedCallback() {
     this.render();
-    this.init();
+    if (HeaderPresenter && typeof HeaderPresenter.initHeaderPresenter === 'function') {
+      HeaderPresenter.initHeaderPresenter(this.shadowRoot);
+    }
   }
 
   render() {
@@ -21,8 +25,8 @@ class HeaderPage extends HTMLElement {
       <span class="text-2xl gap-4 font-semibold text-[#f8f8f6] whitespace-nowrap">Ansaju</span>
       <div class="flex flex-row gap-2 space-x-3 rtl:space-x-reverse"> 
       <ul class="sm:flex flex-row p-4 gap-4 hidden md:p-0 space-y-2 md:space-y-0 md:space-x-8 font-medium md:bg-transparent">
-      <li><a href="#/home" data-page="home" id="nav-link" class="block px-3 py-2 rounded-md text-[#f8f8f6] md:hover:text-[#f8f8f6] transition-colors duration-200">Home</a></li>
-      <li><a href="#/about" data-page="about" id="nav-link" class="block px-3 py-2 rounded-md text-[#f8f8f6] md:hover:text-[#f8f8f6] transition-colors duration-200">About</a></li>
+      <li><a href="/home" data-page="home" id="nav-link" class="block px-3 py-2 rounded-md text-[#f8f8f6] md:hover:text-[#f8f8f6] transition-colors duration-200">Home</a></li>
+      <li><a href="/about" data-page="about" id="nav-link" class="block px-3 py-2 rounded-md text-[#f8f8f6] md:hover:text-[#f8f8f6] transition-colors duration-200">About</a></li>
       <li><a href="#/news" data-page="news" id="nav-link" class="block px-3 py-2 rounded-md text-[#f8f8f6] md:hover:text-[#f8f8f6] transition-colors duration-200">News</a></li>
        <!-- Drop Down -->
       <li class="nav-dropdown-container relative">
@@ -172,7 +176,7 @@ class="dropdown-arrow w-6 h-6 text-[#f8f8f6] transition-transform duration-300 e
 
     <!-- Navigation Links -->
     <ul class="flex flex-col md:flex-row p-4 md:p-0 space-y-2 md:space-y-0 md:space-x-8 font-medium bg-[#f8f8f6] md:bg-transparent md:hidden">
-      <li><a href="#/home" data-page="home" id="nav-link-mobile" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 transition-colors duration-200">Home</a></li>
+      <li><a href="/home" data-page="home" id="nav-link-mobile" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 transition-colors duration-200">Home</a></li>
       <li><a href="#/about" data-page="about" id="nav-link-mobile" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 transition-colors duration-200">About</a></li>
       <li><a href="#/news" data-page="news" id="nav-link-mobile" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 transition-colors duration-200">News</a></li>
       <!-- Dropdown Mobile -->
@@ -195,225 +199,6 @@ class="dropdown-arrow w-6 h-6 text-[#f8f8f6] transition-transform duration-300 e
 </nav>
 
     `;
-  }
-
-  init() {
-    const drawerBtn = this.shadowRoot.getElementById('drawer-button');
-    const drawer = this.shadowRoot.getElementById('navigation-drawer');
-    const closeBtn = this.shadowRoot.getElementById('drawer-close');
-
-    drawerBtn?.addEventListener('click', () => {
-      drawer.classList.remove('translate-x-full');
-      drawer.classList.add('translate-x-0');
-    });
-
-    closeBtn?.addEventListener('click', () => {
-      drawer.classList.add('translate-x-full');
-      drawer.classList.remove('translate-x-0');
-    });
-
-    this.setupActiveNavigation();
-    this.setupDropdown();
-    this.setupDropdownMobile();
-    this.profileDropdown();
-  }
-
-  setupActiveNavigation() {
-    const setActiveNavigation = () => {
-      const currentHash = window.location.hash || '#/home';
-      const currentPage = currentHash.replace('#/', '');
-
-      this.shadowRoot.querySelectorAll('#nav-link').forEach((link) => {
-        link.classList.remove('text-white', 'underline', 'underline-offset-8');
-        link.classList.add('text-white');
-      });
-
-      this.shadowRoot.querySelectorAll('#nav-link-mobile').forEach((link) => {
-        link.classList.remove('text-white', 'font-semibold');
-        link.classList.add('text-gray-700');
-      });
-
-      const activeDesktopLink = this.shadowRoot.querySelector(
-        `#nav-link[data-page="${currentPage}"]`,
-      );
-      if (activeDesktopLink) {
-        activeDesktopLink.classList.remove('text-white');
-        activeDesktopLink.classList.add('text-white', 'underline', 'underline-offset-8');
-      }
-
-      const activeMobileLink = this.shadowRoot.querySelector(
-        `#nav-link-mobile[data-page="${currentPage}"]`,
-      );
-      if (activeMobileLink) {
-        activeMobileLink.classList.remove('text-gray-700');
-        activeMobileLink.classList.add('text-blue-700', 'font-semibold');
-      }
-    };
-
-    window.addEventListener('hashchange', setActiveNavigation);
-
-    this.shadowRoot.querySelectorAll('#nav-link').forEach((link) => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        window.location.hash = link.getAttribute('href');
-        setActiveNavigation();
-      });
-    });
-
-    this.shadowRoot.querySelectorAll('#nav-link-mobile').forEach((link) => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        window.location.hash = link.getAttribute('href');
-        setActiveNavigation();
-
-        const drawer = this.shadowRoot.getElementById('navigation-drawer');
-        drawer.classList.add('translate-x-full');
-        drawer.classList.remove('translate-x-0');
-      });
-    });
-
-    setActiveNavigation();
-  }
-
-  setupDropdown() {
-    const dropdownTrigger = this.shadowRoot.getElementById('nav-link-testPotential');
-    const dropdownMenu = this.shadowRoot.getElementById('dropdown-menu-testPotential');
-    if (!dropdownTrigger || !dropdownMenu) return;
-
-    let isOpen = false;
-
-    function toggleDropdown() {
-      isOpen = !isOpen;
-      dropdownTrigger.setAttribute('aria-expanded', isOpen);
-      if (isOpen) {
-        dropdownMenu.classList.remove('opacity-0', 'invisible', 'scale-95');
-        dropdownMenu.classList.add('opacity-100', 'visible', 'scale-100');
-      } else {
-        dropdownMenu.classList.add('opacity-0', 'invisible', 'scale-95');
-        dropdownMenu.classList.remove('opacity-100', 'visible', 'scale-100');
-      }
-    }
-
-    function closeDropdown() {
-      isOpen = false;
-      dropdownTrigger.setAttribute('aria-expanded', false);
-      dropdownMenu.classList.add('opacity-0', 'invisible', 'scale-95');
-      dropdownMenu.classList.remove('opacity-100', 'visible', 'scale-100');
-    }
-
-    dropdownTrigger.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      toggleDropdown();
-    });
-
-    this.shadowRoot.addEventListener('click', (e) => {
-      if (!dropdownTrigger.contains(e.target) && !dropdownMenu.contains(e.target)) {
-        closeDropdown();
-      }
-    });
-
-    dropdownTrigger.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        toggleDropdown();
-      } else if (e.key === 'Escape') {
-        closeDropdown();
-      }
-    });
-  }
-
-  setupDropdownMobile() {
-    const trigger = this.shadowRoot.getElementById('dropdown-mobile-trigger');
-    const menu = this.shadowRoot.getElementById('dropdown-mobile-menu');
-    if (!trigger || !menu) return;
-    let isOpen = false;
-    function toggleDropdown() {
-      isOpen = !isOpen;
-      if (isOpen) {
-        menu.classList.remove('opacity-0', 'invisible', 'scale-95');
-        menu.classList.add('opacity-100', 'visible', 'scale-100');
-      } else {
-        menu.classList.add('opacity-0', 'invisible', 'scale-95');
-        menu.classList.remove('opacity-100', 'visible', 'scale-100');
-      }
-    }
-    function closeDropdown() {
-      isOpen = false;
-      menu.classList.add('opacity-0', 'invisible', 'scale-95');
-      menu.classList.remove('opacity-100', 'visible', 'scale-100');
-    }
-    trigger.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      toggleDropdown();
-    });
-    this.shadowRoot.addEventListener('click', (e) => {
-      if (!trigger.contains(e.target) && !menu.contains(e.target)) {
-        closeDropdown();
-      }
-    });
-  }
-
-  profileDropdown() {
-    const userMenuButton = this.shadowRoot.getElementById('user-menu-button');
-    const userDropdown = this.shadowRoot.getElementById('user-dropdown');
-    const logoutBtn = userDropdown ? userDropdown.querySelector('#logout-btn') : null;
-
-    if (!userMenuButton || !userDropdown) return;
-
-    // Toggle dropdown ketika button diklik
-    userMenuButton.addEventListener('click', (e) => {
-      e.stopPropagation();
-      userDropdown.classList.toggle('hidden');
-      if (!userDropdown.classList.contains('hidden')) {
-        userDropdown.style.opacity = '0';
-        userDropdown.style.transform = 'translateY(-10px)';
-        setTimeout(() => {
-          userDropdown.style.transition = 'opacity 0.2s ease-out, transform 0.2s ease-out';
-          userDropdown.style.opacity = '1';
-          userDropdown.style.transform = 'translateY(0)';
-        }, 10);
-      }
-    });
-
-    // Tutup dropdown ketika klik di luar
-    document.addEventListener('click', (e) => {
-      if (!userMenuButton.contains(e.target) && !userDropdown.contains(e.target)) {
-        userDropdown.classList.add('hidden');
-      }
-    });
-
-    // Tutup dropdown ketika ESC ditekan
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        userDropdown.classList.add('hidden');
-      }
-    });
-
-    // Handle menu item clicks
-    const menuItems = userDropdown.querySelectorAll('a');
-    menuItems.forEach((item) => {
-      item.addEventListener('click', function (e) {
-        e.preventDefault();
-        const menuText = this.textContent.trim();
-        userDropdown.classList.add('hidden');
-        if (menuText === 'Keluar') {
-          if (confirm('Apakah Anda yakin ingin keluar?')) {
-            alert('Anda telah keluar dari sistem');
-          }
-        } else {
-          alert(`Anda mengklik: ${menuText}`);
-        }
-      });
-    });
-
-    userMenuButton.addEventListener('mouseenter', function () {
-      this.style.transform = 'scale(1.05)';
-    });
-    userMenuButton.addEventListener('mouseleave', function () {
-      this.style.transform = 'scale(1)';
-    });
   }
 }
 

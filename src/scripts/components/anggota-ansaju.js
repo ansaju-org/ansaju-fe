@@ -28,7 +28,7 @@ class AnggotaAnsaju extends HTMLElement {
                 <div class="mb-8 md:mb-0 mt-4 md:mt-0">
                     <div class="mb-6 md:mb-8 flex justify-center">
                     <img
-                            src="https://tecdn.b-cdn.net/img/Photos/Avatars/img%20(9).jpg"
+                            src="/foto-anggota/reza.jpg"
                             class="w-28 md:w-32 lg:w-36 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300"
                             alt="John Smith"
                         />
@@ -42,9 +42,9 @@ class AnggotaAnsaju extends HTMLElement {
                 <div class="mb-8 md:mb-0 mt-4 md:mt-0">
                     <div class="mb-6 md:mb-8 flex justify-center">
                         <img
-                            src="https://tecdn.b-cdn.net/img/Photos/Avatars/img%20(2).jpg"
+                            src="/foto-anggota/alvi.jpg"
                             class="w-28 md:w-32 lg:w-36 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300"
-                            alt="Lisa Cudrow"
+                            alt="AlviSetyaKurniaDewi"
                         />
                     </div>
                     <h4 class="mb-2 md:mb-4 text-lg md:text-xl font-semibold text-[#00bfff]">Alvi Setya Kurnia Dewi</h4>
@@ -56,9 +56,9 @@ class AnggotaAnsaju extends HTMLElement {
                 <div class="mb-8 md:mb-0 mt-4 md:mt-0 sm:col-span-2 md:col-span-1">
                     <div class="mb-6 md:mb-8 flex justify-center">
                         <img
-                            src="https://tecdn.b-cdn.net/img/Photos/Avatars/img%20(1).jpg"
+                            src="/foto-anggota/nabila.JPG"
                             class="w-28 md:w-32 lg:w-36 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300"
-                            alt="Maria Smantha"
+                            alt="NabilaNevaRahmawati"
                         />
                     </div>
                     <h4 class="mb-2 md:mb-4 text-lg md:text-xl font-semibold text-[#00bfff]">Nabila Neva Rahmawati</h4>
@@ -70,7 +70,7 @@ class AnggotaAnsaju extends HTMLElement {
             
             <!-- Second Row - 2 Members -->
             <div class="grid gap-8 md:gap-12 lg:gap-16 text-center grid-cols-1 sm:grid-cols-2 w-full max-w-2xl mx-auto mb-8 md:mb-12">
-                <div class="mb-8 md:mb-0 mt-4 md:mt-0">
+                <div class="mb-8 md:mb-0 mt-10 md:mt-0">
                     <div class="mb-6 md:mb-8 flex justify-center">
                     <img
                             src="/foto-anggota/viane.png"
@@ -88,9 +88,9 @@ class AnggotaAnsaju extends HTMLElement {
                 <div class="mb-8 md:mb-0 mt-4 md:mt-0">
                     <div class="mb-6 md:mb-8 flex justify-center">
                         <img
-                            src="https://tecdn.b-cdn.net/img/Photos/Avatars/img%20(3).jpg"
+                            src="/foto-anggota/ikhlash.jpg"
                             class="w-28 md:w-32 lg:w-36 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300"
-                            alt="Sarah Johnson"
+                            alt="IkhlashMulyanurahman"
                         />
                     </div>
                     <h4 class="mb-2 md:mb-4 text-lg md:text-xl font-semibold text-[#00bfff]">Ikhlash Mulyanurahman</h4>
