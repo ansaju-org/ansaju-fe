@@ -20,8 +20,13 @@ footer {
   font-family: 'League Spartan', sans-serif;
 }
 
-.ansaju-components {
+section {
   font-family: 'League Spartan', sans-serif;
+}
+
+.title-quiz {
+  padding: 4px !impotant;
+  margin: 4px !impotant;
 }
 
 /* carousel */
