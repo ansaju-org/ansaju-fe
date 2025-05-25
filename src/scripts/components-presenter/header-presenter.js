@@ -31,7 +31,7 @@ function setupActiveNavigation(shadowRoot) {
     });
     shadowRoot.querySelectorAll('#nav-link-mobile').forEach((link) => {
       link.classList.remove('text-white', 'font-semibold');
-      link.classList.add('text-gray-700');
+      link.classList.add('text-[#00bfff]');
     });
     const activeDesktopLink = shadowRoot.querySelector(`#nav-link[data-page="${currentPage}"]`);
     if (activeDesktopLink) {
@@ -42,7 +42,7 @@ function setupActiveNavigation(shadowRoot) {
       `#nav-link-mobile[data-page="${currentPage}"]`,
     );
     if (activeMobileLink) {
-      activeMobileLink.classList.remove('text-gray-700');
+      activeMobileLink.classList.remove('text-[#00bfff]');
       activeMobileLink.classList.add('text-blue-700', 'font-semibold');
     }
   };

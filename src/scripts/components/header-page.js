@@ -27,7 +27,6 @@ class HeaderPage extends HTMLElement {
       <ul class="sm:flex flex-row p-4 gap-4 hidden md:p-0 space-y-2 md:space-y-0 md:space-x-8 font-medium md:bg-transparent">
       <li><a href="/home" data-page="home" id="nav-link" class="block px-3 py-2 rounded-md text-[#f8f8f6] md:hover:text-[#f8f8f6] transition-colors duration-200">Beranda</a></li>
       <li><a href="/about" data-page="about" id="nav-link" class="block px-3 py-2 rounded-md text-[#f8f8f6] md:hover:text-[#f8f8f6] transition-colors duration-200">Tentang</a></li>
-      <li><a href="/news" data-page="news" id="nav-link" class="block px-3 py-2 rounded-md text-[#f8f8f6] md:hover:text-[#f8f8f6] transition-colors duration-200">Berita</a></li>
        <!-- Drop Down -->
       <li class="nav-dropdown-container relative">
     </a>
@@ -57,7 +56,7 @@ class="dropdown-arrow w-6 h-6 text-[#f8f8f6] transition-transform duration-300 e
     <li role="none">
       <a 
         href="/quiz" 
-        class="dropdown-item block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 first:rounded-t-md"
+        class="dropdown-item block px-4 py-3 text-[#00bfff] hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 first:rounded-t-md"
         role="menuitem"
         tabindex="-1"
       >
@@ -67,7 +66,7 @@ class="dropdown-arrow w-6 h-6 text-[#f8f8f6] transition-transform duration-300 e
     <li role="none">
       <a 
         href="/quiz" 
-        class="dropdown-item block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 first:rounded-t-md"
+        class="dropdown-item block px-4 py-3 text-[#00bfff] hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 first:rounded-t-md"
         role="menuitem"
         tabindex="-1"
       >
@@ -156,7 +155,7 @@ class="dropdown-arrow w-6 h-6 text-[#f8f8f6] transition-transform duration-300 e
   <!-- Navigation Drawer -->
   <div id="navigation-drawer" class="fixed top-0 right-0 w-64 h-full shadow-lg bg-[#f8f8f6] transform translate-x-full transition-transform duration-300 z-50 md:translate-x-0 md:static md:flex md:w-auto md:shadow-none">
     <!-- Close Button (Mobile only) -->
-    <div class="flex justify-end p-4 md:hidden">
+    <div class="flex !px-4 justify-end md:hidden">
     <button id="drawer-close" class="text-[#00bfff] hover:text-[#98e4ae]">
         <svg class="w-6 h-8" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6"/>
@@ -166,21 +165,19 @@ class="dropdown-arrow w-6 h-6 text-[#f8f8f6] transition-transform duration-300 e
 
     <!-- Navigation Links -->
     <ul class="flex flex-col md:flex-row p-4 md:p-0 space-y-2 md:space-y-0 md:space-x-8 font-medium bg-[#f8f8f6] md:bg-transparent md:hidden">
-      <li><a href="/home" data-page="home" id="nav-link-mobile" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 transition-colors duration-200">Beranda</a></li>
-      <li><a href="/about" data-page="about" id="nav-link-mobile" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 transition-colors duration-200">Tentang</a></li>
-      <li><a href="/news" data-page="news" id="nav-link-mobile" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 transition-colors duration-200">Berita</a></li>
+      <li><a href="/home" data-page="home" id="nav-link-mobile" class="block !px-3 !py-2 rounded-md text-[#00bfff] hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 transition-colors duration-200">Beranda</a></li>
+      <li><a href="/about" data-page="about" id="nav-link-mobile" class="block !px-3 !py-2 rounded-md text-[#00bfff] hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 transition-colors duration-200">Tentang</a></li>
       <!-- Dropdown Mobile -->
       <li class="relative" id="dropdown-mobile-container">
-    <button id="dropdown-mobile-trigger" class="flex items-center justify-between w-full px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 transition-colors duration-200">
+    <button id="dropdown-mobile-trigger" class="flex items-center justify-between w-full !px-3 !py-2 rounded-md text-[#00bfff] hover:bg-gray-100 transition-colors duration-200">
       Test Potential
       <svg class="h-4 w-4 ml-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
         <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
       </svg>
     </button>
     <ul id="dropdown-mobile-menu" class="absolute left-0 top-full mt-1 w-48 bg-[#f8f8f6] rounded-md shadow-lg border border-gray-200 opacity-0 invisible transform scale-95 transition-all duration-300 z-50">
-      <li><a href="/quiz" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 first:rounded-t-md">Quiz Potential Academic</a></li>
-      <li><a href="/potential" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200">Potential</a></li>
-      <li><a href="/lorem-ipsum" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 last:rounded-b-md">Lorem Ipsum</a></li>
+      <li><a href="/quiz" class="block px-4 py-3 text-[#00bfff] hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 first:rounded-t-md">Quiz Potential Academic</a></li>
+      <li><a href="#" class="block px-4 py-3 text-[#00bfff] hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200">Quiz Potential non-Academic</a></li>
     </ul>
   </li>
     </ul>
