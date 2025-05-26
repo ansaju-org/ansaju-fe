@@ -1,3 +1,5 @@
+import * as DataAPI from '../../data/api.js';
+
 export default class QuestionPresenter {
   constructor(view) {
     this.view = view;
@@ -54,6 +56,7 @@ export default class QuestionPresenter {
         options: [{ value: '1' }, { value: '2' }, { value: '3' }, { value: '4' }, { value: '5' }],
       },
     ];
+
     this.view.displayQuestion(question);
   }
 }

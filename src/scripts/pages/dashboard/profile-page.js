@@ -1,6 +1,9 @@
 import SidebarPresenter from '../../components-presenter/sidebar-presenter';
+import ProfilePresenter from './profile-presenter';
 
 export default class ProfilePage {
+  #presenter = null;
+
   async render() {
     return `
       <nav class="bg-[#00bfff] flex justify-between h-16 items-center px-4">
@@ -33,10 +36,10 @@ export default class ProfilePage {
 
             <!-- Result -->
             <div class="absolute top-[290px] left-1/2 transform -translate-x-1/2 w-full flex justify-center text-white text-center px-4 animate-fadeInMove delay-[1000ms]">
-              <div class="w-1/3">
-                <h6 class="uppercase font-bold text-[#f8f8f6] text-xs sm:text-sm">Pens</h6>
-                <p class="text-lg sm:text-xl">29</p>
-              </div>
+              <div id="result-container" class="max-w-lg p-8 bg-blue-50 rounded-xl shadow">
+          <h1 class="text-2xl font-bold text-blue-500 mb-4">Hasil Rekomendasi Jurusan</h1>
+          <p id="result-text" class="text-lg text-gray-700">Memuat hasil...</p>
+        </div>
             </div>
           </div>
         </section>
@@ -45,7 +48,20 @@ export default class ProfilePage {
   }
 
   async afterRender() {
-    SidebarPresenter.displayUserInfo();
+    const result = JSON.parse(localStorage.getItem('recommendationResult'));
+
+    const resultText = document.getElementById('result-text');
+    if (result && result.recommendation) {
+      resultText.textContent = result.recommendation;
+    } else {
+      resultText.textContent = 'Tidak ada hasil rekomendasi.';
+    }
+
+    this.#presenter = new ProfilePresenter({
+      view: this,
+    });
+
     SidebarPresenter.initPresenter();
+    this.#presenter.displayUserInfo();
   }
 }

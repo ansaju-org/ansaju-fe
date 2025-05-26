@@ -26,19 +26,6 @@ const SidebarPresenter = {
       this.init({ sidebarElement, closeButton });
     }
   },
-
-  displayUserInfo() {
-    const userStorage = localStorage.getItem('user');
-    if (!userStorage) return;
-
-    const { name, email } = JSON.parse(userStorage);
-
-    const nameElement = document.getElementById('user-name');
-    const emailElement = document.getElementById('user-email');
-
-    if (nameElement) nameElement.textContent = name || 'Nama tidak tersedia';
-    if (emailElement) emailElement.textContent = email || 'Email tidak tersedia';
-  },
 };
 
 export default SidebarPresenter;

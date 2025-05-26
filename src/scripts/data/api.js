@@ -5,6 +5,9 @@ const ENDPOINTS = {
   // Auth
   REGISTER: `${BASE_URL}register`,
   LOGIN: `${BASE_URL}login`,
+
+  // trapkan ML
+  RECOMMENDATION: `${BASE_URL}recommendation`,
 };
 
 //Post Register
@@ -42,3 +45,19 @@ export async function postLogin({ username, password }) {
 }
 
 // Post Recommendation
+export async function postRecommendation({ options }) {
+  const data = JSON.stringify({ options });
+
+  const fetchResponse = await fetch(ENDPOINTS.RECOMMENDATION, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: data,
+  });
+
+  const json = await fetchResponse.json();
+
+  return {
+    ...json,
+    ok: fetchResponse.ok,
+  };
+}
