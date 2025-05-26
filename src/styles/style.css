@@ -4,29 +4,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'League spartan', serif;
 }
 
 body {
   font-family: 'League spartan', serif;
   font-weight: 300;
   font-style: normal;
-}
-
-nav {
-  font-family: 'League Spartan', sans-serif;
-}
-
-footer {
-  font-family: 'League Spartan', sans-serif;
-}
-
-section {
-  font-family: 'League Spartan', sans-serif;
-}
-
-.title-quiz {
-  padding: 4px !impotant;
-  margin: 4px !impotant;
 }
 
 /* carousel */
@@ -103,4 +87,81 @@ section {
   transform: translateY(-30px) translateX(10px) scale(0.75);
 }
 
+@layer utilities {
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInMove {
+    0% {
+      opacity: 0;
+      transform: translateX(-300px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes dsTop {
+    0% {
+      top: -150px;
+    }
+    100% {
+      top: 0;
+    }
+  }
+
+  @keyframes mvTop {
+    0% {
+      top: -150px;
+    }
+    100% {
+      top: 40px;
+    }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 2s ease-in;
+  }
+
+  .animate-fadeInMove {
+    animation: fadeInMove 2s forwards;
+  }
+
+  .animate-dsTop {
+    animation: dsTop 1.5s ease-out;
+  }
+
+  .animate-mvTop {
+    animation: mvTop 1.5s ease-out;
+  }
+}
+
+.sidebar-transition {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Overlay background */
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Hidden state */
+.sidebar-hidden {
+  transform: translateX(-100%);
+}
+
+/* Mobile responsive */
+@media (min-width: 768px) {
+  .sidebar-desktop {
+    transform: translateX(0) !important;
+  }
+}
 /* Write your styles more here */

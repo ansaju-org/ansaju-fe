@@ -3,8 +3,8 @@ import { BASE_URL } from '../config.js';
 
 const ENDPOINTS = {
   // Auth
-  REGISTER: `${BASE_URL}/register`,
-  LOGIN: `${BASE_URL}/login`,
+  REGISTER: `${BASE_URL}register`,
+  LOGIN: `${BASE_URL}login`,
 };
 
 //Post Register
@@ -40,3 +40,5 @@ export async function postLogin({ username, password }) {
     ok: fetchResponse.ok,
   };
 }
+
+// Post Recommendation

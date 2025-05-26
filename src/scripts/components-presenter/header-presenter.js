@@ -1,6 +1,5 @@
 const HeaderPresenter = {
   initHeaderPresenter(shadowRoot) {
-    // --- Drawer logic ---
     const drawerBtn = shadowRoot.getElementById('drawer-button');
     const drawer = shadowRoot.getElementById('navigation-drawer');
     const closeBtn = shadowRoot.getElementById('drawer-close');
@@ -13,7 +12,6 @@ const HeaderPresenter = {
       drawer.classList.remove('translate-x-0');
     });
 
-    // --- Navigation, Dropdown, Profile ---
     setupActiveNavigation(shadowRoot);
     setupDropdown(shadowRoot);
     setupDropdownMobile(shadowRoot);
@@ -145,7 +143,6 @@ function profileDropdown(shadowRoot) {
   const storage = localStorage.getItem('user');
   const userMenuButton = shadowRoot.getElementById('user-menu-button');
   const userDropdown = shadowRoot.getElementById('user-dropdown');
-  const logoutBtn = userDropdown ? userDropdown.querySelector('#logout-btn') : null;
   if (!userMenuButton || !userDropdown) return;
   userMenuButton.addEventListener('click', (e) => {
     e.stopPropagation();
@@ -182,6 +179,8 @@ function profileDropdown(shadowRoot) {
         if (confirm('Apakah Anda yakin ingin keluar?')) {
           alert('Anda telah keluar dari sistem');
         }
+      } else if (menuText === 'Dashboard') {
+        location.pathname = '/dashboard';
       } else {
         alert(`Anda mengklik: ${menuText}`);
       }

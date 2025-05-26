@@ -18,7 +18,7 @@ class FooterPage extends HTMLElement {
       <img src="/logo.png" class="h-16 w-16 p-2" alt="ansaju-logo" />
       <span class="text-3xl font-semibold text-[#f8f8f6]">Ansaju</span>
     </a>
-    <span class="text-base text-[#f8f8f6] font-light text-center md:text-left">Recomendation System Majors for Students</span>
+    <span class="text-base text-[#f8f8f6] font-light text-center md:text-left">Sistem Rekomendasi Jurusan Perkuliahan</span>
   </div>
   <ul class="flex flex-row md:flex-row justify-center items-center gap-2 md:gap-8 text-lg font-semibold text-[#f8f8f6] text-center">
     <li><a href="#" class="hover:text-[#98e4ae] transition">Support</a></li>

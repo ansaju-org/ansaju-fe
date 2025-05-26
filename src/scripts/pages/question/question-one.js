@@ -8,8 +8,8 @@ export default class QuestionOne {
   async render() {
     return `
     <header-page></header-page>
-<section class="w-full min-h-screen flex justify-center items-center bg-gradient-to-br from-white to-blue-50">
-  <div class="p-8 rounded-3xl border-8 border-[#00bfff] shadow-2xl w-full max-w-lg bg-white">
+<section class="w-full min-h-screen flex justify-center items-center bg-gradient-to-br from-white to-blue-50 !p-2">
+  <div class="sm:p-8 rounded-3xl border-8 border-[#00bfff] w-full max-w-lg bg-white !p-2">
     <div class="p-4 space-y-6">
       <!-- Judul -->
       <div class="text-center space-y-2">
@@ -48,7 +48,7 @@ export default class QuestionOne {
   async afterRender() {
     this.presenter = new QuestionPresenter(this);
     this.#page = 0;
-    this.#limit = 6;
+    this.#limit = 4;
     this.presenter.init();
     this.#buttonNext();
     this.#buttonPrev();
@@ -94,8 +94,13 @@ export default class QuestionOne {
       .map((question, index) => {
         return `
         <div class="question-${index} flex flex-col gap-2 !pb-2">
-            <h2 class="text-based font-semibold mb-2 text-[#00bfff]">${question.question}</h2>
-            <div class="flex gap-20 justify-center">
+            <h2 class="text-lg font-semibold mb-2 text-[#00bfff]">${question.question}</h2>
+            <div class="flex justify-between w-full px-4">
+  <p class="text-left text-based font-semibold text-[#98e4ae]">Kurang Setuju</p>
+  <p class="text-right text-based font-semibold text-[#98e4ae]">Lebih Setuju</p>
+</div>
+
+            <div class="flex gap-10 justify-center sm">
                 ${question.options
                   .map(
                     (option, i) => `
