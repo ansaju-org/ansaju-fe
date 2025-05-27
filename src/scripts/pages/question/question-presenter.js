@@ -1,5 +1,3 @@
-import * as DataAPI from '../../data/api.js';
-
 export default class QuestionPresenter {
   #model;
   #view;
@@ -66,19 +64,19 @@ export default class QuestionPresenter {
 
   async postRecommendation({ answer }) {
     try {
-      const response = await this.#model.postRecommendation({
-        answer,
-      });
+      const response = await this.#model.postRecommendation({ answer });
 
       if (!response.ok) {
-        console.error('postSubmit: response:', response);
         this.#view.submitFailed(response.message);
         return;
       }
-      console.log(response);
-      // this.#view.submitSuccessfully(response.message, response.data);
+
+      this.#view.showResult(response.data); // <== tampilkan hasil jurusan langsung
+      // optionally show success message
+      // this.#view.submitSuccessfully(response.message);
     } catch (error) {
-      console.error('postSubmit: error:', error);
+      console.error('postRecommendation: error:', error);
+      this.#view.submitFailed('Terjadi kesalahan saat mengirim jawaban.');
     }
   }
 }

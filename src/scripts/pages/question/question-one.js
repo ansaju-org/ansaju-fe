@@ -11,40 +11,49 @@ export default class QuestionOne {
   async render() {
     return `
     <header-page></header-page>
-<section class="w-full min-h-screen flex justify-center items-center bg-gradient-to-br from-white to-blue-50 !p-2">
-  <div class="sm:p-8 rounded-3xl border-8 border-[#00bfff] w-full max-w-lg bg-white !p-2">
-    <div class="p-4 space-y-6">
-      <!-- Judul -->
-      <div class="text-center space-y-2">
-        <h1 class="text-4xl font-semibold text-[#00bfff]">Test Potensial Akademik</h1>
-        <h2 class="text-[#98e4ae] text-base font-medium">Pertanyaan ini adalah langkah awal untuk menentukan jurusanmu</h2>
-      </div>
+<section class="w-full min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-white to-blue-100 !px-4 !py-8">
+  <!-- Container utama -->
+  <div class="w-full max-w-2xl bg-white rounded-3xl shadow-lg border-4 border-[#00bfff] overflow-hidden">
+    <!-- Header -->
+    <div class="bg-[#00bfff] text-white text-center !px-6 !py-6">
+      <h1 class="text-3xl sm:text-4xl font-bold">Tes Potensial Akademik</h1>
+      <p class="!mt-2 text-base sm:text-lg text-[#eafff4]">Pertanyaan ini adalah langkah awal untuk menentukan jurusanmu</p>
+    </div>
 
-      <!-- Konten Kuis -->
-      <div id="quiz" class="min-h-[150px] !p-4"></div>
+    <!-- Quiz Content -->
+    <div class="!p-6 sm:p-8 space-y-6">
+      <div id="quiz" class="space-y-4"></div>
 
-      <!-- Tombol Navigasi -->
-      <div class="flex justify-center gap-4 !py-4">
-        <button id="prev" class="bg-[#98e4ae] text-white font-semibold !px-5 !py-2 rounded-lg border-b-4 border-emerald-500 hover:brightness-110 hover:border-t-4 hover:border-b duration-300 group relative overflow-hidden">
-          <span class="absolute -top-[150%] left-0 w-80 h-1 bg-emerald-300 opacity-50 group-hover:top-[150%] duration-500 rounded"></span>
+      <!-- Navigasi -->
+      <div class="flex justify-between items-center pt-4">
+        <button id="prev" class="bg-[#98e4ae] text-white font-semibold !px-6 !py-2 rounded-lg shadow-md hover:brightness-110 transition duration-300">
           Prev
         </button>
-
-        <button id="next" class="bg-[#00bfff] text-white font-semibold !px-5 !py-2 rounded-lg border-b-4 border-blue-500 hover:brightness-110 hover:border-t-4 hover:border-b duration-300 group relative overflow-hidden">
-          <span class="absolute -top-[150%] left-0 w-80 h-1 bg-blue-300 opacity-50 group-hover:top-[150%] duration-500 rounded"></span>
+        <button id="next" class="bg-[#00bfff] text-white font-semibold !px-6 !py-2 rounded-lg shadow-md hover:brightness-110 transition duration-300">
           Next
         </button>
       </div>
-    </div>
-    <div class="flex items-center justify-center !pb-2">
-    <button id="submit" class="bg-[#00bfff] text-white font-semibold !px-5 !py-2 rounded-lg border-b-4 border-blue-500 hover:brightness-110 hover:border-t-4 hover:border-b duration-300 group relative overflow-hidden justify-center">
-          <span class="absolute -top-[150%] left-0 w-80 h-1 bg-blue-300 opacity-50 group-hover:top-[150%] duration-500 rounded"></span>
-         Submit
+
+      <!-- Submit -->
+      <div class="flex justify-center !pt-4">
+        <button id="submit" class="bg-gradient-to-r from-[#00bfff] to-[#009ad6] text-white font-bold !px-6 !py-3 rounded-xl shadow-lg hover:scale-105 transition transform duration-300">
+          Submit
         </button>
-        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Result -->
+  <div class="w-full max-w-2xl !mt-6 !px-4">
+    <div id="result-container" class="!p-6 sm:p-8 bg-white border-2 border-blue-200 rounded-xl shadow-md text-center">
+      <h2 class="text-2xl font-semibold text-[#98e4ae] !mb-2">Hasil Rekomendasi Jurusan</h2>
+      <p id="result-text" class="text-xl font-semibold text-[#00bfff] !mb-2"></p>
+    </div>
   </div>
 </section>
+
 <footer-page></footer-page>
+
     `;
   }
 
@@ -60,6 +69,15 @@ export default class QuestionOne {
     this.#buttonPrev();
     this.#listenerRadio();
     this.#listenSubmit();
+  }
+
+  showResult(data) {
+    const resultText = document.getElementById('result-text');
+    if (data && data.jurusan) {
+      resultText.textContent = `${data.jurusan}`;
+    } else {
+      resultText.textContent = 'Tidak ada hasil rekomendasi.';
+    }
   }
 
   #buttonNext() {
@@ -109,15 +127,6 @@ export default class QuestionOne {
         alert('Silakan jawab semua pertanyaan sebelum melanjutkan.');
         return;
       }
-
-      // if (this.#answers.filter((ans) => ans && ans.value).length < this.#questions.length) {
-      //   alert('Silakan jawab semua pertanyaan sebelum melanjutkan.');
-      //   return;
-      // }
-
-      // const questionData = this.#questions.map((_question, index) => ({
-      //   answer: this.#answers[index] ? this.#answers[index].value : null,
-      // }));
       await this.#presenter.postRecommendation({ answer: this.#answers });
     });
   }

@@ -33,13 +33,6 @@ export default class ProfilePage {
               <h5 id="user-name" class="text-white font-bold text-2xl hover:underline hover:text-[#f8f8f6]"></h5>
               <h6 id="user-email" class="text-white text-xl mt-1 break-all"></h6>
             </div>
-
-            <!-- Result -->
-            <div class="absolute top-[290px] left-1/2 transform -translate-x-1/2 w-full flex justify-center text-white text-center px-4 animate-fadeInMove delay-[1000ms]">
-              <div id="result-container" class="max-w-lg p-8 bg-blue-50 rounded-xl shadow">
-          <h1 class="text-2xl font-bold text-blue-500 mb-4">Hasil Rekomendasi Jurusan</h1>
-          <p id="result-text" class="text-lg text-gray-700">Memuat hasil...</p>
-        </div>
             </div>
           </div>
         </section>
@@ -48,15 +41,6 @@ export default class ProfilePage {
   }
 
   async afterRender() {
-    const result = JSON.parse(localStorage.getItem('recommendationResult'));
-
-    const resultText = document.getElementById('result-text');
-    if (result && result.recommendation) {
-      resultText.textContent = result.recommendation;
-    } else {
-      resultText.textContent = 'Tidak ada hasil rekomendasi.';
-    }
-
     this.#presenter = new ProfilePresenter({
       view: this,
     });
