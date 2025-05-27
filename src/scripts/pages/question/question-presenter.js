@@ -1,8 +1,12 @@
 import * as DataAPI from '../../data/api.js';
 
 export default class QuestionPresenter {
-  constructor(view) {
-    this.view = view;
+  #model;
+  #view;
+
+  constructor({ view, model }) {
+    this.#view = view;
+    this.#model = model;
   }
 
   async init() {
@@ -57,6 +61,24 @@ export default class QuestionPresenter {
       },
     ];
 
-    this.view.displayQuestion(question);
+    this.#view.displayQuestion(question);
+  }
+
+  async postRecommendation({ answer }) {
+    try {
+      const response = await this.#model.postRecommendation({
+        answer,
+      });
+
+      if (!response.ok) {
+        console.error('postSubmit: response:', response);
+        this.#view.submitFailed(response.message);
+        return;
+      }
+      console.log(response);
+      // this.#view.submitSuccessfully(response.message, response.data);
+    } catch (error) {
+      console.error('postSubmit: error:', error);
+    }
   }
 }

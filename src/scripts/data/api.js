@@ -45,16 +45,19 @@ export async function postLogin({ username, password }) {
 }
 
 // Post Recommendation
-export async function postRecommendation({ options }) {
-  const data = JSON.stringify({ options });
+export async function postRecommendation({ answer }) {
+  const accessToken = getAccessToken();
+  console.log(accessToken);
+  const data = JSON.stringify({ answer });
 
   const fetchResponse = await fetch(ENDPOINTS.RECOMMENDATION, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${accessToken}` },
     body: data,
   });
 
   const json = await fetchResponse.json();
+  console.log('fetchResponse:', json);
 
   return {
     ...json,

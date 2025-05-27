@@ -1,9 +1,12 @@
 import QuestionPresenter from '../question/question-presenter';
+import * as DataAPI from '../../data/api';
 
 export default class QuestionOne {
+  #presenter = null;
   #page;
   #limit;
   #questions = [];
+  #answers = [];
 
   async render() {
     return `
@@ -34,7 +37,7 @@ export default class QuestionOne {
       </div>
     </div>
     <div class="flex items-center justify-center !pb-2">
-    <button id="" class="bg-[#00bfff] text-white font-semibold !px-5 !py-2 rounded-lg border-b-4 border-blue-500 hover:brightness-110 hover:border-t-4 hover:border-b duration-300 group relative overflow-hidden justify-center">
+    <button id="submit" class="bg-[#00bfff] text-white font-semibold !px-5 !py-2 rounded-lg border-b-4 border-blue-500 hover:brightness-110 hover:border-t-4 hover:border-b duration-300 group relative overflow-hidden justify-center">
           <span class="absolute -top-[150%] left-0 w-80 h-1 bg-blue-300 opacity-50 group-hover:top-[150%] duration-500 rounded"></span>
          Submit
         </button>
@@ -46,12 +49,17 @@ export default class QuestionOne {
   }
 
   async afterRender() {
-    this.presenter = new QuestionPresenter(this);
+    this.#presenter = new QuestionPresenter({
+      view: this,
+      model: DataAPI,
+    });
     this.#page = 0;
     this.#limit = 4;
-    this.presenter.init();
+    this.#presenter.init();
     this.#buttonNext();
     this.#buttonPrev();
+    this.#listenerRadio();
+    this.#listenSubmit();
   }
 
   #buttonNext() {
@@ -62,7 +70,7 @@ export default class QuestionOne {
       const maxPage = this.#questions.length;
       if (this.#page + this.#limit < maxPage) {
         this.#page += this.#limit;
-        this.presenter.init();
+        this.#presenter.init();
       }
     });
   }
@@ -74,8 +82,37 @@ export default class QuestionOne {
 
       if (this.#page - this.#limit >= 0) {
         this.#page -= this.#limit;
-        this.presenter.init();
+        this.#presenter.init();
       }
+    });
+  }
+
+  #listenerRadio() {
+    const questionElements = document.querySelectorAll('input[type="radio"]');
+    questionElements.forEach((element) => {
+      element.addEventListener('change', (event) => {
+        const questionIndex = parseInt(event.target.name.split('-')[1], 10);
+        const selectedValue = event.target.value;
+
+        this.#answers[questionIndex] = { value: selectedValue };
+      });
+    });
+  }
+
+  #listenSubmit() {
+    const submitButton = document.getElementById('submit');
+    submitButton.addEventListener('click', async (event) => {
+      event.preventDefault();
+
+      if (this.#answers.filter((ans) => ans && ans.value).length < this.#questions.length) {
+        alert('Silakan jawab semua pertanyaan sebelum melanjutkan.');
+        return;
+      }
+
+      // const questionData = this.#questions.map((_question, index) => ({
+      //   answer: this.#answers[index] ? this.#answers[index].value : null,
+      // }));
+      await this.#presenter.postRecommendation({ answer: this.#answers });
     });
   }
 
@@ -91,27 +128,33 @@ export default class QuestionOne {
     const questionList = this.#questions.slice(this.#page, this.#page + this.#limit);
 
     container.innerHTML = questionList
-      .map((question, index) => {
-        return `
-        <div class="question-${index} flex flex-col gap-2 !pb-2">
-            <h2 class="text-lg font-semibold mb-2 text-[#00bfff]">${question.question}</h2>
-            <div class="flex justify-between w-full px-4">
-  <p class="text-left text-based font-semibold text-[#98e4ae]">Kurang Setuju</p>
-  <p class="text-right text-based font-semibold text-[#98e4ae]">Lebih Setuju</p>
-</div>
+      .map((question, indexOnPage) => {
+        const globalIndex = this.#page + indexOnPage;
+        const savedAnswer = this.#answers[globalIndex]?.value;
 
-            <div class="flex gap-10 justify-center sm">
-                ${question.options
-                  .map(
-                    (option, i) => `
-                    <input class="w-4 h-4" type="radio" name="question-${index}" value="${option.value}" id="option-${index}-${i}" required/>
-                  `,
-                  )
-                  .join('')}
-            </div>
+        return `
+        <div class="question-${globalIndex} flex flex-col gap-2 !pb-2">
+          <h2 class="text-lg font-semibold mb-2 text-[#00bfff]">${question.question}</h2>
+          <div class="flex justify-between w-full px-4">
+            <p class="text-left text-based font-semibold text-[#98e4ae]">Kurang Setuju</p>
+            <p class="text-right text-based font-semibold text-[#98e4ae]">Lebih Setuju</p>
+          </div>
+
+          <div class="flex gap-10 justify-center sm">
+            ${question.options
+              .map((option, i) => {
+                const isChecked = savedAnswer === option.value ? 'checked' : '';
+                return `
+                  <input class="w-4 h-4" type="radio" name="question-${globalIndex}" value="${option.value}" id="option-${globalIndex}-${i}" ${isChecked} />
+                `;
+              })
+              .join('')}
+          </div>
         </div>
       `;
       })
       .join('');
+
+    this.#listenerRadio();
   }
 }
