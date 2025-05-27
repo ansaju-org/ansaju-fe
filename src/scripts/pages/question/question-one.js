@@ -94,7 +94,8 @@ export default class QuestionOne {
         const questionIndex = parseInt(event.target.name.split('-')[1], 10);
         const selectedValue = event.target.value;
 
-        this.#answers[questionIndex] = { value: selectedValue };
+        // this.#answers[questionIndex] = { value: selectedValue };
+        this.#answers[questionIndex] = parseInt(selectedValue, 10);
       });
     });
   }
@@ -104,10 +105,15 @@ export default class QuestionOne {
     submitButton.addEventListener('click', async (event) => {
       event.preventDefault();
 
-      if (this.#answers.filter((ans) => ans && ans.value).length < this.#questions.length) {
+      if (this.#answers.filter((ans) => typeof ans === 'number').length < this.#questions.length) {
         alert('Silakan jawab semua pertanyaan sebelum melanjutkan.');
         return;
       }
+
+      // if (this.#answers.filter((ans) => ans && ans.value).length < this.#questions.length) {
+      //   alert('Silakan jawab semua pertanyaan sebelum melanjutkan.');
+      //   return;
+      // }
 
       // const questionData = this.#questions.map((_question, index) => ({
       //   answer: this.#answers[index] ? this.#answers[index].value : null,
