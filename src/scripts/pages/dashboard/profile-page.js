@@ -19,13 +19,13 @@ export default class ProfilePage {
         <sidebar-page></sidebar-page>
 
         <section class="card flex-1 flex flex-col items-center justify-center gap-8 p-4 sm:p-6 lg:p-8">
-          <div class="relative mx-auto w-full max-w-xs h-[420px] rounded-xl bg-[#00bfff] overflow-hidden" style="box-shadow: 0 20px 40px rgba(0, 191, 255, 0.6);">
+          <div class="relative mx-auto w-full max-w-xs h-[400px] rounded-xl bg-[#00bfff] overflow-hidden" style="box-shadow: 0 20px 40px rgba(0, 191, 255, 0.6);">
             <!-- Top bar -->
             <div class="absolute top-0 left-1/2 -translate-x-1/2 w-11/12 h-20 bg-[#98e4ae] animate-dsTop rounded-bl-xl rounded-br-xl"></div>
 
             <!-- Avatar -->
             <div class="absolute top-10 left-1/2 -translate-x-1/2 w-24 h-24 rounded-full overflow-hidden border-2 border-[#f8f8f6] bg-[#00bfff] animate-mvTop">
-              <img class="w-24 h-24" src="/logo.png" alt="">
+              <img class="w-24 h-24" src="/images/profile.png" alt="">
             </div>
 
             <!-- Name -->

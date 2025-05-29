@@ -5,21 +5,22 @@ export default class AboutPage {
       <section class="flex flex-col items-center justify-center min-h-screen gap-8 p-4 sm:p-6 lg:p-8">
         <!-- About Ansaju Section -->
         <div class="w-full max-w-6xl">
-            <div class="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12">
+            <div class="flex flex-col lg:flex-row items-center !pt-6 justify-center gap-8 lg:gap-12">
     <!-- Blue Rectangle with Icon -->
     <div class="flex flex-col items-center justify-center order-1 lg:order-2">
         <div class="w-32 h-28 sm:w-40 sm:h-32 lg:w-48 lg:h-40 bg-[#00bfff] rounded-xl flex items-center justify-center shadow-lg mb-3 lg:mb-4">
             <img src="/logo.png" class="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 object-contain" alt="Logo" />
         </div>
-        <span class="text-[#00bfff] font-bold text-sm sm:text-base lg:text-lg">#AntiSalahJurusan</span>
+        <span class="text-[#00bfff] font-bold text-base sm:text-base lg:text-lg">#AntiSalahJurusan</span>
     </div>
 
     <!-- Text Content -->
     <div class="flex flex-col text-center lg:text-left order-2 lg:order-1">
         <h2 class="text-center text-2xl sm:text-3xl lg:text-4xl font-bold text-[#00bfff] mb-2">About Ansaju</h2>
         <h3 class="text-center text-lg sm:text-xl lg:text-2xl font-semibold text-[#98e4ae] mb-4 lg:mb-6">"Anti Salah Jurusan"</h3>
-        <p class="text-center text-[#00bfff] text-sm sm:text-base leading-relaxed max-w-md mx-auto lg:mx-0">
-            Ansaju adalah platform yang membantu siswa dan mahasiswa menemukan jurusan dan potensi terbaik mereka.
+        <p class="text-center text-[#00bfff] text-base sm:text-base leading-relaxed max-w-md mx-auto lg:mx-0">
+            Ansaju adalah platform edukasi yang bertujuan untuk membantu siswa dan mahasiswa dalam menemukan jurusan pendidikan yang sesuai dengan minat, bakat, dan potensi terbaik mereka.
+Kami percaya bahwa setiap individu memiliki potensi unik yang bisa dikembangkan melalui pilihan jurusan yang tepat.
         </p>
     </div>
 </div>
@@ -27,21 +28,22 @@ export default class AboutPage {
 
         <!-- Objective Ansaju Section -->
         <div class="w-full max-w-6xl">
-            <div class="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12">
+            <div class="flex flex-col lg:flex-row items-center !pb-6 justify-center gap-8 lg:gap-12">
                 <!-- Blue Rectangle with Icon -->
                 <div class="flex flex-col items-center justify-center order-1">
                     <div class="w-32 h-28 sm:w-40 sm:h-32 lg:w-48 lg:h-40 bg-[#00bfff] rounded-xl flex items-center justify-center shadow-lg mb-3 lg:mb-4">
                         <img src="/logo.png" class="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 object-contain" alt="Logo" />
                     </div>
-                    <span class="text-[#00bfff] font-bold text-sm sm:text-base lg:text-lg">#AntiSalahJurusan</span>
+                    <span class="text-[#00bfff] font-bold text-base sm:text-base lg:text-lg">#AntiSalahJurusan</span>
                 </div>
 
                 <!-- Text Content -->
                 <div class="flex flex-col text-center lg:text-left order-2">
                     <h2 class="text-center text-2xl sm:text-3xl lg:text-4xl font-bold text-[#00bfff] mb-2">Objective Ansaju</h2>
                     <h3 class="text-center text-lg sm:text-xl lg:text-2xl font-semibold text-[#98e4ae] mb-4 lg:mb-6">"Anti Salah Jurusan"</h3>
-                    <p class="text-center text-[#00bfff] text-sm sm:text-base leading-relaxed max-w-md mx-auto lg:mx-0">
-                        Ansaju adalah platform yang membantu siswa dan mahasiswa menemukan jurusan dan potensi terbaik mereka.
+                    <p class="text-center text-[#00bfff] text-base sm:text-base leading-relaxed max-w-md mx-auto lg:mx-0">
+                        Ansaju bertujuan menciptakan generasi yang sadar akan potensi dirinya dan mampu menentukan arah pendidikan serta karier dengan lebih terarah.
+Melalui pendekatan teknologi dengan sistem rekomendasi, kami hadir sebagai solusi bagi siswa dan mahasiswa agar tidak lagi salah memilih jurusan.
                     </p>
                 </div>
             </div>

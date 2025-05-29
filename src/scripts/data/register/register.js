@@ -6,41 +6,43 @@ export default class Register {
 
   async render() {
     return `
-    <section class="gap-10 flex items-center justify-center min-h-screen bg-[conic-gradient(rgba(152,228,174,0.35)),url('/images/bg-right.png')] bg-no-repeat bg-cover p-4">
-      <h1 class="text-center text-5xl text-[#fff]">Recognize your potential with Ansaju</h1>
-    <div class="bg-white rounded-3xl border-8 border-[#98e4ae] w-full max-w-md shadow-lg p-8">
-        <h2 class="text-[#98e4ae] text-center text-4xl font-bold mb-2">Register</h2>
-        <p class="text-[#98e4ae] text-center mb-6">Let's create your account!</p>
+    <section class="gap-6 flex flex-col items-center justify-center min-h-screen bg-[conic-gradient(rgba(152,228,174,0.35)),url('/images/bg-right.png')] bg-no-repeat bg-cover !px-4 !py-6 sm:gap-10 sm:flex-row">
+      <h1 class="text-center text-3xl sm:text-5xl text-[#fff] font-medium !px-2">Recognize your potential with Ansaju</h1>
+      <div class="bg-white rounded-3xl border-8 border-[#98e4ae] w-full max-w-md shadow-lg !px-4 !py-6 sm:p-8">
+        <h2 class="text-[#98e4ae] text-center text-3xl sm:text-4xl font-bold mb-2">Register</h2>
+        <p class="text-[#98e4ae] text-center mb-6 text-sm sm:text-base">Let's create your account!</p>
 
         <!-- FORM AREA -->
         <form id="registerForm" class="flex flex-col gap-4 items-center">
-          <div class="flex flex-col m-[10px] w-9/12">
-            <label for="name" class="text-[#98e4ae] text-lg font-semibold mb-2">Name</label>
-            <input type="text" id="name" class="border-2 border-[#98e4ae] rounded-lg p-[10px] focus:outline-none focus:border-[#00bfff] transition" required>
+          <div class="flex flex-col my-2 w-full sm:w-9/12">
+            <label for="name" class="text-[#98e4ae] text-base sm:text-lg font-semibold mb-1 sm:mb-2">Name</label>
+            <input type="text" id="name" class="border-2 border-[#98e4ae] rounded-lg px-3 py-2 focus:outline-none focus:border-[#00bfff] transition text-sm sm:text-base" required>
           </div>
-          <div class="flex flex-col m-[10px] w-9/12">
-            <label for="email" class="text-[#98e4ae] text-lg font-semibold mb-2">Email</label>
-            <input type="email" id="email" class="border-2 border-[#98e4ae] rounded-lg p-[10px] focus:outline-none focus:border-[#00bfff] transition" required>
+          <div class="flex flex-col my-2 w-full sm:w-9/12">
+            <label for="email" class="text-[#98e4ae] text-base sm:text-lg font-semibold mb-1 sm:mb-2">Email</label>
+            <input type="email" id="email" class="border-2 border-[#98e4ae] rounded-lg px-3 py-2 focus:outline-none focus:border-[#00bfff] transition text-sm sm:text-base" required>
           </div>
-          <div class="flex flex-col m-[10px] w-9/12">
-            <label for="username" class="text-[#98e4ae] text-lg font-semibold mb-2">Username</label>
-            <input type="text" id="username" class="border-2 border-[#98e4ae] rounded-lg p-[10px] focus:outline-none focus:border-[#00bfff] transition" required>
+          <div class="flex flex-col my-2 w-full sm:w-9/12">
+            <label for="username" class="text-[#98e4ae] text-base sm:text-lg font-semibold mb-1 sm:mb-2">Username</label>
+            <input type="text" id="username" class="border-2 border-[#98e4ae] rounded-lg px-3 py-2 focus:outline-none focus:border-[#00bfff] transition text-sm sm:text-base" required>
           </div>
-          <div class="flex flex-col m-[10px] w-9/12">
-            <label for="password" class="text-[#98e4ae] text-lg font-semibold mb-2">Password</label>
-            <input type="password" id="password" class="border-2 border-[#98e4ae] rounded-lg p-[10px] focus:outline-none focus:border-[#00bfff] transition" required>
+          <div class="flex flex-col my-2 w-full sm:w-9/12">
+            <label for="password" class="text-[#98e4ae] text-base sm:text-lg font-semibold mb-1 sm:mb-2">Password</label>
+            <input type="password" id="password" class="border-2 border-[#98e4ae] rounded-lg px-3 py-2 focus:outline-none focus:border-[#00bfff] transition text-sm sm:text-base" required>
           </div>
-          <button type="submit" id="submit" class="bg-[#98e4ae] text-white w-20 text-lg font-semibold rounded-lg p-3 mt-2 hover:bg-green-600 transition duration-300 ease-in-out">Register</button>
+          <button type="submit" id="submit" class="bg-[#98e4ae] text-white w-24 text-base sm:text-lg font-semibold rounded-lg py-2 mt-2 hover:bg-[#00bfff] transition duration-300 ease-in-out">Register</button>
         </form>
-        <!-- FROM AREA ENDS -->
+        <!-- FORM AREA ENDS -->
+
         <div id="registerLoading" class="hidden justify-center items-center mb-4">
-          <svg class="animate-spin h-8 w-8 text-[#00bfff]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <svg class="animate-spin h-6 w-6 sm:h-8 sm:w-8 text-[#00bfff]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
             <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
             <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
           </svg>
-          <span class="ml-2 text-[#98e4ae] font-semibold">Registering...</span>
+          <span class="ml-2 text-[#98e4ae] font-semibold text-sm sm:text-base">Registering...</span>
         </div>
-        <p class="text-center text-[#98e4ae] mt-6 text-sm">
+
+        <p class="text-center text-[#98e4ae] mt-4 sm:mt-6 text-xs sm:text-sm">
           Already have an account?
           <a href="/login" class="text-[#00bfff] hover:underline font-semibold">Login</a>
         </p>

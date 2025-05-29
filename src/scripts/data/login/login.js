@@ -7,38 +7,39 @@ export default class Login {
 
   async render() {
     return `
-        <section class="gap-10 flex items-center justify-center min-h-screen bg-[conic-gradient(rgba(0,191,255,0.35)),url('/images/bg-left.png')] bg-no-repeat bg-cover p-4">
-       <h1 class="text-center text-5xl text-[#fff]">Explore to Achieve Your Dreams with Ansaju</h1>
-        <div class="bg-white rounded-3xl border-8 border-[#00bfff] w-full max-w-md shadow-lg p-8">
-        <h2 class="text-[#00bfff] text-center text-4xl font-bold mb-2">Log in</h2>
-        <p class="text-[#00bfff] text-center mb-6">Welcome Back Friends!</p>
+    <section class="gap-6 sm:gap-10 flex flex-col sm:flex-row items-center justify-center min-h-screen bg-[conic-gradient(rgba(0,191,255,0.35)),url('/images/bg-left.png')] bg-no-repeat bg-cover !px-4 !py-6">
+      <h1 class="text-center text-3xl sm:text-5xl text-white font-semibold !px-2">Explore to Achieve Your Dreams with Ansaju</h1>
+      <div class="bg-white rounded-3xl border-8 border-[#00bfff] w-full max-w-md shadow-lg !px-4 !py-6 sm:p-8">
+        <h2 class="text-[#00bfff] text-center text-3xl sm:text-4xl font-bold mb-2">Log in</h2>
+        <p class="text-[#00bfff] text-center mb-6 text-sm sm:text-base">Welcome Back Friends!</p>
         
         <form id="login-form" class="flex flex-col gap-4 items-center">
-          <div class="flex flex-col m-[10px] w-9/12">
-            <label for="username" class="text-[#00bfff] text-lg font-semibold mb-2">Username</label>
-            <input type="username" id="username" class="border-2 border-[#00bfff] rounded-lg p-[10px] focus:outline-none focus:border-[#98e4ae] transition" required>
+          <div class="flex flex-col my-2 w-full sm:w-9/12">
+            <label for="username" class="text-[#00bfff] text-base sm:text-lg font-semibold mb-1 sm:mb-2">Username</label>
+            <input type="text" id="username" class="border-2 border-[#00bfff] rounded-lg px-3 py-2 focus:outline-none focus:border-[#98e4ae] transition text-sm sm:text-base" required>
           </div>
-          <div class="flex flex-col m-[10px] w-9/12">
-            <label for="password" class="text-[#00bfff] text-lg font-semibold mb-2">Password</label>
-            <input type="password" id="password" class="border-2 border-[#00bfff] rounded-lg p-[10px] focus:outline-none focus:border-[#98e4ae] transition" required>
+          <div class="flex flex-col my-2 w-full sm:w-9/12">
+            <label for="password" class="text-[#00bfff] text-base sm:text-lg font-semibold mb-1 sm:mb-2">Password</label>
+            <input type="password" id="password" class="border-2 border-[#00bfff] rounded-lg px-3 py-2 focus:outline-none focus:border-[#98e4ae] transition text-sm sm:text-base" required>
           </div>
-          <button type="submit" id="submit" class="bg-[#00bfff] text-white w-20 text-lg font-semibold rounded-lg p-3 mt-2 hover:bg-green-600 transition duration-300 ease-in-out">Log In</button>
+          <button type="submit" id="submit" class="bg-[#00bfff] text-white w-24 text-base sm:text-lg font-semibold rounded-lg py-2 mt-2 hover:bg-[#98e4ae] transition duration-300 ease-in-out">Log In</button>
         </form>
+
         <div id="loginLoading" class="hidden justify-center items-center mb-4">
-          <svg class="animate-spin h-8 w-8 text-[#00bfff]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <svg class="animate-spin h-6 w-6 sm:h-8 sm:w-8 text-[#00bfff]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
             <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
             <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
           </svg>
-          <span class="ml-2 text-[#00bfff] font-semibold">Logging in...</span>
+          <span class="ml-2 text-[#00bfff] font-semibold text-sm sm:text-base">Logging in...</span>
         </div>
 
-        <p class="text-center text-[#00bfff] mt-6 text-sm">
-          Already have an account?
+        <p class="text-center text-[#00bfff] mt-4 sm:mt-6 text-xs sm:text-sm">
+          Don’t have an account?
           <a href="/register" class="text-[#98e4ae] hover:underline font-semibold">Register</a>
         </p>
       </div>
     </section>
-        `;
+    `;
   }
 
   async afterRender() {
@@ -83,8 +84,6 @@ export default class Login {
   loginSuccessfully(message) {
     this.#showLoading(false);
     console.log(message);
-
-    // Redirect
     location.pathname = '/home';
   }
 

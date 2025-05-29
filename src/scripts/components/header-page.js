@@ -8,9 +8,7 @@ class HeaderPage extends HTMLElement {
 
   connectedCallback() {
     this.render();
-    if (HeaderPresenter && typeof HeaderPresenter.initHeaderPresenter === 'function') {
-      HeaderPresenter.initHeaderPresenter(this.shadowRoot);
-    }
+    HeaderPresenter.initHeaderPresenter(this.shadowRoot);
   }
 
   render() {
@@ -63,16 +61,6 @@ class="dropdown-arrow w-6 h-6 text-[#f8f8f6] transition-transform duration-300 e
         Quiz Potential Academic
       </a>
     </li>
-    <li role="none">
-      <a 
-        href="/quiz" 
-        class="dropdown-item block px-4 py-3 text-[#00bfff] hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 first:rounded-t-md"
-        role="menuitem"
-        tabindex="-1"
-      >
-        Quiz Potential Non-Academic
-      </a>
-    </li>
   </ul>
 </li>
     </a>
@@ -118,7 +106,7 @@ class="dropdown-arrow w-6 h-6 text-[#f8f8f6] transition-transform duration-300 e
                         
                         <!-- Logout -->
                         <div class="py-1">
-                            <a href="#" id="logout-btn" class="flex items-center px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors duration-150">
+                            <a href="#" id="logout-button" class="flex items-center px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors duration-150">
                                 <svg class="w-4 h-4 mr-3 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
                                 </svg>
@@ -161,7 +149,6 @@ class="dropdown-arrow w-6 h-6 text-[#f8f8f6] transition-transform duration-300 e
     </button>
     <ul id="dropdown-mobile-menu" class="absolute left-0 top-full mt-1 w-48 bg-[#f8f8f6] rounded-md shadow-lg border border-gray-200 opacity-0 invisible transform scale-95 transition-all duration-300 z-50">
       <li><a href="/quiz" class="block px-4 py-3 text-[#00bfff] hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 first:rounded-t-md">Quiz Potential Academic</a></li>
-      <li><a href="#" class="block px-4 py-3 text-[#00bfff] hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200">Quiz Potential non-Academic</a></li>
     </ul>
   </li>
     </ul>

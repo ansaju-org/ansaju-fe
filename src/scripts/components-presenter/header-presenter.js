@@ -143,10 +143,17 @@ function profileDropdown(shadowRoot) {
   const storage = localStorage.getItem('user');
   const userMenuButton = shadowRoot.getElementById('user-menu-button');
   const userDropdown = shadowRoot.getElementById('user-dropdown');
+  const logoutButton = shadowRoot.getElementById('logout-button');
+  const dashboardButton = shadowRoot.getElementById('dashboard-button');
+  const nameEl = shadowRoot.getElementById('name');
+  const emailEl = shadowRoot.getElementById('email');
+
   if (!userMenuButton || !userDropdown) return;
+
   userMenuButton.addEventListener('click', (e) => {
     e.stopPropagation();
     userDropdown.classList.toggle('hidden');
+
     if (!userDropdown.classList.contains('hidden')) {
       userDropdown.style.opacity = '0';
       userDropdown.style.transform = 'translateY(-10px)';
@@ -156,42 +163,56 @@ function profileDropdown(shadowRoot) {
         userDropdown.style.transform = 'translateY(0)';
       }, 10);
     }
-    shadowRoot.getElementById('name').textContent = storage ? JSON.parse(storage).name : 'Guest';
-    shadowRoot.getElementById('email').textContent = storage ? JSON.parse(storage).email : 'Guest';
+
+    if (nameEl && emailEl) {
+      nameEl.textContent = storage ? JSON.parse(storage).name : 'Guest';
+      emailEl.textContent = storage ? JSON.parse(storage).email : 'Guest';
+    }
   });
+
   document.addEventListener('click', (e) => {
     if (!userMenuButton.contains(e.target) && !userDropdown.contains(e.target)) {
       userDropdown.classList.add('hidden');
     }
   });
+
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       userDropdown.classList.add('hidden');
     }
   });
-  const menuItems = userDropdown.querySelectorAll('a');
-  menuItems.forEach((item) => {
-    item.addEventListener('click', function (e) {
-      e.preventDefault();
-      const menuText = this.textContent.trim();
-      userDropdown.classList.add('hidden');
-      if (menuText === 'Keluar') {
-        if (confirm('Apakah Anda yakin ingin keluar?')) {
-          alert('Anda telah keluar dari sistem');
-        }
-      } else if (menuText === 'Dashboard') {
-        location.pathname = '/dashboard';
-      } else {
-        alert(`Anda mengklik: ${menuText}`);
-      }
-    });
-  });
+
   userMenuButton.addEventListener('mouseenter', function () {
     this.style.transform = 'scale(1.05)';
   });
+
   userMenuButton.addEventListener('mouseleave', function () {
     this.style.transform = 'scale(1)';
   });
+
+  if (logoutButton) {
+    logoutButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      userDropdown.classList.add('hidden');
+
+      const confirmLogout = confirm('Apakah Anda yakin ingin keluar?');
+      if (confirmLogout) {
+        localStorage.clear();
+        alert('Anda telah keluar dari sistem');
+        location.pathname = '/login';
+      } else {
+        alert('Yey, kamu masih stay di Ansaju!');
+      }
+    });
+  }
+
+  if (dashboardButton) {
+    dashboardButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      userDropdown.classList.add('hidden');
+      location.pathname = '/dashboard';
+    });
+  }
 }
 
 export default HeaderPresenter;

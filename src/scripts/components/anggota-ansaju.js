@@ -12,14 +12,14 @@ class AnggotaAnsaju extends HTMLElement {
     this.shadowRoot.innerHTML = `
     <link rel="stylesheet" href="/styles/style.css" />
     <section class="ansaju-components flex flex-col items-center justify-center min-h-screen px-4 py-12 md:py-20">
-        <div class="w-full max-w-6xl mx-auto flex flex-col items-center justify-center">
+        <div class="w-full max-w-6xl mx-auto flex flex-col items-center justify-center !p-4">
             <!-- Header Section -->
-            <div class="flex flex-col items-center justify-center mb-12 md:mb-16 mt-8 md:mt-12">
+            <div class="flex flex-col items-center justify-center !mb-4 md:mb-16 mt-8 md:mt-12">
                 <h1 class="text-center text-3xl md:text-5xl lg:text-6xl font-bold text-[#00bfff] mb-4 md:mb-6">
-                    Our Team
+                    Tim Ansaju
                 </h1>
                 <h2 class="text-center text-lg md:text-2xl lg:text-3xl font-semibold text-[#98e4ae] px-4">
-                    "Meet the Minds Behind Ansaju"
+                    "Berkenalan dengan Tim dibalik Ansaju"
                 </h2>
             </div>
             
