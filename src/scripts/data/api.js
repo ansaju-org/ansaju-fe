@@ -7,7 +7,8 @@ const ENDPOINTS = {
   LOGIN: `${BASE_URL}login`,
 
   // trapkan ML
-  RECOMMENDATION: `${BASE_URL}recommendation`,
+  RECOMMENDATIONS: `${BASE_URL}recommendations`,
+  HISTORY_RECOMMENDATIONS: `${BASE_URL}recommendations/history`,
 };
 
 //Post Register
@@ -44,13 +45,13 @@ export async function postLogin({ username, password }) {
   };
 }
 
-// Post Recommendation
-export async function postRecommendation({ answer }) {
+// Post Recommendations
+export async function postRecommendations({ answer }) {
   const accessToken = getAccessToken();
   console.log(accessToken);
   const data = JSON.stringify({ answer });
 
-  const fetchResponse = await fetch(ENDPOINTS.RECOMMENDATION, {
+  const fetchResponse = await fetch(ENDPOINTS.RECOMMENDATIONS, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${accessToken}` },
     body: data,
@@ -63,4 +64,41 @@ export async function postRecommendation({ answer }) {
     ...json,
     ok: fetchResponse.ok,
   };
+}
+
+// Get History Jurusan
+export async function getRecommendationHistory({ page = 1, limit = 1000 } = {}) {
+  const accessToken = getAccessToken();
+  if (!accessToken) {
+    throw new Error('Token tidak ditemukan');
+  }
+
+  const queryParams = new URLSearchParams({ page, limit });
+
+  try {
+    const fetchResponse = await fetch(`${ENDPOINTS.HISTORY_RECOMMENDATIONS}?${queryParams}`, {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+
+    const json = await fetchResponse.json();
+    localStorage.setItem('jurusan', JSON.stringify(json.data));
+
+    console.log('fetchResponse:', json);
+
+    return {
+      ...json,
+      ok: fetchResponse.ok,
+    };
+  } catch (error) {
+    console.error('Gagal mengambil history rekomendasi:', error);
+    return {
+      error: true,
+      message: 'Terjadi kesalahan saat mengambil history rekomendasi',
+      data: [],
+      ok: false,
+    };
+  }
 }

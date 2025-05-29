@@ -1,5 +1,6 @@
 import SidebarPresenter from '../../components-presenter/sidebar-presenter';
 import ProfilePresenter from './profile-presenter';
+import * as DataAPI from '../../data/api';
 
 export default class ProfilePage {
   #presenter = null;
@@ -33,7 +34,17 @@ export default class ProfilePage {
               <h5 id="user-name" class="text-white font-bold text-2xl hover:underline hover:text-[#f8f8f6]"></h5>
               <h6 id="user-email" class="text-white text-xl mt-1 break-all"></h6>
             </div>
-            </div>
+
+            <!-- Hasil Test -->
+<div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-11/12 max-w-sm bg-white border border-blue-200 rounded-xl shadow-lg px-4 py-5 animate-fadeInMove delay-[1000ms]">
+  <h6 class="text-center text-[#00bfff] text-sm sm:text-base font-semibold !m-3 uppercase tracking-wide">
+    Hasil Test Jurusan Mu
+  </h6>
+  <ul id="recommendation-history" class="space-y-3 text-sm sm:text-base max-h-40 overflow-y-auto px-1 text-center">
+  </ul>
+</div>
+
+
           </div>
         </section>
       </div>
@@ -43,9 +54,32 @@ export default class ProfilePage {
   async afterRender() {
     this.#presenter = new ProfilePresenter({
       view: this,
+      model: DataAPI,
     });
 
     SidebarPresenter.initPresenter();
+    this.#presenter.init();
     this.#presenter.displayUserInfo();
+  }
+
+  showRecommendationHistory(historyData) {
+    const container = document.getElementById('recommendation-history');
+    container.innerHTML = '';
+
+    if (historyData.length === 0) {
+      container.innerHTML =
+        '<li class="text-lg text-center text-[#00bfff]">Tidak ada riwayat rekomendasi.</li>';
+      return;
+    }
+
+    // Batasi tampilan hanya 5 riwayat terbaru
+    const limitedHistory = historyData.slice(0, 1);
+
+    limitedHistory.forEach((item) => {
+      const li = document.createElement('li');
+      li.className = 'border border-[#00bfff] rounded-md !p-3 text-[#98e4ae] font-semibold';
+      li.textContent = `${item.jurusan} - ${new Date(item.created_at).toLocaleDateString('id-ID')}`;
+      container.appendChild(li);
+    });
   }
 }

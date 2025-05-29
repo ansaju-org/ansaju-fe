@@ -127,7 +127,7 @@ export default class QuestionOne {
         alert('Silakan jawab semua pertanyaan sebelum melanjutkan.');
         return;
       }
-      await this.#presenter.postRecommendation({ answer: this.#answers });
+      await this.#presenter.postRecommendations({ answer: this.#answers });
     });
   }
 

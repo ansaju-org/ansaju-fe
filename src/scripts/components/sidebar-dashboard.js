@@ -52,12 +52,12 @@ class Sidebar extends HTMLElement {
                 </a>
 
                 <!-- Menu Hasil Sebelumnya -->
-                <!-- <a class="flex items-center !p-3 !m-2 text-[#f8f8f6] transition-colors duration-300 transform rounded-lg hover:bg-gray-100 hover:text-[#00bfff]" href="#hasil">
+                <a class="flex items-center !p-3 !m-2 text-[#f8f8f6] transition-colors duration-300 transform rounded-lg hover:bg-gray-100 hover:text-[#00bfff]" href="/riwayat">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M10.125 2.25h-4.5c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9M10.125 2.25h.375a9 9 0 019 9v.375M10.125 2.25A3.375 3.375 0 0113.5 5.625v1.5c0 .621.504 1.125 1.125 1.125h1.5a3.375 3.375 0 013.375 3.375M9 15l2.25 2.25L15 12" />
                     </svg>
                     <span class="!m-2 text-xl font-semibold">Hasil Sebelumnya</span>
-                </a> -->
+                </a>
             </nav>
             <button id="closeSidebar" class="flex items-center w-full justify-center !p-2">
       <svg class="w-18 h-18 text-[#f8f8f8] items-center" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">

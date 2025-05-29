@@ -1,15 +1,15 @@
 import * as DataAPI from '../../data/api';
 import { getAccessToken } from '../../utils/auth.js';
 
-export default class ProfilePresenter {
+export default class RiwayatPresenter {
   #view;
-  #presenter;
   #model;
+  #presenter;
 
   constructor({ view, presenter, model }) {
     this.#view = view;
-    this.#presenter = presenter;
     this.#model = model;
+    this.#presenter = presenter;
   }
 
   async init() {
@@ -26,24 +26,6 @@ export default class ProfilePresenter {
       }
     } catch (error) {
       console.error('Terjadi kesalahan saat inisialisasi profil:', error);
-    }
-  }
-
-  async displayUserInfo() {
-    try {
-      const userStorage = localStorage.getItem('user');
-      if (!userStorage) return;
-
-      const { name = 'Nama tidak tersedia', email = 'Email tidak tersedia' } =
-        JSON.parse(userStorage);
-
-      const nameElement = document.getElementById('user-name');
-      const emailElement = document.getElementById('user-email');
-
-      if (nameElement) nameElement.textContent = name;
-      if (emailElement) emailElement.textContent = email;
-    } catch (error) {
-      console.error('Gagal menampilkan informasi pengguna:', error);
     }
   }
 }

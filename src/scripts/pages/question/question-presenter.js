@@ -62,9 +62,9 @@ export default class QuestionPresenter {
     this.#view.displayQuestion(question);
   }
 
-  async postRecommendation({ answer }) {
+  async postRecommendations({ answer }) {
     try {
-      const response = await this.#model.postRecommendation({ answer });
+      const response = await this.#model.postRecommendations({ answer });
 
       if (!response.ok) {
         this.#view.submitFailed(response.message);
@@ -75,7 +75,7 @@ export default class QuestionPresenter {
       // optionally show success message
       // this.#view.submitSuccessfully(response.message);
     } catch (error) {
-      console.error('postRecommendation: error:', error);
+      console.error('postRecommendations: error:', error);
       this.#view.submitFailed('Terjadi kesalahan saat mengirim jawaban.');
     }
   }
