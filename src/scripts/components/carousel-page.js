@@ -35,7 +35,7 @@ class CarouselPage extends HTMLElement {
 <div class="!p-6 bg-white rounded-lg shadow-md transition-transform hover:shadow-lg hover:-translate-y-1">
   <div class="flex flex-col items-center !mb-4">
     <div class="flex-shrink-0 mb-2">
-      <img class="w-12 h-12 rounded-full" src="/ccdbs.jpg" alt="Profile image" />
+      <img class="w-24 h-24 rounded-full" src="/ccdbs.jpg" alt="Profile image" />
     </div>
     <h3 class="font-bold text-[#C61414] text-xl !p-2 text-center">
       Coding Camp by DBS Foundation
