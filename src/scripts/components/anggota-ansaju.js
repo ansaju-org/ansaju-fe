@@ -15,10 +15,10 @@ class AnggotaAnsaju extends HTMLElement {
         <div class="w-full max-w-6xl mx-auto flex flex-col items-center justify-center !p-4">
             <!-- Header Section -->
             <div class="flex flex-col items-center justify-center !mb-4 md:mb-16 mt-8 md:mt-12">
-                <h1 class="text-center text-3xl md:text-5xl lg:text-6xl font-bold text-[#00bfff] mb-4 md:mb-6">
+                <h1 class="text-center text-3xl md:text-5xl lg:text-6xl font-bold text-[#1D5D9B] mb-4 md:mb-6">
                     Tim Ansaju
                 </h1>
-                <h2 class="text-center text-lg md:text-2xl lg:text-3xl font-semibold text-[#98e4ae] px-4">
+                <h2 class="text-center text-lg md:text-2xl lg:text-3xl font-semibold text-teal-700 px-4">
                     "Berkenalan dengan Tim dibalik Ansaju"
                 </h2>
             </div>
@@ -33,8 +33,8 @@ class AnggotaAnsaju extends HTMLElement {
                             alt="John Smith"
                         />
                     </div>
-                    <h4 class="mb-2 md:mb-4 text-lg md:text-xl font-semibold text-[#00bfff]">Reza Pahlevi</h4>
-                    <p class="mb-4 md:mb-6 font-semibold text-[#98e4ae] text-sm md:text-base">
+                    <h4 class="mb-2 md:mb-4 text-lg md:text-xl font-semibold text-[#1D5D9B]">Reza Pahlevi</h4>
+                    <p class="mb-4 md:mb-6 font-semibold text-teal-700 text-sm md:text-base">
                     Lead Team and Machine Learning Engineer
                     </p>
                 </div>
@@ -47,8 +47,8 @@ class AnggotaAnsaju extends HTMLElement {
                             alt="AlviSetyaKurniaDewi"
                         />
                     </div>
-                    <h4 class="mb-2 md:mb-4 text-lg md:text-xl font-semibold text-[#00bfff]">Alvi Setya Kurnia Dewi</h4>
-                    <p class="mb-4 md:mb-6 font-semibold text-[#98e4ae] text-sm md:text-base">
+                    <h4 class="mb-2 md:mb-4 text-lg md:text-xl font-semibold text-[#1D5D9B]">Alvi Setya Kurnia Dewi</h4>
+                    <p class="mb-4 md:mb-6 font-semibold text-teal-700 text-sm md:text-base">
                     Machine Learning Engineer
                     </p>
                 </div>
@@ -61,8 +61,8 @@ class AnggotaAnsaju extends HTMLElement {
                             alt="NabilaNevaRahmawati"
                         />
                     </div>
-                    <h4 class="mb-2 md:mb-4 text-lg md:text-xl font-semibold text-[#00bfff]">Nabila Neva Rahmawati</h4>
-                    <p class="mb-4 md:mb-6 font-semibold text-[#98e4ae] text-sm md:text-base">
+                    <h4 class="mb-2 md:mb-4 text-lg md:text-xl font-semibold text-[#1D5D9B]">Nabila Neva Rahmawati</h4>
+                    <p class="mb-4 md:mb-6 font-semibold text-teal-700 text-sm md:text-base">
                     Machine Learning Engineer
                     </p>
                 </div>
@@ -79,8 +79,8 @@ class AnggotaAnsaju extends HTMLElement {
                         />
                         
                     </div>
-                    <h4 class="mb-2 md:mb-4 text-lg md:text-xl font-semibold text-[#00bfff]">Dwi Oktaviane</h4>
-                    <p class="mb-4 md:mb-6 font-semibold text-[#98e4ae] text-sm md:text-base">
+                    <h4 class="mb-2 md:mb-4 text-lg md:text-xl font-semibold text-[#1D5D9B]">Dwi Oktaviane</h4>
+                    <p class="mb-4 md:mb-6 font-semibold text-teal-700 text-sm md:text-base">
                     UI/UX and Front-End Engineer
                     </p>
                 </div>
@@ -93,8 +93,8 @@ class AnggotaAnsaju extends HTMLElement {
                             alt="IkhlashMulyanurahman"
                         />
                     </div>
-                    <h4 class="mb-2 md:mb-4 text-lg md:text-xl font-semibold text-[#00bfff]">Ikhlash Mulyanurahman</h4>
-                    <p class="mb-4 md:mb-6 font-semibold text-[#98e4ae] text-sm md:text-base">
+                    <h4 class="mb-2 md:mb-4 text-lg md:text-xl font-semibold text-[#1D5D9B]">Ikhlash Mulyanurahman</h4>
+                    <p class="mb-4 md:mb-6 font-semibold text-teal-700 text-sm md:text-base">
                     Back-End Engineer
                 </div>
             </div>

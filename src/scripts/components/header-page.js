@@ -54,7 +54,7 @@ class="dropdown-arrow w-6 h-6 text-[#f8f8f6] transition-transform duration-300 e
     <li role="none">
       <a 
         href="/quiz" 
-        class="dropdown-item block px-4 py-3 text-[#00bfff] hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 first:rounded-t-md"
+        class="dropdown-item block px-4 py-3 text-[#1B6530] hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 first:rounded-t-md"
         role="menuitem"
         tabindex="-1"
       >
@@ -83,31 +83,31 @@ class="dropdown-arrow w-6 h-6 text-[#f8f8f6] transition-transform duration-300 e
                     <div id="user-dropdown" class="hidden absolute right-0 top-14 mt-2 w-56 bg-[#f8f8f6] rounded-lg shadow-lg border border-gray-200 z-50">
                         <!-- User Info Section -->
                         <div class="px-4 py-3 border-b border-gray-100">
-                            <p id="name" class="text-xl text-center font-medium text-[#00bfff]"></p>
-                            <p id="email" class="text-lg text-center text-[#98e4ae] truncate"></p>
+                            <p id="name" class="text-xl text-center font-medium text-[#1A508B]"></p>
+                            <p id="email" class="text-lg text-center font-medium text-[#1B6530] truncate"></p>
                         </div>
                         
                         <!-- Menu Items -->
                         <div class="py-1">
-                            <a href="/dashboard" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors duration-150">
-                                <svg class="w-4 h-4 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <a href="/dashboard" class="flex items-center px-4 py-2 text-lg text-gray-600 font-medium hover:bg-gray-100 transition-colors duration-150">
+                                <svg class="w-6 h-6 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                                 </svg>
                                 Dashboard
                             </a>
-                            <a href="#" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors duration-150">
-                                <svg class="w-4 h-4 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <a href="#" class="flex items-center px-4 py-2 text-lg font-medium text-gray-600 hover:bg-gray-100 transition-colors duration-150">
+                                <svg class="w-6 h-6 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2M7 4h10M7 4H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1"></path>
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11V8h4v3"></path>
                                 </svg>
-                                Aktivitas
+                                Login & Register
                             </a>
                         </div>
                         
                         <!-- Logout -->
                         <div class="py-1">
-                            <a href="#" id="logout-button" class="flex items-center px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors duration-150">
-                                <svg class="w-4 h-4 mr-3 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <a href="#" id="logout-button" class="flex items-center px-4 py-2 text-lg font-medium text-red-600 hover:bg-red-50 transition-colors duration-150">
+                                <svg class="w-8 h-8 mr-3 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
                                 </svg>
                                 Keluar
@@ -137,18 +137,18 @@ class="dropdown-arrow w-6 h-6 text-[#f8f8f6] transition-transform duration-300 e
 
     <!-- Navigation Links -->
     <ul class="flex flex-col md:flex-row p-4 md:p-0 space-y-2 md:space-y-0 md:space-x-8 font-medium bg-[#f8f8f6] md:bg-transparent md:hidden">
-      <li><a href="/home" data-page="home" id="nav-link-mobile" class="block !px-3 !py-2 rounded-md text-[#00bfff] hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 transition-colors duration-200">Beranda</a></li>
-      <li><a href="/about" data-page="about" id="nav-link-mobile" class="block !px-3 !py-2 rounded-md text-[#00bfff] hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 transition-colors duration-200">Tentang</a></li>
+      <li><a href="/home" data-page="home" id="nav-link-mobile" class="block !px-3 !py-2 rounded-md text-[#1D5D9B] hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 transition-colors duration-200">Beranda</a></li>
+      <li><a href="/about" data-page="about" id="nav-link-mobile" class="block !px-3 !py-2 rounded-md text-[#1D5D9B] hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 transition-colors duration-200">Tentang</a></li>
       <!-- Dropdown Mobile -->
       <li class="relative" id="dropdown-mobile-container">
-    <button id="dropdown-mobile-trigger" class="flex items-center justify-between w-full !px-3 !py-2 rounded-md text-[#00bfff] hover:bg-gray-100 transition-colors duration-200">
+    <button id="dropdown-mobile-trigger" class="flex items-center justify-between w-full !px-3 !py-2 rounded-md text-[#1D5D9B] hover:bg-gray-100 transition-colors duration-200">
       Test Potential
       <svg class="h-4 w-4 ml-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
         <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
       </svg>
     </button>
     <ul id="dropdown-mobile-menu" class="absolute left-0 top-full mt-1 w-48 bg-[#f8f8f6] rounded-md shadow-lg border border-gray-200 opacity-0 invisible transform scale-95 transition-all duration-300 z-50">
-      <li><a href="/quiz" class="block px-4 py-3 text-[#00bfff] hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 first:rounded-t-md">Quiz Potential Academic</a></li>
+      <li><a href="/quiz" class="block px-4 py-3 text-[#1B6530] hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 first:rounded-t-md">Quiz Potential Academic</a></li>
     </ul>
   </li>
     </ul>

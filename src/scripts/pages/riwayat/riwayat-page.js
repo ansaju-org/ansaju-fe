@@ -20,7 +20,7 @@ export default class RiwayatPage {
 
   <section class="flex-grow flex justify-center !py-12 !px-6 sm:px-10 lg:px-16">
     <div class="w-full max-w-4xl bg-white shadow-lg rounded-xl !p-6 md:p-10">
-      <h2 class="text-3xl sm:text-4xl font-bold text-center text-[#00bfff] mb-8">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center text-[#1A508B] mb-8">
         Riwayat Tes Potensial
       </h2>
 
@@ -58,7 +58,7 @@ export default class RiwayatPage {
     if (historyData.length === 0) {
       container.innerHTML = `
         <tr>
-          <td colspan="2" class="!py-4 !px-4 text-center text-[#98e4ae] text-lg font-semibold">
+          <td colspan="2" class="!py-4 !px-4 text-center text-[#1B6530] text-lg font-semibold">
             Tidak ada riwayat rekomendasi.
           </td>
         </tr>`;
@@ -70,8 +70,8 @@ export default class RiwayatPage {
       tr.className = 'hover:bg-gray-50';
 
       tr.innerHTML = `
-        <td class="text-lg font-semibold !py-3 !px-4 text-[#00bfff]">${item.jurusan}</td>
-        <td class="text-lg font-semibold !py-3 !px-4 text-[#98e4ae]">${new Date(item.created_at).toLocaleDateString('id-ID')}</td>
+        <td class="text-lg font-semibold !py-3 !px-4 text-[#1A508B]">${item.jurusan}</td>
+        <td class="text-lg font-semibold !py-3 !px-4 text-[#1B6530]">${new Date(item.created_at).toLocaleDateString('id-ID')}</td>
       `;
 
       container.appendChild(tr);

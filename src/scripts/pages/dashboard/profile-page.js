@@ -31,13 +31,13 @@ export default class ProfilePage {
 
             <!-- Name -->
             <div class="absolute top-36 left-1/2 -translate-x-1/2 flex flex-col items-center text-center animate-fadeIn w-full p-2">
-              <h5 id="user-name" class="text-white font-bold text-2xl hover:underline hover:text-[#f8f8f6]"></h5>
-              <h6 id="user-email" class="text-white text-xl mt-1 break-all"></h6>
+              <h5 id="user-name" class="text-[#f8f8f6] font-medium text-2xl hover:underline hover:text-[#f8f8f6]"></h5>
+              <h6 id="user-email" class="text-[#f8f8f6] font-medium text-xl mt-1 break-all"></h6>
             </div>
 
             <!-- Hasil Test -->
 <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-11/12 max-w-sm bg-white border border-blue-200 rounded-xl shadow-lg px-4 py-5 animate-fadeInMove delay-[1000ms]">
-  <h6 class="text-center text-[#00bfff] text-sm sm:text-base font-semibold !m-3 uppercase tracking-wide">
+  <h6 class="text-center text-[#1A508B] text-2xl sm:text-lg font-bold !m-3 uppercase tracking-wide">
     Hasil Test Jurusan Mu
   </h6>
   <ul id="recommendation-history" class="space-y-3 text-sm sm:text-base max-h-40 overflow-y-auto px-1 text-center">
@@ -77,7 +77,7 @@ export default class ProfilePage {
 
     limitedHistory.forEach((item) => {
       const li = document.createElement('li');
-      li.className = 'border border-[#00bfff] rounded-md !p-3 text-[#98e4ae] font-semibold';
+      li.className = 'border border-[#00bfff] rounded-md !p-3 text-teal-700 font-semibold';
       li.textContent = `${item.jurusan} - ${new Date(item.created_at).toLocaleDateString('id-ID')}`;
       container.appendChild(li);
     });

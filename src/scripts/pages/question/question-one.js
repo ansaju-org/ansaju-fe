@@ -17,7 +17,7 @@ export default class QuestionOne {
     <!-- Header -->
     <div class="bg-[#00bfff] text-white text-center !px-6 !py-6">
       <h1 class="text-3xl sm:text-4xl font-bold">Tes Potensial Akademik</h1>
-      <p class="!mt-2 text-base sm:text-lg text-[#eafff4]">Pertanyaan ini adalah langkah awal untuk menentukan jurusanmu</p>
+      <p class="!mt-2 text-xl font-semibold sm:text-lg text-[#f8f8f6]">Pertanyaan ini adalah langkah awal untuk menentukan jurusanmu</p>
     </div>
 
     <!-- Quiz Content -->
@@ -46,8 +46,8 @@ export default class QuestionOne {
   <!-- Result -->
   <div class="w-full max-w-2xl !mt-6 !px-4">
     <div id="result-container" class="!p-6 sm:p-8 bg-white border-2 border-blue-200 rounded-xl shadow-md text-center">
-      <h2 class="text-2xl font-semibold text-[#98e4ae] !mb-2">Hasil Rekomendasi Jurusan</h2>
-      <p id="result-text" class="text-xl font-semibold text-[#00bfff] !mb-2"></p>
+      <h2 class="text-2xl font-semibold text-teal-700 !mb-2">Hasil Rekomendasi Jurusan</h2>
+      <p id="result-text" class="text-xl font-semibold text-[#1A508B] !mb-2"></p>
     </div>
   </div>
 </section>
@@ -149,10 +149,10 @@ export default class QuestionOne {
 
         return `
         <div class="question-${globalIndex} flex flex-col gap-2 !pb-2">
-          <h2 class="text-lg font-semibold mb-2 text-[#00bfff]">${question.question}</h2>
+          <h2 class="text-lg font-semibold mb-2 text-[#1A508B]">${question.question}</h2>
           <div class="flex justify-between w-full px-4">
-            <p class="text-left text-based font-semibold text-[#98e4ae]">Kurang Setuju</p>
-            <p class="text-right text-based font-semibold text-[#98e4ae]">Lebih Setuju</p>
+            <p class="text-left text-based font-semibold text-teal-700">Kurang Setuju</p>
+            <p class="text-right text-based font-semibold text-teal-700">Lebih Setuju</p>
           </div>
 
           <div class="flex gap-10 justify-center sm">
