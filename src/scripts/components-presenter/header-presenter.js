@@ -1,3 +1,5 @@
+import { getAccessToken } from '../utils/auth';
+
 const HeaderPresenter = {
   initHeaderPresenter(shadowRoot) {
     const drawerBtn = shadowRoot.getElementById('drawer-button');
@@ -21,7 +23,7 @@ const HeaderPresenter = {
 
 function setupActiveNavigation(shadowRoot) {
   const setActiveNavigation = () => {
-    const currentHash = window.location.pathname || '/home';
+    const currentHash = window.location.pathname || '/';
     const currentPage = currentHash;
     shadowRoot.querySelectorAll('#nav-link').forEach((link) => {
       link.classList.remove('text-white', 'underline', 'underline-offset-8');
@@ -147,14 +149,17 @@ function profileDropdown(shadowRoot) {
   const dashboardButton = shadowRoot.getElementById('dashboard-button');
   const nameEl = shadowRoot.getElementById('name');
   const emailEl = shadowRoot.getElementById('email');
+  const accessToken = getAccessToken();
 
   if (!userMenuButton || !userDropdown) return;
 
   userMenuButton.addEventListener('click', (e) => {
     e.stopPropagation();
-    userDropdown.classList.toggle('hidden');
+    // userDropdown.classList.toggle('hidden');
 
+    userDropdown.classList.remove('hidden');
     if (!userDropdown.classList.contains('hidden')) {
+      userDropdown.classList.add('block');
       userDropdown.style.opacity = '0';
       userDropdown.style.transform = 'translateY(-10px)';
       setTimeout(() => {
@@ -162,7 +167,29 @@ function profileDropdown(shadowRoot) {
         userDropdown.style.opacity = '1';
         userDropdown.style.transform = 'translateY(0)';
       }, 10);
+      const tabLoginEl = document.querySelector('#tab-login');
+      tabLoginEl?.forEach((element) => {
+        if (element.classList.contains('flex')) {
+          element.classList.remove('flex');
+          element.classList.add('hidden');
+        } else {
+          console.log(tabLoginEl);
+        }
+      });
     }
+
+    // const tabLogin = document.querySelector('.tab-login');
+    // console.log(tabLogin);
+    // const tabLogout = document.querySelector('.tab-logout');
+    // if (accessToken) {
+    //   if (tabLogin && tabLogin.classList.contains('flex')) {
+    //     tabLogin.classList.remove('flex');
+    //     tabLogin.classList.add('hidden');
+    //   }
+    // } else {
+    //   tabLogout.classList.remove('flex');
+    //   tabLogout.classList.add('hidden');
+    // }
 
     if (nameEl && emailEl) {
       nameEl.textContent = storage ? JSON.parse(storage).name : 'Guest';

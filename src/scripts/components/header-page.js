@@ -1,4 +1,5 @@
 import HeaderPresenter from '../components-presenter/header-presenter.js';
+import { getAccessToken } from '../utils/auth.js';
 
 class HeaderPage extends HTMLElement {
   constructor() {
@@ -9,6 +10,34 @@ class HeaderPage extends HTMLElement {
   connectedCallback() {
     this.render();
     HeaderPresenter.initHeaderPresenter(this.shadowRoot);
+    this.updateLoginState();
+  }
+
+  updateLoginState() {
+    const token = getAccessToken();
+    const loginTab = this.shadowRoot.querySelector('#tab-login');
+    const logoutTab = this.shadowRoot.querySelector('#logout-button');
+    const nameField = this.shadowRoot.querySelector('#name');
+    const emailField = this.shadowRoot.querySelector('#email');
+
+    if (token) {
+      // Jika user sudah login
+      if (loginTab) loginTab.style.display = 'none';
+      if (logoutTab) logoutTab.style.display = 'flex';
+
+      const user = JSON.parse(localStorage.getItem('user'));
+      if (user) {
+        if (nameField) nameField.textContent = user.name || '';
+        if (emailField) emailField.textContent = user.email || '';
+      }
+    } else {
+      // Jika user belum login
+      if (loginTab) loginTab.style.display = 'flex';
+      if (logoutTab) logoutTab.style.display = 'none';
+
+      if (nameField) nameField.textContent = '';
+      if (emailField) emailField.textContent = '';
+    }
   }
 
   render() {
@@ -23,8 +52,8 @@ class HeaderPage extends HTMLElement {
       <span class="text-2xl gap-4 font-semibold text-[#f8f8f6] whitespace-nowrap">Ansaju</span>
       <div class="flex flex-row gap-2 space-x-3 rtl:space-x-reverse"> 
       <ul class="sm:flex flex-row p-4 gap-4 hidden md:p-0 space-y-2 md:space-y-0 md:space-x-8 font-medium md:bg-transparent">
-      <li><a href="/home" data-page="home" id="nav-link" class="block px-3 py-2 rounded-md text-[#f8f8f6] md:hover:text-[#f8f8f6] transition-colors duration-200">Beranda</a></li>
-      <li><a href="/about" data-page="about" id="nav-link" class="block px-3 py-2 rounded-md text-[#f8f8f6] md:hover:text-[#f8f8f6] transition-colors duration-200">Tentang</a></li>
+      <li><a href="/" data-page="home" id="nav-link" class="text-xl block px-3 py-2 rounded-md text-[#f8f8f6] md:hover:text-[#f8f8f6] transition-colors duration-200">Beranda</a></li>
+      <li><a href="/about" data-page="about" id="nav-link" class="text-xl block px-3 py-2 rounded-md text-[#f8f8f6] md:hover:text-[#f8f8f6] transition-colors duration-200">Tentang</a></li>
        <!-- Drop Down -->
       <li class="nav-dropdown-container relative">
     </a>
@@ -37,7 +66,7 @@ class HeaderPage extends HTMLElement {
     aria-controls="dropdown-menu-testPotential"
   >
   </button>
-  <span class="dropdown-text text-[#f8f8f6]">Test Potential</span>
+  <span class="dropdown-text text-xl text-[#f8f8f6]">Tes Potensial</span>
   <svg 
  id="nav-link-testPotential"
 class="dropdown-arrow w-6 h-6 text-[#f8f8f6] transition-transform duration-300 ease-in-out ml-2 justify-self-center transform -translate-x-1/2 animate-bounce" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -95,7 +124,7 @@ class="dropdown-arrow w-6 h-6 text-[#f8f8f6] transition-transform duration-300 e
                                 </svg>
                                 Dashboard
                             </a>
-                            <a href="#" class="flex items-center px-4 py-2 text-lg font-medium text-gray-600 hover:bg-gray-100 transition-colors duration-150">
+                            <a href="/login" id="tab-login" class="flex items-center px-4 py-2 text-lg font-medium text-gray-600 hover:bg-gray-100 transition-colors duration-150">
                                 <svg class="w-6 h-6 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2M7 4h10M7 4H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1"></path>
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11V8h4v3"></path>
@@ -105,7 +134,7 @@ class="dropdown-arrow w-6 h-6 text-[#f8f8f6] transition-transform duration-300 e
                         </div>
                         
                         <!-- Logout -->
-                        <div class="py-1">
+                        <div class="tab-logout py-1">
                             <a href="#" id="logout-button" class="flex items-center px-4 py-2 text-lg font-medium text-red-600 hover:bg-red-50 transition-colors duration-150">
                                 <svg class="w-8 h-8 mr-3 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
@@ -137,7 +166,7 @@ class="dropdown-arrow w-6 h-6 text-[#f8f8f6] transition-transform duration-300 e
 
     <!-- Navigation Links -->
     <ul class="flex flex-col md:flex-row p-4 md:p-0 space-y-2 md:space-y-0 md:space-x-8 font-medium bg-[#f8f8f6] md:bg-transparent md:hidden">
-      <li><a href="/home" data-page="home" id="nav-link-mobile" class="block !px-3 !py-2 rounded-md text-[#1D5D9B] hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 transition-colors duration-200">Beranda</a></li>
+      <li><a href="/" data-page="home" id="nav-link-mobile" class="block !px-3 !py-2 rounded-md text-[#1D5D9B] hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 transition-colors duration-200">Beranda</a></li>
       <li><a href="/about" data-page="about" id="nav-link-mobile" class="block !px-3 !py-2 rounded-md text-[#1D5D9B] hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 transition-colors duration-200">Tentang</a></li>
       <!-- Dropdown Mobile -->
       <li class="relative" id="dropdown-mobile-container">

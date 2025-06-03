@@ -20,7 +20,7 @@ export default class ProfilePage {
         <sidebar-page></sidebar-page>
 
         <section class="card flex-1 flex flex-col items-center justify-center gap-8 p-4 sm:p-6 lg:p-8">
-          <div class="relative mx-auto w-full max-w-xs h-[400px] rounded-xl bg-[#00bfff] overflow-hidden" style="box-shadow: 0 20px 40px rgba(0, 191, 255, 0.6);">
+          <div class="relative mx-auto w-full max-w-xs h-[400px] rounded-xl bg-[#00bfff] overflow-hidden" style="box-shadow: 0 10px 20px rgba(0, 191, 255, 0.6);">
             <!-- Top bar -->
             <div class="absolute top-0 left-1/2 -translate-x-1/2 w-11/12 h-20 bg-[#98e4ae] animate-dsTop rounded-bl-xl rounded-br-xl"></div>
 

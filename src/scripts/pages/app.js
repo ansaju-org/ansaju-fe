@@ -13,7 +13,7 @@ class App {
     const url = getActiveRoute();
     let page = routes[url];
 
-    const protectedRoutes = ['/home', '/about', '/quiz'];
+    const protectedRoutes = ['/quiz', '/dashboard'];
     console.log(url, 'token', getAccessToken());
     // 'protectedRoutes', protectedRoutes,
     if (protectedRoutes.includes(url)) {

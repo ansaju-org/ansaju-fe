@@ -84,7 +84,7 @@ export default class Login {
   loginSuccessfully(message) {
     this.#showLoading(false);
     console.log(message);
-    location.pathname = '/home';
+    location.pathname = '/';
   }
 
   loginFailed(message) {

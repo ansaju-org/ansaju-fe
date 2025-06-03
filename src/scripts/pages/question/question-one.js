@@ -16,7 +16,7 @@ export default class QuestionOne {
   <div class="w-full max-w-2xl bg-white rounded-3xl shadow-lg border-4 border-[#00bfff] overflow-hidden">
     <!-- Header -->
     <div class="bg-[#00bfff] text-white text-center !px-6 !py-6">
-      <h1 class="text-3xl sm:text-4xl font-bold">Tes Potensial Akademik</h1>
+      <h1 class="text-3xl sm:text-4xl font-bold text-[#1A508B]">Tes Potensial Akademik</h1>
       <p class="!mt-2 text-xl font-semibold sm:text-lg text-[#f8f8f6]">Pertanyaan ini adalah langkah awal untuk menentukan jurusanmu</p>
     </div>
 
