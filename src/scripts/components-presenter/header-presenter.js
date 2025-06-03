@@ -155,7 +155,6 @@ function profileDropdown(shadowRoot) {
 
   userMenuButton.addEventListener('click', (e) => {
     e.stopPropagation();
-    // userDropdown.classList.toggle('hidden');
 
     userDropdown.classList.remove('hidden');
     if (!userDropdown.classList.contains('hidden')) {
@@ -167,29 +166,7 @@ function profileDropdown(shadowRoot) {
         userDropdown.style.opacity = '1';
         userDropdown.style.transform = 'translateY(0)';
       }, 10);
-      const tabLoginEl = document.querySelector('#tab-login');
-      tabLoginEl?.forEach((element) => {
-        if (element.classList.contains('flex')) {
-          element.classList.remove('flex');
-          element.classList.add('hidden');
-        } else {
-          console.log(tabLoginEl);
-        }
-      });
     }
-
-    // const tabLogin = document.querySelector('.tab-login');
-    // console.log(tabLogin);
-    // const tabLogout = document.querySelector('.tab-logout');
-    // if (accessToken) {
-    //   if (tabLogin && tabLogin.classList.contains('flex')) {
-    //     tabLogin.classList.remove('flex');
-    //     tabLogin.classList.add('hidden');
-    //   }
-    // } else {
-    //   tabLogout.classList.remove('flex');
-    //   tabLogout.classList.add('hidden');
-    // }
 
     if (nameEl && emailEl) {
       nameEl.textContent = storage ? JSON.parse(storage).name : 'Guest';
