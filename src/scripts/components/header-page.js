@@ -13,33 +13,6 @@ class HeaderPage extends HTMLElement {
     this.updateLoginState();
   }
 
-  updateLoginState() {
-    const token = getAccessToken();
-    const loginTab = this.shadowRoot.querySelector('#tab-login');
-    const logoutTab = this.shadowRoot.querySelector('#logout-button');
-    const nameField = this.shadowRoot.querySelector('#name');
-    const emailField = this.shadowRoot.querySelector('#email');
-
-    if (token) {
-      // Jika user sudah login
-      if (loginTab) loginTab.style.display = 'none';
-      if (logoutTab) logoutTab.style.display = 'flex';
-
-      const user = JSON.parse(localStorage.getItem('user'));
-      if (user) {
-        if (nameField) nameField.textContent = user.name || '';
-        if (emailField) emailField.textContent = user.email || '';
-      }
-    } else {
-      // Jika user belum login
-      if (loginTab) loginTab.style.display = 'flex';
-      if (logoutTab) logoutTab.style.display = 'none';
-
-      if (nameField) nameField.textContent = '';
-      if (emailField) emailField.textContent = '';
-    }
-  }
-
   render() {
     this.shadowRoot.innerHTML = `
       <link rel="stylesheet" href="/styles/style.css" />
@@ -185,6 +158,31 @@ class="dropdown-arrow w-6 h-6 text-[#f8f8f6] transition-transform duration-300 e
 </nav>
 
     `;
+  }
+
+  updateLoginState() {
+    const token = getAccessToken();
+    const loginTab = this.shadowRoot.querySelector('#tab-login');
+    const logoutTab = this.shadowRoot.querySelector('#logout-button');
+    const nameField = this.shadowRoot.querySelector('#name');
+    const emailField = this.shadowRoot.querySelector('#email');
+
+    if (token) {
+      if (loginTab) loginTab.style.display = 'none';
+      if (logoutTab) logoutTab.style.display = 'flex';
+
+      const user = JSON.parse(localStorage.getItem('user'));
+      if (user) {
+        if (nameField) nameField.textContent = user.name || '';
+        if (emailField) emailField.textContent = user.email || '';
+      }
+    } else {
+      if (loginTab) loginTab.style.display = 'flex';
+      if (logoutTab) logoutTab.style.display = 'none';
+
+      if (nameField) nameField.textContent = '';
+      if (emailField) emailField.textContent = '';
+    }
   }
 }
 

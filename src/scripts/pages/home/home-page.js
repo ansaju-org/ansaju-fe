@@ -22,7 +22,7 @@ export default class HomePage {
         <span class="text-xl font-semibold sm:text-2xl !mt-2">Mahasiswa</span>
       </div>
     </div>
-    <span class="text-2xl font-semibold sm:text-2xl text-center sm:mt-32 text-gray-600">
+    <span class="text-lg font-semibold sm:text-xl text-center sm:mt-32 text-gray-600">
       2022 (April 2023) Kemendikbudristek Indonesia
     </span>
   </div>

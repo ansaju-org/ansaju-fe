@@ -28,8 +28,8 @@ export default class RiwayatPage {
         <table class="min-w-full divide-y divide-gray-200">
           <thead class="bg-[#00bfff] text-white">
             <tr>
-              <th class="!py-3 !px-4 text-left font-semibold">Jurusan</th>
-              <th class="!py-3 !px-4 text-left font-semibold">Tanggal</th>
+              <th class="!py-3 !px-4 text-center font-semibold">Jurusan</th>
+              <th class="!py-3 !px-4 text-center font-semibold">Tanggal</th>
             </tr>
           </thead>
           <tbody id="recommendation-history" class="divide-y divide-gray-200">
@@ -70,8 +70,8 @@ export default class RiwayatPage {
       tr.className = 'hover:bg-gray-50';
 
       tr.innerHTML = `
-        <td class="text-lg font-semibold !py-3 !px-4 text-[#1A508B]">${item.jurusan}</td>
-        <td class="text-lg font-semibold !py-3 !px-4 text-[#1B6530]">${new Date(item.created_at).toLocaleDateString('id-ID')}</td>
+        <td class="text-lg font-semibold !py-3 !px-4 text-center text-[#1A508B]">${item.jurusan}</td>
+        <td class="text-lg font-semibold !py-3 !px-4 text-center text-[#1B6530]">${new Date(item.created_at).toLocaleDateString('id-ID')}</td>
       `;
 
       container.appendChild(tr);

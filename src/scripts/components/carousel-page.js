@@ -25,9 +25,9 @@ class CarouselPage extends HTMLElement {
       <!-- Testimonial 1 -->
       <div class="!p-6 bg-white rounded-lg shadow-md transition-transform hover:shadow-lg hover:-translate-y-1">
         <div class="justify-center items-center text-center">
-            <h3 class="font-bold text-teal-700 text-center text-xl !p-2 !mb-4">Kenali Potensi mu</h3>
+            <h3 class="font-bold text-teal-700 text-center text-3xl !p-2 !mb-4">Kenali Potensi mu</h3>
           </div>
-        <p class="text-gray-600 text-xl sm:text-base font-semibold">Ansaju membantu kamu mengenali minat dan bakat sejak dini melalui tes potensi yang akurat. Dengan memahami diri sendiri, kamu bisa mengambil keputusan jurusan yang lebih tepat dan terarah.</p>
+        <h3 class="text-gray-600 text-lg sm:text-lg text-center font-semibold">Ansaju membantu kamu mengenali minat dan bakat sejak dini melalui tes potensi yang akurat. Dengan memahami diri sendiri, kamu bisa mengambil keputusan jurusan yang lebih tepat dan terarah.</h3>
       </div>
 
       <!-- Testimonial 2 -->
@@ -36,22 +36,22 @@ class CarouselPage extends HTMLElement {
     <div class="flex-shrink-0 mb-2">
       <img class="w-24 h-24 rounded-full" src="/ccdbs.jpg" alt="Profile image" />
     </div>
-    <h3 class="font-bold text-[#C61414] text-xl !p-2 text-center">
+    <h3 class="font-bold text-[#C61414] text-3xl !p-2 text-center">
       Coding Camp by DBS Foundation
     </h3>
   </div>
-  <p class="text-gray-600 text-lg sm:text-base text-center font-semibold">
+  <h3 class="text-gray-600 text-lg sm:text-lg text-center font-semibold">
     Ansaju dibuat untuk menyelesaikan Capstone Project di program Coding Camp by DBS Foundation.
-  </p>
+  </h3>
 </div>
 
 
       <!-- Testimonial 3 -->
       <div class="!p-6 bg-white rounded-lg shadow-md transition-transform hover:shadow-lg hover:-translate-y-1">
         <div class="justify-center items-center text-center">
-            <h3 class="font-bold text-teal-700 text-center text-xl !p-2 !mb-4">Langkah Awal Menentukan Jurusan</h3>
+            <h3 class="font-bold text-teal-700 text-center text-3xl !p-2 !mb-4">Langkah Awal Menentukan Jurusan</h3>
           </div>
-        <p class="text-gray-600 text-xl sm:text-base font-semibold">Menentukan jurusan bukan sekadar ikut-ikutan. Ansaju hadir sebagai solusi untuk membantu kamu membuat keputusan berdasarkan potensi dan ketertarikan pribadi. Mulailah perjalanan akademikmu dengan lebih percaya diri dan terarah.</p>
+        <h3 class="text-gray-600 text-lg sm:text-lg text-center font-semibold">Menentukan jurusan bukan sekadar ikut-ikutan. Ansaju hadir sebagai solusi untuk membantu kamu membuat keputusan berdasarkan potensi dan ketertarikan pribadi. Mulailah perjalanan akademikmu dengan lebih percaya diri dan terarah.</h3>
       </div>
     </div>
   </div>

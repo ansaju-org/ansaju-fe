@@ -30,8 +30,8 @@ export default class ProfilePage {
             </div>
 
             <!-- Name -->
-            <div class="absolute top-36 left-1/2 -translate-x-1/2 flex flex-col items-center text-center animate-fadeIn w-full p-2">
-              <h5 id="user-name" class="text-[#f8f8f6] font-medium text-2xl hover:underline hover:text-[#f8f8f6]"></h5>
+            <div class="absolute top-44 left-1/2 -translate-x-1/2 flex flex-col items-center text-center animate-fadeIn w-full p-2">
+              <h5 id="user-name" class="text-[#1A508B] font-medium text-2xl"></h5>
               <h6 id="user-email" class="text-[#f8f8f6] font-medium text-xl mt-1 break-all"></h6>
             </div>
 
