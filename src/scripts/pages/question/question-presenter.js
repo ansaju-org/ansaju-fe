@@ -72,8 +72,6 @@ export default class QuestionPresenter {
       }
 
       this.#view.showResult(response.data); // <== tampilkan hasil jurusan langsung
-      // optionally show success message
-      // this.#view.submitSuccessfully(response.message);
     } catch (error) {
       console.error('postRecommendations: error:', error);
       this.#view.submitFailed('Terjadi kesalahan saat mengirim jawaban.');

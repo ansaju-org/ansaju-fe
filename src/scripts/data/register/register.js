@@ -7,7 +7,7 @@ export default class Register {
   async render() {
     return `
     <section class="gap-6 flex flex-col items-center justify-center min-h-screen bg-[conic-gradient(rgba(152,228,174,0.35)),url('/images/bg-right.png')] bg-no-repeat bg-cover !px-4 !py-6 sm:gap-10 sm:flex-row">
-      <h1 class="text-center text-3xl sm:text-5xl text-[#fff] font-medium !px-2">Recognize your potential with Ansaju</h1>
+      <h1 class="text-center text-3xl sm:text-5xl text-[#f8f8f8] font-medium !px-2">Kenali Potensimu Bersama Ansaju</h1>
       <div class="bg-white rounded-3xl border-8 border-[#98e4ae] w-full max-w-md shadow-lg !px-4 !py-6 sm:p-8">
         <h2 class="text-[#98e4ae] text-center text-3xl sm:text-4xl font-bold mb-2">Register</h2>
         <p class="text-[#98e4ae] text-center mb-6 text-sm sm:text-base">Let's create your account!</p>

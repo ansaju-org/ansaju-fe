@@ -39,7 +39,7 @@ class HeaderPage extends HTMLElement {
     aria-controls="dropdown-menu-testPotential"
   >
   </button>
-  <span class="dropdown-text text-xl text-[#f8f8f6]">Tes Potensial</span>
+  <span class="dropdown-text text-xl text-[#f8f8f6]">Area Potensial</span>
   <svg 
  id="nav-link-testPotential"
 class="dropdown-arrow w-6 h-6 text-[#f8f8f6] transition-transform duration-300 ease-in-out ml-2 justify-self-center transform -translate-x-1/2 animate-bounce" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -60,7 +60,27 @@ class="dropdown-arrow w-6 h-6 text-[#f8f8f6] transition-transform duration-300 e
         role="menuitem"
         tabindex="-1"
       >
-        Quiz Potential Academic
+        Kuis Potensial Akademik
+      </a>
+    </li>
+    <li role="none">
+      <a 
+        href="/rekomendasi" 
+        class="dropdown-item block px-4 py-3 text-[#1B6530] hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 first:rounded-t-md"
+        role="menuitem"
+        tabindex="-1"
+      >
+        Rekomendasi PTN & PTS
+      </a>
+    </li>
+    <li role="none">
+      <a 
+        href="/quiz" 
+        class="dropdown-item block px-4 py-3 text-[#1B6530] hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 first:rounded-t-md"
+        role="menuitem"
+        tabindex="-1"
+      >
+        Tips & Trik Memilih Jurusan
       </a>
     </li>
   </ul>
@@ -144,13 +164,15 @@ class="dropdown-arrow w-6 h-6 text-[#f8f8f6] transition-transform duration-300 e
       <!-- Dropdown Mobile -->
       <li class="relative" id="dropdown-mobile-container">
     <button id="dropdown-mobile-trigger" class="flex items-center justify-between w-full !px-3 !py-2 rounded-md text-[#1D5D9B] hover:bg-gray-100 transition-colors duration-200">
-      Test Potential
+      Area Potensial
       <svg class="h-4 w-4 ml-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
         <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
       </svg>
     </button>
     <ul id="dropdown-mobile-menu" class="absolute left-0 top-full mt-1 w-48 bg-[#f8f8f6] rounded-md shadow-lg border border-gray-200 opacity-0 invisible transform scale-95 transition-all duration-300 z-50">
-      <li><a href="/quiz" class="block px-4 py-3 text-[#1B6530] hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 first:rounded-t-md">Quiz Potential Academic</a></li>
+      <li><a href="/quiz" class="block px-4 py-3 text-[#1B6530] hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 first:rounded-t-md">Kuis Potensial Akademik</a></li>
+      <li><a href="#" class="block px-4 py-3 text-[#1B6530] hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 first:rounded-t-md">Rekomendasi PTN & PTS</a></li>
+      <li><a href="#" class="block px-4 py-3 text-[#1B6530] hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 first:rounded-t-md">Tips & Trik Memilih Jurusan</a></li>
     </ul>
   </li>
     </ul>

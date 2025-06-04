@@ -1,0 +1,40 @@
+import RecommendationPresenter from './recom-presenter';
+export default class RecommendationPage {
+  #presenter = null;
+
+  async render() {
+    return `
+    <header-page></header-page>
+    <section class="h-screen !m-5 !p-5">
+<div class="flex flex-col justify-center items-center">
+	<div class="container mx-auto bg-[#98e4ae] rounded-lg !p-14">
+		<form>
+			<h1 class="text-center font-bold text-teal-700 text-3xl">Halo, Universitas dengan Jurusan Apa yang Ingin Kamu Cari?</h1>
+				<p class="font-normal text-center text-lg !my-6 text-gray-600">Carilah Universitasmu Berdasarkan Nama Jurusan</p>
+				<div class="sm:flex items-center bg-white rounded-lg overflow-hidden !px-2 !py-1 justify-between">
+                    <select id="category" class="text-base font-medium text-gray-600 outline-none border-2 !px-4 !py-2 rounded-lg">
+                        <option value="PTN" selected>Perguruan Tinggi Negeri (PTN)</option>
+                        <option value="PTS">Perguruan Tinggi Swasta (PTS)</option>
+                    </select>
+					<input id="search-input" class="text-base text-gray-600 flex-grow outline-none !px-2 " type="text" placeholder="Kedokteran" />
+					<div class="ms:flex items-center !px-2 rounded-lg space-x-4 mx-auto ">
+						<button id="search-button" class="bg-[#98e4ae] text-teal-700 font-semibold text-lg rounded-lg !px-4 !py-2">Search</button>
+					</div>
+				</div>
+		</form>
+	</div>
+    <ul id="ptn-list" class="!mt-4 space-y-2"></ul>
+    <ul id="pts-list" class="!mt-4 space-y-2"></ul>
+
+</div>
+    </section>
+    `;
+  }
+
+  async afterRender() {
+    this.#presenter = new RecommendationPresenter({
+      view: this,
+    });
+    this.#presenter.searchEngine();
+  }
+}

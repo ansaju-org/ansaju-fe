@@ -8,7 +8,7 @@ export default class Login {
   async render() {
     return `
     <section class="gap-6 sm:gap-10 flex flex-col sm:flex-row items-center justify-center min-h-screen bg-[conic-gradient(rgba(0,191,255,0.35)),url('/images/bg-left.png')] bg-no-repeat bg-cover !px-4 !py-6">
-      <h1 class="text-center text-3xl sm:text-5xl text-white font-semibold !px-2">Explore to Achieve Your Dreams with Ansaju</h1>
+      <h1 class="text-center text-3xl sm:text-5xl text-white font-semibold !px-2">Jelajahi dan Raih Mimpimu Bersama Ansaju</h1>
       <div class="bg-white rounded-3xl border-8 border-[#00bfff] w-full max-w-md shadow-lg !px-4 !py-6 sm:p-8">
         <h2 class="text-[#00bfff] text-center text-3xl sm:text-4xl font-bold mb-2">Log in</h2>
         <p class="text-[#00bfff] text-center mb-6 text-sm sm:text-base">Welcome Back Friends!</p>
@@ -34,7 +34,7 @@ export default class Login {
         </div>
 
         <p class="text-center text-[#00bfff] mt-4 sm:mt-6 text-xs sm:text-sm">
-          Don’t have an account?
+          Belum Punya Akun?
           <a href="/register" class="text-[#98e4ae] hover:underline font-semibold">Register</a>
         </p>
       </div>

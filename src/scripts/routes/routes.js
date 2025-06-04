@@ -5,6 +5,7 @@ import Register from '../data/register/register';
 import QuestionOne from '../pages/Question/question-one';
 import ProfilePage from '../pages/dashboard/profile-page';
 import RiwayatPage from '../pages/riwayat/riwayat-page';
+import RecommendationPage from '../pages/rekomendasi/recommendation-page';
 
 const routes = {
   '/': new HomePage(),
@@ -14,6 +15,7 @@ const routes = {
   '/quiz': new QuestionOne(),
   '/dashboard': new ProfilePage(),
   '/riwayat': new RiwayatPage(),
+  '/rekomendasi': new RecommendationPage(),
 };
 
 export default routes;
