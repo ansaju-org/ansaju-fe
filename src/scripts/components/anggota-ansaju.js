@@ -81,7 +81,7 @@ class AnggotaAnsaju extends HTMLElement {
                     </div>
                     <h4 class="mb-2 md:mb-4 text-xl md:text-xl font-semibold text-[#1D5D9B]">Dwi Oktaviane</h4>
                     <p class="mb-4 md:mb-6 font-semibold text-teal-700 text-lg md:text-lg">
-                    UI/UX and Front-End Engineer
+                    UI/UX dan Front-End Engineer
                     </p>
                 </div>
                 

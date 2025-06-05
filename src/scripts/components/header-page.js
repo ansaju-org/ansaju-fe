@@ -75,12 +75,12 @@ class="dropdown-arrow w-6 h-6 text-[#f8f8f6] transition-transform duration-300 e
     </li>
     <li role="none">
       <a 
-        href="/quiz" 
+        href="/artikel" 
         class="dropdown-item block px-4 py-3 text-[#1B6530] hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 first:rounded-t-md"
         role="menuitem"
         tabindex="-1"
       >
-        Tips & Trik Memilih Jurusan
+        Artikel Tips & Trik Memilih Jurusan
       </a>
     </li>
   </ul>
@@ -171,7 +171,7 @@ class="dropdown-arrow w-6 h-6 text-[#f8f8f6] transition-transform duration-300 e
     </button>
     <ul id="dropdown-mobile-menu" class="absolute left-0 top-full mt-1 w-48 bg-[#f8f8f6] rounded-md shadow-lg border border-gray-200 opacity-0 invisible transform scale-95 transition-all duration-300 z-50">
       <li><a href="/quiz" class="block px-4 py-3 text-[#1B6530] hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 first:rounded-t-md">Kuis Potensial Akademik</a></li>
-      <li><a href="#" class="block px-4 py-3 text-[#1B6530] hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 first:rounded-t-md">Rekomendasi PTN & PTS</a></li>
+      <li><a href="/rekomendasi" class="block px-4 py-3 text-[#1B6530] hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 first:rounded-t-md">Rekomendasi PTN & PTS</a></li>
       <li><a href="#" class="block px-4 py-3 text-[#1B6530] hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 first:rounded-t-md">Tips & Trik Memilih Jurusan</a></li>
     </ul>
   </li>

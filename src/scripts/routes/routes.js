@@ -6,6 +6,10 @@ import QuestionOne from '../pages/Question/question-one';
 import ProfilePage from '../pages/dashboard/profile-page';
 import RiwayatPage from '../pages/riwayat/riwayat-page';
 import RecommendationPage from '../pages/rekomendasi/recommendation-page';
+import ArtikelDetailPage from '../pages/artikel/artikel-detail-page';
+import ArtikelPage from '../pages/artikel/artikel-page';
+
+const id = window.location.pathname.split('/').pop();
 
 const routes = {
   '/': new HomePage(),
@@ -16,6 +20,8 @@ const routes = {
   '/dashboard': new ProfilePage(),
   '/riwayat': new RiwayatPage(),
   '/rekomendasi': new RecommendationPage(),
+  '/artikel': new ArtikelPage(),
+  '/artikel/:id': new ArtikelDetailPage(id),
 };
 
 export default routes;
