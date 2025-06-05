@@ -23,8 +23,16 @@ export default class RecommendationPage {
 				</div>
 		</form>
 	</div>
-    <ul id="ptn-list" class="!mt-4 space-y-2"></ul>
-    <ul id="pts-list" class="!mt-4 space-y-2"></ul>
+    <!-- Result Section -->
+<section class="!mt-10 w-full flex flex-col items-center">
+  <div class="w-full max-w-5xl flex flex-col items-center">
+    <ul id="ptn-list" class="space-y-4 w-full flex flex-col items-center"></ul>
+    <ul id="pts-list" class="space-y-4 w-full flex flex-col items-center"></ul>
+  </div>
+</section>
+
+</section>
+
 
 </div>
     </section>

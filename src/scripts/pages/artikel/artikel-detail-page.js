@@ -14,9 +14,10 @@ export default class ArtikelDetailPage {
   async render() {
     return `
       <header-page></header-page>
-      <div id="article-detail">
+      <section id="article-detail" class="min-h-screen flex items-center justify-center">
         <div class="loading">Loading article...</div>
-      </div>
+      </section>
+      <footer-page></footer-page>
     `;
   }
 

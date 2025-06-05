@@ -28,26 +28,29 @@ export default class RecommendationPresenter {
       }
 
       data.forEach((univ) => {
-        const li = document.createElement('li');
+        const li = document.createElement('div');
         li.classList.add(
           'flex',
           'items-center',
-          'gap-4',
-          'bg-white',
-          'shadow',
-          '!p-4',
-          '!mb-2',
-          'rounded-lg',
+          'gap-6',
+          'bg-[#f8f8f6]',
+          'shadow-lg',
+          '!p-6',
+          '!mb-4',
+          'rounded-xl',
+          'w-full',
+          'max-w-3xl',
+          'text-lg',
         );
 
         const img = document.createElement('img');
         img.src = univ.img;
         img.alt = univ.nama;
-        img.classList.add('w-16', 'h-16', 'object-cover', 'rounded-md');
+        img.classList.add('w-20', 'h-20', 'object-cover', 'rounded-md');
 
         const text = document.createElement('span');
         text.textContent = univ.nama;
-        text.classList.add('text-lg', 'font-semibold', 'text-gray-800');
+        text.classList.add('text-xl', 'font-semibold', 'text-gray-700');
 
         li.appendChild(img);
         li.appendChild(text);

@@ -8,7 +8,12 @@ export default class ArtikelPage {
   async render() {
     return `
     <header-page></header-page>
-      <div id="article"></div>
+     <section class="flex flex-col justify-center items-center max-h-full !m-10">
+      <h1 class="text-4xl font-bold text-[#1D5D9B] text-center">Artikel Tips & Trick Mengenali Jurusanmu</h1>
+     <div id="article" class="max-w-screen-xl w-full !px-5 !py-8">
+      </div>
+    </section>
+    <footer-page></footer-page>
     `;
   }
 
@@ -23,13 +28,10 @@ export default class ArtikelPage {
 
   showArticles(articles) {
     const html = articles.reduce((acc, curr) => acc + generateArticleListTemplate(curr), '');
-
     document.getElementById('article').innerHTML = `
-      <ul class="cats-list">
-        ${html}
-      </ul>
-    `;
+    <ul class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center items-center mx-auto">
+      ${html}
+    </ul>
+  `;
   }
-
-  showArticle(article) {}
 }

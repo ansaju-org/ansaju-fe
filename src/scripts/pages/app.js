@@ -11,7 +11,7 @@ class App {
 
   async renderPage() {
     const url = getActiveRoute();
-    const page = routes[url];
+    let page = routes[url];
 
     const protectedRoutes = ['/quiz', '/dashboard'];
     console.log(url, 'token', getAccessToken());
