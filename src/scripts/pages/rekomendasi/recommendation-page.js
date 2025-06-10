@@ -9,7 +9,7 @@ export default class RecommendationPage {
 <div class="flex flex-col justify-center items-center">
 	<div class="container mx-auto bg-[#98e4ae] rounded-lg !p-14">
 		<form>
-			<h1 class="text-center font-bold text-teal-700 text-3xl">Halo, Universitas dengan Jurusan Apa yang Ingin Kamu Cari?</h1>
+    <div class="text-center"><span class=" font-bold text-teal-700 text-3xl">Halo, Universitas dengan Jurusan Apa yang Ingin Kamu Cari?</span></div>
 				<p class="font-normal text-center text-lg !my-6 text-gray-600">Carilah Universitasmu Berdasarkan Nama Jurusan</p>
 				<div class="sm:flex items-center bg-white rounded-lg overflow-hidden !px-2 !py-1 justify-between">
                     <select id="category" class="text-base font-medium text-gray-600 outline-none border-2 !px-4 !py-2 rounded-lg">

@@ -1,29 +1,48 @@
 const SidebarPresenter = {
   init({ sidebarElement, closeButton }) {
-    const openButton = document.getElementById('open-sidebar'); // di DOM utama
+    const openButton = document.getElementById('open-sidebar');
 
     if (openButton) {
       openButton.addEventListener('click', () => {
-        sidebarElement.classList.remove('translate-x-[-100%]');
-        sidebarElement.classList.add('translate-x-0');
+        // Menampilkan sidebar dengan mengubah transform
+        sidebarElement.style.transform = 'translateX(0)';
       });
     }
 
-    closeButton?.addEventListener('click', () => {
-      sidebarElement.classList.add('translate-x-[-100%]');
-      sidebarElement.classList.remove('translate-x-0');
-    });
+    if (closeButton) {
+      closeButton.addEventListener('click', () => {
+        // Menyembunyikan sidebar dengan mengubah transform
+        sidebarElement.style.transform = 'translateX(-100%)';
+      });
+    }
   },
 
   initPresenter() {
-    const sidebarPage = document.querySelector('sidebar-page');
-    const shadowRoot = sidebarPage?.shadowRoot;
+    // Tunggu sampai DOM ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => {
+        this.setupSidebar();
+      });
+    } else {
+      this.setupSidebar();
+    }
+  },
 
-    const sidebarElement = shadowRoot?.getElementById('sidebar-drawer');
-    const closeButton = shadowRoot?.getElementById('closeSidebar');
+  setupSidebar() {
+    const sidebarElement = document.getElementById('sidebar-drawer');
+    const closeButton = document.getElementById('closeSidebar');
 
     if (sidebarElement && closeButton) {
+      // Set initial state - sidebar tersembunyi
+      sidebarElement.style.transform = 'translateX(-100%)';
+      sidebarElement.style.transition = 'transform 0.3s ease-in-out';
+
       this.init({ sidebarElement, closeButton });
+    } else {
+      console.warn('Sidebar elements not found:', {
+        sidebarElement: !!sidebarElement,
+        closeButton: !!closeButton,
+      });
     }
   },
 };

@@ -8,11 +8,12 @@ export default class Login {
   async render() {
     return `
     <section class="gap-6 sm:gap-10 flex flex-col sm:flex-row items-center justify-center min-h-screen bg-[conic-gradient(rgba(0,191,255,0.35)),url('/images/bg-left.png')] bg-no-repeat bg-cover !px-4 !py-6">
-      <h1 class="text-center text-3xl sm:text-5xl text-white font-semibold !px-2">Jelajahi dan Raih Mimpimu Bersama Ansaju</h1>
-      <div class="bg-white rounded-3xl border-8 border-[#00bfff] w-full max-w-md shadow-lg !px-4 !py-6 sm:p-8">
-        <h2 class="text-[#00bfff] text-center text-3xl sm:text-4xl font-bold mb-2">Log in</h2>
+      <span class="text-center text-3xl sm:text-5xl text-white font-semibold !px-2">Jelajahi dan Raih Mimpimu Bersama Ansaju</span>
+      <div class="bg-white rounded-3xl border-8 border-[#00bfff] w-full max-w-md shadow-lg !px-4 !py-6 sm:p-8 ">
+        <div class="text-center justify-center">
+        <span class="text-[#00bfff] text-center text-3xl sm:text-4xl font-bold mb-2">Log in</span>
         <p class="text-[#00bfff] text-center mb-6 text-sm sm:text-base">Welcome Back Friends!</p>
-        
+        </div>
         <form id="login-form" class="flex flex-col gap-4 items-center">
           <div class="flex flex-col my-2 w-full sm:w-9/12">
             <label for="username" class="text-[#00bfff] text-base sm:text-lg font-semibold mb-1 sm:mb-2">Username</label>

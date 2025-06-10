@@ -7,47 +7,71 @@ export default class ProfilePage {
 
   async render() {
     return `
-      <nav class="bg-[#00bfff] flex justify-between h-16 items-center px-4">
-        <div id="open-sidebar" class="flex items-center">
-          <svg class="w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-            <path fill-rule="evenodd" d="M10 4H4c-1.10457 0-2 .89543-2 2v12c0 1.1046.89543 2 2 2h6V4ZM4.37868 9.29289c-.39052.39053-.39052 1.02371 0 1.41421l1.29283 1.2928-1.29283 1.2929c-.39052.3905-.39052 1.0237 0 1.4142.39052.3905 1.02369.3905 1.41421 0l1.99994-2c.39053-.3905.39053-1.0236 0-1.4142L5.79289 9.29289c-.39052-.39052-1.02369-.39052-1.41421 0Z" clip-rule="evenodd"/>
-            <path d="M12 20h8c1.1046 0 2-.8954 2-2V6c0-1.10457-.8954-2-2-2h-8v16Z"/>
-          </svg>
+      <nav class="bg-[#00bfff] flex justify-between h-16 items-center px-4 shadow-md">
+    <div id="open-sidebar" class="flex items-center cursor-pointer">
+        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+    </div>
+</nav>
+
+<div class="flex flex-col min-h-screen md:flex-row bg-gray-100">
+    <sidebar-page></sidebar-page>
+
+    <section
+      class="flex-1 flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8 bg-gray-100"
+    >
+      <div
+        class="relative mx-auto w-full max-w-xs h-[450px] rounded-2xl bg-[#00bfff] overflow-hidden shadow-xl"
+        style="box-shadow: 0 15px 30px rgba(0, 191, 255, 0.5)"
+      >
+        <div
+          class="absolute items-center w-full h-24 bg-[#98e4ae] rounded-bl-2xl rounded-br-2xl"
+        ></div>
+
+        <div
+          class="absolute top-4 flex flex-col items-center w-28 h-28 rounded-full overflow-hidden border-4 border-[#f8f8f6] bg-white shadow-lg left-[30%] transform -translate-x-1/2 -translate-y-1/2"
+        >
+          <img
+            class="w-full h-full object-cover items-center"
+            src="/images/profile.png"
+            alt="Profile Avatar"
+          />
         </div>
-      </nav>
 
-      <div class="flex flex-col min-h-screen md:flex-row">
-        <sidebar-page></sidebar-page>
+        <div
+          class="absolute flex flex-col items-center text-center w-full !px-4 !py-2 top-[40%] transform -translate-x-1/2 -translate-y-1/2"
+        >
+          <span
+            id="user-name"
+            class="text-[#1A508B] font-semibold text-2xl mt-2 block truncate max-w-full"
+            >Nama Pengguna</span
+          >
+          <span
+            id="user-email"
+            class="text-[#f8f8f6] font-medium text-lg mt-1 block break-all px-2 max-w-full"
+            >email@example.com</span
+          >
+        </div>
 
-        <section class="card flex-1 flex flex-col items-center justify-center gap-8 p-4 sm:p-6 lg:p-8">
-          <div class="relative mx-auto w-full max-w-xs h-[400px] rounded-xl bg-[#00bfff] overflow-hidden" style="box-shadow: 0 10px 20px rgba(0, 191, 255, 0.6);">
-            <!-- Top bar -->
-            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-11/12 h-20 bg-[#98e4ae] animate-dsTop rounded-bl-xl rounded-br-xl"></div>
-
-            <!-- Avatar -->
-            <div class="absolute top-10 left-1/2 -translate-x-1/2 w-24 h-24 rounded-full overflow-hidden border-2 border-[#f8f8f6] bg-[#00bfff] animate-mvTop">
-              <img class="w-24 h-24" src="/images/profile.png" alt="">
-            </div>
-
-            <!-- Name -->
-            <div class="absolute top-44 left-1/2 -translate-x-1/2 flex flex-col items-center text-center animate-fadeIn w-full p-2">
-              <h5 id="user-name" class="text-[#1A508B] font-medium text-2xl"></h5>
-              <h6 id="user-email" class="text-[#f8f8f6] font-medium text-xl mt-1 break-all"></h6>
-            </div>
-
-            <!-- Hasil Test -->
-<div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-11/12 max-w-sm bg-white border border-blue-200 rounded-xl shadow-lg px-4 py-5 animate-fadeInMove delay-[1000ms]">
-  <h6 class="text-center text-[#1A508B] text-2xl sm:text-lg font-bold !m-3 uppercase tracking-wide">
-    Hasil Test Jurusan Mu
-  </h6>
-  <ul id="recommendation-history" class="space-y-3 text-sm sm:text-base max-h-40 overflow-y-auto px-1 text-center">
-  </ul>
-</div>
-
-
+        <div
+          class="absolute bottom-3 w-full max-w-sm bg-white border border-blue-200 rounded-xl shadow-lg !px-4 !py-4"
+        >
+          <div class="flex items-center justify-center">
+            <span
+              class="text-center text-[#1A508B] text-xl font-bold uppercase tracking-wide mb-3"
+            >
+              Hasil Tes Jurusanmu
+            </span>
           </div>
-        </section>
+          <ul
+            id="recommendation-history"
+            class="space-y-3 text-base sm:text-xl max-h-40 overflow-y-auto px-2 text-center text-gray-700"
+          ></ul>
+        </div>
       </div>
+    </section>
+</div>
     `;
   }
 

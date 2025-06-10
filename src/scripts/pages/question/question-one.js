@@ -16,7 +16,7 @@ export default class QuestionOne {
   <div class="w-full max-w-2xl bg-white rounded-3xl shadow-lg border-4 border-[#00bfff] overflow-hidden">
     <!-- Header -->
     <div class="bg-[#00bfff] text-white text-center !px-6 !py-6">
-      <h1 class="text-3xl sm:text-4xl font-bold text-[#1A508B]">Tes Potensial Akademik</h1>
+      <span class="text-3xl sm:text-4xl font-bold text-[#1A508B]">Tes Potensial Akademik</span>
       <p class="!mt-2 text-xl font-semibold sm:text-lg text-[#f8f8f6]">Pertanyaan ini adalah langkah awal untuk menentukan jurusanmu</p>
     </div>
 
@@ -25,19 +25,19 @@ export default class QuestionOne {
       <div id="quiz" class="space-y-4"></div>
 
       <!-- Navigasi -->
-      <div class="flex justify-between items-center pt-4">
-        <button id="prev" class="bg-[#98e4ae] text-white font-semibold !px-6 !py-2 rounded-lg shadow-md hover:brightness-110 transition duration-300">
-          Prev
+      <div class="flex justify-between items-center pt-4 ">
+        <button id="prev" class=" rounded-lg shadow-md hover:brightness-110 transition duration-300">
+          <span class="text-[#f8f8f6] bg-[#98e4ae] font-semibold !px-6 !py-2 text-base">Prev</span>
         </button>
-        <button id="next" class="bg-[#00bfff] text-white font-semibold !px-6 !py-2 rounded-lg shadow-md hover:brightness-110 transition duration-300">
-          Next
+        <button id="next" class=" rounded-lg shadow-md hover:brightness-110 transition duration-300">
+          <span class="text-[#f8f8f6] bg-[#00bfff] font-semibold !px-6 !py-2 text-base">Prev</span>
         </button>
       </div>
 
       <!-- Submit -->
       <div class="flex justify-center !pt-4">
-        <button id="submit" class="bg-gradient-to-r from-[#00bfff] to-[#009ad6] text-white font-bold !px-6 !py-3 rounded-xl shadow-lg hover:scale-105 transition transform duration-300">
-          Submit
+        <button id="submit" class=" font-bold px-6 py-3 rounded-xl shadow-lg hover:scale-105 transition transform duration-300">
+          <span class="text-[#f8f8f6] bg-[#1A508B] font-semibold !px-6 !py-2 text-base">submit</span>
         </button>
       </div>
     </div>
@@ -46,7 +46,7 @@ export default class QuestionOne {
   <!-- Result -->
   <div class="w-full max-w-2xl !mt-6 !px-4">
     <div id="result-container" class="!p-6 sm:p-8 bg-white border-2 border-blue-200 rounded-xl shadow-md text-center">
-      <h2 class="text-2xl font-semibold text-teal-700 !mb-2">Hasil Rekomendasi Jurusan</h2>
+      <span class="text-2xl font-semibold text-teal-700 !mb-2">Hasil Rekomendasi Jurusan</span>
       <p id="result-text" class="text-xl font-semibold text-[#1A508B] !mb-2"></p>
     </div>
   </div>
@@ -149,7 +149,7 @@ export default class QuestionOne {
 
         return `
         <div class="question-${globalIndex} flex flex-col gap-2 !pb-2">
-          <h2 class="text-lg font-semibold mb-2 text-[#1A508B]">${question.question}</h2>
+          <span class="text-lg font-semibold mb-2 text-[#1A508B]">${question.question}</span>
           <div class="flex justify-between w-full px-4">
             <p class="text-left text-based font-semibold text-teal-700">Kurang Setuju</p>
             <p class="text-right text-based font-semibold text-teal-700">Lebih Setuju</p>

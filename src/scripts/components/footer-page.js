@@ -1,7 +1,6 @@
 class FooterPage extends HTMLElement {
   constructor() {
     super();
-    this.attachShadow({ mode: 'open' });
   }
 
   connectedCallback() {
@@ -9,8 +8,7 @@ class FooterPage extends HTMLElement {
   }
 
   render() {
-    this.shadowRoot.innerHTML = `
-    <link rel="stylesheet" href="/styles/style.css" />
+    this.innerHTML = `
     <footer class="bg-[#00bfff] rounded-t-3xl shadow-lg m-0 w-full pt-10 pb-4 flex flex-col items-center">
       <div class="w-full max-h-full flex flex-col md:flex-row md:items-center md:justify-between px-4 md:px-8 gap-8 md:gap-0">
   <div class="flex flex-col items-center md:items-start mb-4 md:mb-0">

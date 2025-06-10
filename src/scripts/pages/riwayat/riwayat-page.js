@@ -20,9 +20,11 @@ export default class RiwayatPage {
 
   <section class="flex-grow flex justify-center !py-12 !px-6 sm:px-10 lg:px-16">
     <div class="w-full max-w-4xl bg-white shadow-lg rounded-xl !p-6 md:p-10">
-      <h2 class="text-3xl sm:text-4xl font-bold text-center text-[#1A508B] mb-8">
+    <div class="text-center">
+    <span class="text-3xl sm:text-4xl font-bold text-[#1A508B] mb-8">
         Riwayat Tes Potensial
-      </h2>
+    </span>
+</div>  
 
       <div class="overflow-x-auto rounded-lg border border-gray-200">
         <table class="min-w-full divide-y divide-gray-200">

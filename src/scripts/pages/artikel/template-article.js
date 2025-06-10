@@ -1,9 +1,9 @@
 export function generateArticleListTemplate({ id, judul, img }) {
   return `
     <li class="relative flex items-end justify-center w-full bg-center bg-cover cursor-pointer h-96 group rounded-xl overflow-hidden shadow-md" style="background-image: url('${img}');">
-    <h2 class="z-20 !p-5 text-xl text-center lg:text-xl font-semibold text-[#1D5D9B]">
+    <span class="z-20 !p-5 text-xl text-center lg:text-xl font-semibold text-[#1D5D9B]">
           ${judul}
-        </h2>
+        </span>
     <a href="/artikel/${id}" class="absolute inset-0 z-10">
         <div class="absolute inset-0 bg-gradient-to-b from-white/30 to-[#00bfff]"></div>
       </a>
@@ -25,9 +25,9 @@ export function generateArticleDetailTemplate({ img, judul, isi, isi2 }) {
   <div class="max-w-3xl mx-auto">
     <div class="!mt-3 bg-white rounded-b lg:rounded-b-none lg:rounded-r flex flex-col justify-between leading-normal shadow-md relative z-10">
       <div class="bg-white !p-5 sm:p-10">
-        <h1 class="text-[#1D5D9B] font-bold text-3xl sm:text-4xl mb-4">
+        <span class="text-[#1D5D9B] font-bold text-3xl sm:text-4xl mb-4">
           ${judul}
-        </h1>
+        </span>
 
         <p class="text-gray-600 text-base sm:text-sm !mb-4 !mt-4">
           Written By:

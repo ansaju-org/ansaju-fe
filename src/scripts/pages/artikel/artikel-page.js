@@ -9,7 +9,7 @@ export default class ArtikelPage {
     return `
     <header-page></header-page>
      <section class="flex flex-col justify-center items-center max-h-full !m-10">
-      <h1 class="text-4xl font-bold text-[#1D5D9B] text-center">Artikel Tips & Trick Mengenali Jurusanmu</h1>
+      <span class="text-4xl font-bold text-[#1D5D9B] text-center">Artikel Tips & Trick Mengenali Jurusanmu</span>
      <div id="article" class="max-w-screen-xl w-full !px-5 !py-8">
       </div>
     </section>

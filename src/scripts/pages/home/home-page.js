@@ -5,9 +5,9 @@ export default class HomePage {
       <!-- Middle Section -->
 <section class="w-full flex items-center justify-center h-auto min-h-[24rem] overflow-hidden bg-gradient-to-b from-[#ffff] to-[#00bfff] py-10 sm:h-96">
   <div class="relative z-10 container mx-auto px-4 text-center text-[#1D5D9B] flex flex-col items-center justify-center h-full">
-    <h1 class="mb-5 sm:mb-40 text-3xl sm:text-5xl font-bold tracking-tight md:text-6xl lg:text-7xl" style="line-height: 1.2">
+    <span class="mb-5 sm:mb-40 text-[40px] font-bold tracking-tight">
       Data Statistik Perkuliahan
-    </h1>
+    </span>
     <div class="flex flex-col sm:flex-row gap-6 sm:gap-10 items-center justify-center mb-6 sm:mt-10 sm:mb-10 w-full text-gray-600">
       <div class="flex flex-col items-center">
         <p class="text-2xl sm:text-4xl font-bold">4.437</p>
