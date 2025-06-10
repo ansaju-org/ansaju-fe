@@ -23,7 +23,7 @@ export default class ArtikelPage {
       view: this,
     });
 
-    await this.#presenter.showArticles(); // Metode baru, dijelaskan di bawah
+    await this.#presenter.showArticles();
   }
 
   showArticles(articles) {
