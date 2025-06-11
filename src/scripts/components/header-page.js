@@ -78,7 +78,7 @@ class HeaderPage extends HTMLElement {
             <!-- Profile Dropdown -->
             <div class="relative">
               <!-- Profile Button -->
-              <button type="button" id="user-menu-button" class="flex p-2 focus:outline-none focus:ring-2 focus:ring-[#f8f8f6] focus:ring-offset-2 rounded-full transition-all duration-200 hover:shadow-lg">
+              <button type="button" id="user-menu-button" class="flex !p-2 focus:outline-none focus:ring-2 focus:ring-[#f8f8f6] focus:ring-offset-2 rounded-full transition-all duration-200 hover:shadow-lg">
                 <img class="w-10 h-10 p-4 md:w-12 md:h-12 rounded-full" src="/component/iconOrg.png" alt="User photo" />
               </button>
               
@@ -119,41 +119,43 @@ class HeaderPage extends HTMLElement {
             </div>
 
             <!-- Mobile Menu Button -->
-            <button id="drawer-button" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-[#f8f8f6] rounded-lg md:hidden hover:bg-blue-600 focus:ring-2 focus:ring-white transition-colors duration-200">
+            <div class="text-[#f8f8f6]">
+            <button id="drawer-button" type="button" class="inline-flex items-center !p-2 w-10 h-10 justify-center rounded-lg md:hidden hover:bg-blue-600 focus:ring-2 focus:ring-white transition-colors duration-200">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </button>
+            </div>
           </div>
         </div>
 
         <!-- Mobile Navigation Drawer -->
         <div id="navigation-drawer" class="hidden fixed top-0 right-0 w-64 h-full shadow-lg bg-[#f8f8f6] transform translate-x-full transition-transform duration-300 z-50">
           <!-- Close Button -->
-          <div class="flex px-4 py-4 justify-end">
-            <button id="drawer-close" class="text-[#00bfff] hover:text-[#0099cc] transition-colors duration-200">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <div class="flex !px-4 !py-4 justify-end text-[#98e4ae] hover:text-red-600 ">
+            <button id="drawer-close" class="transition-colors duration-200">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
               </svg>
             </button>
           </div>
 
           <!-- Mobile Navigation Links -->
-          <ul class="flex flex-col p-4 space-y-2 font-medium">
-            <li><a href="/" data-page="home" id="nav-link-mobile" class="block px-3 py-2 rounded-md text-[#1D5D9B] hover:bg-gray-100 transition-colors duration-200">Beranda</a></li>
-            <li><a href="/about" data-page="about" id="nav-link-mobile" class="block px-3 py-2 rounded-md text-[#1D5D9B] hover:bg-gray-100 transition-colors duration-200">Tentang</a></li>
+          <ul class="flex flex-col p-4! space-y-2 font-medium text-[#1D5D9B]">
+            <li><a href="/" data-page="home" id="nav-link-mobile" class="block !px-3 !py-2 rounded-md  hover:bg-blue-200 transition-colors duration-200">Beranda</a></li>
+            <li><a href="/about" data-page="about" id="nav-link-mobile" class="block !px-3 !py-2 rounded-md hover:bg-blue-200 transition-colors duration-200">Tentang</a></li>
             <!-- Mobile Dropdown -->
             <li class="relative" id="dropdown-mobile-container">
-              <button id="dropdown-mobile-trigger" class="flex items-center justify-between w-full px-3 py-2 rounded-md text-[#1D5D9B] hover:bg-gray-100 transition-colors duration-200">
+              <button id="dropdown-mobile-trigger" class="flex items-center justify-between w-full !px-3 !py-2 rounded-md hover:bg-blue-200 transition-colors duration-200">
                 Area Potensial
-                <svg class="h-4 w-4 ml-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <svg class="h-4 w-4 !ml-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <ul id="dropdown-mobile-menu" class="mt-2 ml-4 space-y-1 opacity-0 invisible max-h-0 overflow-hidden transition-all duration-300">
-                <li><a href="/quiz" class="block px-4 py-2 text-[#1B6530] hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 rounded-md">Kuis Potensial Akademik</a></li>
-                <li><a href="/rekomendasi" class="block px-4 py-2 text-[#1B6530] hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 rounded-md">Rekomendasi PTN & PTS</a></li>
-                <li><a href="/artikel" class="block px-4 py-2 text-[#1B6530] hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 rounded-md">Tips & Trik Memilih Jurusan</a></li>
+              <ul id="dropdown-mobile-menu" class="!mt-2 !ml-4 space-y-1 opacity-0 invisible max-h-0 overflow-hidden transition-all rounded-md duration-300 text-[#1B6530]">
+                <li><a href="/quiz" class="block !px-4 !py-2 hover:bg-green-200 transition-colors duration-200 ">Kuis Potensial Akademik</a></li>
+                <li><a href="/rekomendasi" class="block !px-4 !py-2 hover:bg-green-200 transition-colors duration-200">Rekomendasi PTN & PTS</a></li>
+                <li><a href="/artikel" class="block !px-4 !py-2 hover:bg-green-200 transition-colors duration-200">Tips & Trik Memilih Jurusan</a></li>
               </ul>
             </li>
           </ul>

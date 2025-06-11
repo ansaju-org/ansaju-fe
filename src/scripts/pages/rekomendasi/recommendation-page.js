@@ -11,14 +11,14 @@ export default class RecommendationPage {
 		<form>
     <div class="text-center"><span class=" font-bold text-teal-700 text-3xl">Halo, Universitas dengan Jurusan Apa yang Ingin Kamu Cari?</span></div>
 				<p class="font-normal text-center text-lg !my-6 text-gray-600">Carilah Universitasmu Berdasarkan Nama Jurusan</p>
-				<div class="sm:flex items-center bg-white rounded-lg overflow-hidden !px-2 !py-1 justify-between">
-                    <select id="category" class="text-base font-medium text-gray-600 outline-none border-2 !px-4 !py-2 rounded-lg">
+				<div class="sm:flex items-center bg-white rounded-lg overflow-hidden !px-2 !py-1 justify-between outline-none border-2">
+                    <select id="category" class="text-base font-medium text-gray-600 !px-4 !py-2 rounded-lg">
                         <option value="PTN" selected>Perguruan Tinggi Negeri (PTN)</option>
                         <option value="PTS">Perguruan Tinggi Swasta (PTS)</option>
                     </select>
-					<input id="search-input" class="text-base text-gray-600 flex-grow outline-none !px-2 " type="text" placeholder="Kedokteran" />
-					<div class="ms:flex items-center !px-2 rounded-lg space-x-4 mx-auto ">
-						<button id="search-button" class="bg-[#98e4ae] text-teal-700 font-semibold text-lg rounded-lg !px-4 !py-2">Search</button>
+					<input id="search-input" class="text-base text-gray-600 w-full outline-none !py-2 !px-2" type="text" placeholder="Kedokteran" />
+					<div class="ms:flex items-center rounded-lg space-x-4 mx-auto !px-4 !py-4">
+						<button id="search-button" class="bg-[#98e4ae] text-teal-700 font-semibold text-lg rounded-lg">Search</button>
 					</div>
 				</div>
 		</form>

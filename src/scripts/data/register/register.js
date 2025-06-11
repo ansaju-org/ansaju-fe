@@ -8,30 +8,30 @@ export default class Register {
     return `
     <section class="gap-6 flex flex-col items-center justify-center min-h-screen bg-[conic-gradient(rgba(152,228,174,0.35)),url('/images/bg-right.png')] bg-no-repeat bg-cover !px-4 !py-6 sm:gap-10 sm:flex-row">
       <span class="text-center text-3xl sm:text-5xl text-[#f8f8f8] font-medium !px-2">Kenali Potensimu Bersama Ansaju</span>
-      <div class="bg-white rounded-3xl border-8 border-[#98e4ae] w-full max-w-md shadow-lg !px-4 !py-6 sm:p-8">
-        <div class="text-center justify-center">
-        <span class="text-[#98e4ae] text-3xl sm:text-4xl font-bold mb-2">Register</span>
-        <p class="text-[#98e4ae] mb-6 text-sm sm:text-base">Let's create your account!</p>
+      <div class="bg-white rounded-3xl border-8 border-[#1B6530] w-full max-w-md shadow-lg !px-4 !py-6 sm:p-8">
+        <div class="text-center justify-center bg-[#98e4ae]">
+        <span class="text-[#1B6530] text-3xl sm:text-4xl font-bold !mb-2">Register</span>
+        <p class="text-[#f8f8f6] !mb-6 text-base font-semibold sm:text-base">Ayo Buat Akunmu!</p>
         </div>
         <!-- FORM AREA -->
         <form id="registerForm" class="flex flex-col gap-4 items-center">
           <div class="flex flex-col my-2 w-full sm:w-9/12">
-            <label for="name" class="text-[#98e4ae] text-base sm:text-lg font-semibold mb-1 sm:mb-2">Name</label>
-            <input type="text" id="name" class="border-2 border-[#98e4ae] rounded-lg px-3 py-2 focus:outline-none focus:border-[#00bfff] transition text-sm sm:text-base" required>
+            <label for="name" class="text-[#1B6530] text-base sm:text-lg font-semibold mb-1 sm:mb-2">Name</label>
+            <input type="text" id="name" class="border-2 border-[#1B6530] rounded-lg px-3 py-2 focus:outline-none focus:border-[#00bfff] transition text-sm sm:text-base" required>
           </div>
           <div class="flex flex-col my-2 w-full sm:w-9/12">
-            <label for="email" class="text-[#98e4ae] text-base sm:text-lg font-semibold mb-1 sm:mb-2">Email</label>
-            <input type="email" id="email" class="border-2 border-[#98e4ae] rounded-lg px-3 py-2 focus:outline-none focus:border-[#00bfff] transition text-sm sm:text-base" required>
+            <label for="email" class="text-[#1B6530] text-base sm:text-lg font-semibold mb-1 sm:mb-2">Email</label>
+            <input type="email" id="email" class="border-2 border-[#1B6530] rounded-lg px-3 py-2 focus:outline-none focus:border-[#00bfff] transition text-sm sm:text-base" required>
           </div>
           <div class="flex flex-col my-2 w-full sm:w-9/12">
-            <label for="username" class="text-[#98e4ae] text-base sm:text-lg font-semibold mb-1 sm:mb-2">Username</label>
-            <input type="text" id="username" class="border-2 border-[#98e4ae] rounded-lg px-3 py-2 focus:outline-none focus:border-[#00bfff] transition text-sm sm:text-base" required>
+            <label for="username" class="text-[#1B6530] text-base sm:text-lg font-semibold mb-1 sm:mb-2">Username</label>
+            <input type="text" id="username" class="border-2 border-[#1B6530] rounded-lg px-3 py-2 focus:outline-none focus:border-[#00bfff] transition text-sm sm:text-base" required>
           </div>
           <div class="flex flex-col my-2 w-full sm:w-9/12">
-            <label for="password" class="text-[#98e4ae] text-base sm:text-lg font-semibold mb-1 sm:mb-2">Password</label>
-            <input type="password" id="password" class="border-2 border-[#98e4ae] rounded-lg px-3 py-2 focus:outline-none focus:border-[#00bfff] transition text-sm sm:text-base" required>
+            <label for="password" class="text-[#1B6530] text-base sm:text-lg font-semibold mb-1 sm:mb-2">Password</label>
+            <input type="password" id="password" class="border-2 border-[#1B6530] rounded-lg px-3 py-2 focus:outline-none focus:border-[#00bfff] transition text-sm sm:text-base" required>
           </div>
-          <button type="submit" id="submit" class="bg-[#98e4ae] text-white w-24 text-base sm:text-lg font-semibold rounded-lg py-2 mt-2 hover:bg-[#00bfff] transition duration-300 ease-in-out">Register</button>
+          <button type="submit" id="submit" class="bg-[#1B6530] text-white w-24 text-base sm:text-lg font-semibold rounded-lg py-2 mt-2 hover:bg-[#00bfff] transition duration-300 ease-in-out">Register</button>
         </form>
         <!-- FORM AREA ENDS -->
 
@@ -40,11 +40,11 @@ export default class Register {
             <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
             <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
           </svg>
-          <span class="ml-2 text-[#98e4ae] font-semibold text-sm sm:text-base">Registering...</span>
+          <span class="ml-2 text-[#1B6530] font-semibold text-sm sm:text-base">Registering...</span>
         </div>
 
-        <p class="text-center text-[#98e4ae] mt-4 sm:mt-6 text-xs sm:text-sm">
-          Already have an account?
+        <p class="text-center text-[#1B6530] mt-4 sm:mt-6 text-xs sm:text-sm">
+          Sudah punya akun?
           <a href="/login" class="text-[#00bfff] hover:underline font-semibold">Login</a>
         </p>
       </div>
