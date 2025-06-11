@@ -30,7 +30,7 @@ export default class QuestionOne {
           <span class="text-[#f8f8f6] bg-[#98e4ae] font-semibold !px-6 !py-2 text-base">Prev</span>
         </button>
         <button id="next" class=" rounded-lg shadow-md hover:brightness-110 transition duration-300">
-          <span class="text-[#f8f8f6] bg-[#00bfff] font-semibold !px-6 !py-2 text-base">Prev</span>
+          <span class="text-[#f8f8f6] bg-[#00bfff] font-semibold !px-6 !py-2 text-base">Next</span>
         </button>
       </div>
 
